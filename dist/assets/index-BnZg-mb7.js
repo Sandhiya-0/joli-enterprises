@@ -214,17 +214,16 @@
       <div class="hero-bg-media-wrap" aria-hidden="true">
         <video 
           id="hero-bg-video" 
-          src="/videos/promo-video.mp4" 
+          src="/joli-enterprises/videos/promo-video.mp4" 
           autoplay 
           muted 
           loop 
           playsinline 
           preload="auto"
-          poster="/images/hero-warehouse-bg.jpg"
+          poster="/joli-enterprises/images/hero-warehouse-bg.jpg"
           class="hero-bg-video"
         ></video>
         <div class="hero-cinematic-scrim"></div>
-      </div>
       </div>
 
       <!-- Golden Orbital Elliptical Curves Overlay -->
@@ -503,7 +502,7 @@
             <div class="about-box-visual-wrap">
               <div class="about-box-image-card">
                 <img 
-                  src="/images/about-product-box.jpg" 
+                  src="/joli-enterprises/images/about-product-box.jpg" 
                   alt="Joli Enterprises Open Wholesale Cardboard Box Filled with Colourful Retail Merchandise" 
                   class="about-box-img"
                   loading="lazy"
@@ -836,7 +835,7 @@
         </div>
       </div>
     </section>
-  `}function ve(){xe()}function Le(){return`
+  `}function ve(){xe();const e=document.getElementById("hero-bg-video");if(e){e.muted=!0;const a=e.play();a!==void 0&&a.catch(()=>{})}}function Le(){return`
     <!-- About Header & Breadcrumbs -->
     <header class="about-hero">
       <div class="container">
@@ -951,7 +950,7 @@
             <div class="about-box-visual-wrap">
               <div class="about-box-image-card">
                 <img 
-                  src="/images/about-product-box.jpg" 
+                  src="/joli-enterprises/images/about-product-box.jpg" 
                   alt="Joli Enterprises Open Wholesale Cardboard Box Filled with Colourful Retail Merchandise" 
                   class="about-box-img"
                   loading="lazy"

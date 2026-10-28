@@ -117,7 +117,7 @@ export function renderAboutView() {
             <div class="about-box-visual-wrap">
               <div class="about-box-image-card">
                 <img 
-                  src="/images/about-product-box.jpg" 
+                  src="${import.meta.env.BASE_URL}images/about-product-box.jpg" 
                   alt="Joli Enterprises Open Wholesale Cardboard Box Filled with Colourful Retail Merchandise" 
                   class="about-box-img"
                   loading="lazy"
