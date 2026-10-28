@@ -177,36 +177,12 @@ export function renderHomeView() {
             </div>
           </div>
 
-          <!-- Dual CTA Buttons -->
+          <!-- Centered Explore Products CTA -->
           <div class="hero-cta-centered-group fade-up">
             <a href="#/categories" class="btn-hero-explore-gold">
               <span>Explore Products</span>
               <span class="btn-arrow">&rarr;</span>
             </a>
-            <button type="button" class="btn-hero-watch-video" id="btn-hero-watch-video" aria-label="Watch Video Showcase">
-              <span class="play-icon-circle">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-              </span>
-              <span>Watch Video</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video Modal -->
-      <div class="hero-video-modal" id="hero-video-modal" aria-hidden="true" role="dialog" aria-label="Wholesale Promotional Video">
-        <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
-        <div class="video-modal-dialog">
-          <button type="button" class="video-modal-close" id="btn-close-video-modal" aria-label="Close Video">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-          <div class="video-modal-player-wrap">
-            <video id="modal-video-player" src="/videos/promo-video.mp4" controls playsinline preload="metadata"></video>
           </div>
         </div>
       </div>
