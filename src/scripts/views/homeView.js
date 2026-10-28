@@ -28,7 +28,7 @@ export function renderHomeView() {
           loop 
           playsinline 
           preload="auto"
-          poster="/images/hero-warehouse-bg.jpg"
+          poster="${import.meta.env.BASE_URL}images/hero-warehouse-bg.jpg"
           class="hero-bg-video"
         ></video>
         <div class="hero-cinematic-scrim"></div>
