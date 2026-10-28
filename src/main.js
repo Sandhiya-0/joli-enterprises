@@ -6,7 +6,7 @@ import { getProducts } from './data/products.js';
 import { formatINR } from './scripts/utils/cart.js';
 import { escapeHtml } from './scripts/components/productCard.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // Initialize Header Scroll Dynamics
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
@@ -197,4 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Client-side Router
   initRouter();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
