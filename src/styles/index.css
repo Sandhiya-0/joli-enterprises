@@ -6329,62 +6329,61 @@ canvas.holo-card__canvas {
 
 /* 1. Master Carton Hero Header */
 .bulk-hero-header {
-  padding: 2.5rem 0 1.5rem;
+  padding: 3rem 0 2rem;
   background: linear-gradient(180deg, #f6faff 0%, #ffffff 100%);
   border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
 .bulk-hero-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
 .bulk-hero-content {
   flex: 1;
-  min-width: 300px;
-  max-width: 620px;
+  min-width: 320px;
+  max-width: 720px;
 }
 
 .bulk-eyebrow {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  font-size: 0.82rem;
+  gap: 0.55rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: #0f172a;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.65rem;
 }
 
 .bulk-eyebrow-dash {
   color: #0284c7;
   font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .bulk-hero-title {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: clamp(2.85rem, 6vw, 4.85rem);
+  font-weight: 900;
   color: #0f172a;
-  line-height: 1.15;
-  margin: 0 0 0.85rem;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .bulk-hero-title .highlight-blue {
   color: #0284c7;
-}
-
-.bulk-hero-subtitle {
-  color: #64748b;
-  font-size: 1.05rem;
-  line-height: 1.55;
-  margin: 0;
-  max-width: 540px;
+  background: linear-gradient(135deg, #0284c7 0%, #04ADFE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 /* Visual Artwork on Top Right with Floating Badge */
