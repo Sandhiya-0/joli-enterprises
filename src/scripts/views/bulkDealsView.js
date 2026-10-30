@@ -91,9 +91,6 @@ export function renderBulkDealsView() {
               <span class="bulk-eyebrow-dash">—</span> MASTER CARTON
             </div>
             <h1 class="bulk-hero-title">Volume <span class="highlight-blue">Specials</span></h1>
-            <p class="bulk-hero-subtitle">
-              High turnover daily household, mobile accessories, and stationery items available in factory master carton lots.
-            </p>
           </div>
 
           <div class="bulk-hero-visual">
