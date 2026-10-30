@@ -7,7 +7,7 @@ import { renderFounderView, initFounderViewEvents } from './views/founderView.js
 import { renderCategoriesView } from './views/categoriesView.js';
 import { renderProductsView, initProductsViewEvents } from './views/productsView.js';
 import { renderShopView, initShopViewEvents } from './views/shopView.js';
-import { renderBulkDealsView } from './views/bulkDealsView.js';
+import { renderBulkDealsView, initBulkDealsViewEvents } from './views/bulkDealsView.js';
 import { renderCombosView, initCombosViewEvents } from './views/combosView.js';
 import { renderContactView, initContactViewEvents } from './views/contactView.js';
 import { renderCategoryView } from './views/categoryView.js';
@@ -157,6 +157,7 @@ function handleRoute() {
     case 'bulk-deals':
       // 6. BULK DEALS: Dedicated Bulk Deals Page
       appContent.innerHTML = renderBulkDealsView();
+      initBulkDealsViewEvents();
       setActiveNav('bulk-deals');
       break;
 

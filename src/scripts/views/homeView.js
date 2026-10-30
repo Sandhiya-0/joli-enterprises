@@ -8,6 +8,7 @@ import { renderProductCard, escapeHtml } from '../components/productCard.js';
 import { initContactViewEvents } from './contactView.js';
 import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
+import { renderBulkFlipCard, initFlipCards } from '../components/flipCard.js';
 
 export function renderHomeView() {
   const baseUrl = import.meta.env.BASE_URL;
@@ -605,8 +606,8 @@ export function renderHomeView() {
           </a>
         </div>
 
-        <div class="products-grid" style="margin-bottom: 3.5rem;">
-          ${volumeDeals.map(p => renderProductCard(p)).join('')}
+        <div class="products-grid flip-cards-grid" style="margin-bottom: 3.5rem;">
+          ${volumeDeals.map(p => renderBulkFlipCard(p)).join('')}
         </div>
 
         <!-- Tiered Wholesale Breakdown Banner -->
@@ -776,6 +777,9 @@ export function initHomeViewEvents() {
 
   // Initialize interactive WebGL2 3D HoloCard effect on wholesale combo cards
   initHoloCards();
+
+  // Initialize interactive 3D physics FlipCard effect on master carton bulk deals
+  initFlipCards();
 }
 
 /**

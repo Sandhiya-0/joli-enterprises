@@ -1,6 +1,13 @@
 // Page: Bulk Deals & Combo Packs View
 import { getProducts } from '../../data/products.js';
 import { renderProductCard } from '../components/productCard.js';
+import { renderBulkFlipCard, initFlipCards } from '../components/flipCard.js';
+import { initHoloCards } from '../components/holoCard.js';
+
+export function initBulkDealsViewEvents() {
+  initHoloCards();
+  initFlipCards();
+}
 
 export function renderBulkDealsView() {
   const allProducts = getProducts();
@@ -54,8 +61,8 @@ export function renderBulkDealsView() {
           </a>
         </div>
 
-        <div class="products-grid">
-          ${volumeDeals.map(p => renderProductCard(p)).join('')}
+        <div class="products-grid flip-cards-grid">
+          ${volumeDeals.map(p => renderBulkFlipCard(p)).join('')}
         </div>
       </div>
     </section>
