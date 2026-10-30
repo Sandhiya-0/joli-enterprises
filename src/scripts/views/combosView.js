@@ -2,9 +2,14 @@
 import { getProducts } from '../../data/products.js';
 import { renderProductCard } from '../components/productCard.js';
 import { initHoloCards } from '../components/holoCard.js';
+import { openOffersModal } from '../components/offersModal.js';
 
 export function initCombosViewEvents() {
   initHoloCards();
+  // Automatically pop up the offer modal at center of page when entering combos
+  setTimeout(() => {
+    openOffersModal();
+  }, 250);
 }
 
 export function renderCombosView() {

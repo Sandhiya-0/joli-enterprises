@@ -9,6 +9,7 @@ import { initContactViewEvents } from './contactView.js';
 import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
 import { renderBulkFlipCard, initFlipCards } from '../components/flipCard.js';
+import { observeCombosSectionForPopup } from '../components/offersModal.js';
 
 export function renderHomeView() {
   const baseUrl = import.meta.env.BASE_URL;
@@ -1105,5 +1106,11 @@ export function initHeroCounters() {
         window.location.hash = `#/category?slug=${encodeURIComponent(item.slug)}`;
       }
     });
+  }
+
+  // When scrolling past landing page hero into combos section, trigger center offer popup
+  const combosSec = document.getElementById('combos');
+  if (combosSec) {
+    observeCombosSectionForPopup(combosSec);
   }
 }

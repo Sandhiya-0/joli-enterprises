@@ -2,6 +2,7 @@
 
 import { initRouter } from './scripts/router.js';
 import { initEnquiryModal } from './scripts/components/modal.js';
+import { initOffersModal } from './scripts/components/offersModal.js';
 import { getProducts } from './data/products.js';
 import { formatINR } from './scripts/utils/cart.js';
 import { escapeHtml } from './scripts/components/productCard.js';
@@ -215,6 +216,9 @@ function initApp() {
 
   // Initialize Quick Enquiry Modal
   initEnquiryModal();
+
+  // Initialize Special Offers Popup Modal
+  initOffersModal();
 
   // Initialize Client-side Router
   initRouter();

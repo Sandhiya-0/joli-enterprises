@@ -7410,5 +7410,171 @@ canvas.holo-card__canvas {
   }
 }
 
+/* ==========================================================================
+   SPECIAL OFFERS POPUP MODAL (Matching Tharun Website Screen Recording)
+   Animated Centered Modal with Dark Blur Backdrop and Crimson Red Close Button
+   ========================================================================== */
+
+.offers-popup-modal {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.offers-popup-modal.is-open {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal Dark Dimmed Blur Backdrop */
+.offers-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 15, 29, 0.74);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Modal Centered Elevated Card */
+.offers-modal-card {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  width: 100%;
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 25px 65px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: scale(0.92) translateY(24px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
+}
+
+.offers-popup-modal.is-open .offers-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Circular Crimson Red Close Button matching Tharun Website */
+.offers-modal-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #8B1D24;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  padding: 0;
+  outline: none;
+}
+
+.offers-modal-close-btn:hover {
+  transform: scale(1.12);
+  background-color: #b91c1c;
+}
+
+.offers-modal-close-btn:active {
+  transform: scale(0.96);
+}
+
+/* Banner Image & Interactive Hotspots */
+.offers-modal-banner-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.offers-modal-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+}
+
+.offers-modal-hotspots {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 5;
+}
+
+.offers-hotspot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 20px;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.offers-hotspot:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.hotspot-accessible-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body.offers-modal-active {
+  overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+  .offers-popup-modal {
+    padding: 1rem;
+  }
+
+  .offers-modal-card {
+    border-radius: 16px;
+  }
+
+  .offers-modal-banner-wrap {
+    border-radius: 16px;
+  }
+
+  .offers-modal-banner-img {
+    border-radius: 16px;
+  }
+
+  .offers-modal-close-btn {
+    top: -12px;
+    right: -12px;
+    width: 36px;
+    height: 36px;
+    border-width: 2.5px;
+  }
+}
+
 
 
