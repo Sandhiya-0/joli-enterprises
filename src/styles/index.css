@@ -5613,7 +5613,7 @@ canvas.holo-card__canvas {
    ========================================================================== */
 .flip-card {
   --fc-w: 100%;
-  --fc-h: 465px;
+  --fc-h: 420px;
   --fc-radius: 18px;
   --fc-bg: #ffffff;
   --fc-ink: #0C182A;
@@ -5840,6 +5840,16 @@ canvas.holo-card__canvas {
   transform: scale(1.1);
   border-color: #cbd5e1;
   background: #f8fafc;
+}
+
+.bulk-card-wish-btn.is-saved {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.bulk-card-wish-btn.is-saved svg {
+  fill: #ef4444;
+  stroke: #ef4444;
 }
 
 /* Front Card Body */
