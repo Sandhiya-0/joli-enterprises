@@ -2067,656 +2067,88 @@ button, input, select, textarea {
   margin: 0;
 }
 
-/* ==========================================================================
-   CONTACT PAGE — EXACT MATCH TO REFERENCE DESIGN (IMAGE 1)
-   Wholesale Desk, Warehouse Backdrop, Pan-India Dispatch Map,
-   Floating White Commercial Enquiry Form, and 3-Column Bottom Logistics Strip
-   ========================================================================== */
-
-.contact-exact-page-wrapper {
-  background-color: #f8fafc;
-  min-height: calc(100vh - var(--header-height, 76px));
-  padding-bottom: 3.5rem;
-}
-
-/* Hero Section with Warehouse Racks Backdrop */
-.contact-exact-hero {
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: 3rem 0 2rem;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  overflow: hidden;
-}
-
-.contact-exact-container {
+/* Contact Section Styles */
+.contact-grid {
   display: grid;
-  grid-template-columns: 390px minmax(180px, 1fr) 540px;
-  gap: 1.5rem;
-  align-items: stretch;
-  position: relative;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 3.5rem;
+  align-items: start;
 }
 
-/* --------------------------------------------------------------------------
-   Left Column: Wholesale Desk & 4 White Contact Pill Cards
-   -------------------------------------------------------------------------- */
-.contact-left-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 0.5rem;
+.contact-info-card {
+  background-color: var(--color-navy);
+  color: #CBD5E1;
+  padding: 2.5rem;
+  border-radius: var(--radius-sm);
 }
 
-.contact-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.76rem;
+.contact-info-card h3 {
+  font-size: 1.45rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
-}
-
-.contact-eyebrow .eyebrow-dash {
-  color: #0284c7;
-  font-weight: 900;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-.contact-hero-title {
-  font-family: var(--font-heading);
-  font-size: 2.75rem;
-  font-weight: 900;
-  color: #0a192f;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  color: #FFFFFF;
   margin-bottom: 0.75rem;
 }
 
-.contact-hero-title .highlight-blue {
-  color: #0284c7;
-}
-
-.contact-hero-desc {
-  font-size: 0.9rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin-bottom: 1.6rem;
-  max-width: 380px;
-}
-
-.contact-capsule-list {
+.contact-channel-list {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-}
-
-.contact-capsule-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  border-radius: 16px;
-  padding: 12px 16px;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-
-.contact-capsule-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-  border-color: #cbd5e1;
-}
-
-.capsule-icon-wrap {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.contact-capsule-card:hover .capsule-icon-wrap {
-  transform: scale(1.05);
-}
-
-.icon-blue {
-  background-color: #e0f2fe;
-  color: #0284c7;
-}
-
-.icon-green {
-  background-color: #dcfce7;
-  color: #16a34a;
-}
-
-.icon-orange {
-  background-color: #ffedd5;
-  color: #ea580c;
-}
-
-.icon-purple {
-  background-color: #f3e8ff;
-  color: #9333ea;
-}
-
-.capsule-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.capsule-title {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.25;
-  margin-bottom: 2px;
-}
-
-.capsule-text {
-  font-size: 0.76rem;
-  color: #64748b;
-  line-height: 1.35;
-}
-
-.capsule-strong {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.3;
-}
-
-.capsule-hint {
-  font-size: 0.74rem;
-  color: #64748b;
-}
-
-.capsule-sub-hint {
-  font-size: 0.72rem;
-  color: #94a3b8;
-}
-
-.capsule-link-underline {
-  color: #0284c7;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-.capsule-arrow {
-  color: #94a3b8;
-  margin-left: 4px;
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.contact-capsule-card:hover .capsule-arrow {
-  transform: translateX(3px);
-  color: #0284c7;
-}
-
-/* --------------------------------------------------------------------------
-   Center Visual: Pan-India Dispatch Map + Pallet Jack Cartons
-   -------------------------------------------------------------------------- */
-.contact-center-visual {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
-  align-self: stretch;
-  padding-bottom: 0.25rem;
-}
-
-.dispatch-callout {
-  position: absolute;
-  top: 5%;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  z-index: 3;
-}
-
-.dispatch-callout-text {
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: #1e293b;
-  line-height: 1.05;
-  text-align: center;
-  transform: rotate(-9deg);
-  white-space: nowrap;
-}
-
-.dispatch-curved-arrow {
-  transform: rotate(-12deg);
-  margin-top: -6px;
-  margin-right: 10px;
-}
-
-.dispatch-map-svg-wrap {
-  position: relative;
-  z-index: 1;
-  opacity: 0.95;
-  margin-bottom: -10px;
-}
-
-.dispatch-pallet-jack-wrap {
-  width: 250px;
-  max-width: 100%;
-  position: relative;
-  z-index: 2;
-  margin-top: auto;
-}
-
-.dispatch-pallet-jack-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  filter: contrast(1.06);
-}
-
-/* --------------------------------------------------------------------------
-   Right Column: Floating Elevated White Wholesale Form Card
-   -------------------------------------------------------------------------- */
-.contact-form-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 2.25rem 2.4rem;
-  box-shadow: 0 12px 42px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(241, 245, 249, 0.9);
-  position: relative;
-  z-index: 3;
-}
-
-.contact-form-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #0f172a;
-  margin-bottom: 0.45rem;
-}
-
-.contact-form-eyebrow .eyebrow-dash {
-  color: #0284c7;
-  font-weight: 900;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-.contact-form-title {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 800;
-  color: #0a192f;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  margin-bottom: 0.35rem;
-}
-
-.contact-form-title .highlight-blue {
-  color: #0284c7;
-}
-
-.contact-form-subtitle {
-  font-size: 0.86rem;
-  color: #64748b;
-  line-height: 1.45;
-  margin-bottom: 1.4rem;
-}
-
-.contact-form-row-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.form-group-custom {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.85rem;
-}
-
-.custom-label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 0.35rem;
-}
-
-.custom-input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.custom-input-icon {
-  position: absolute;
-  left: 13px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #94a3b8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.custom-textarea-icon {
-  top: 13px;
-  transform: none;
-}
-
-.custom-input-control {
-  width: 100%;
-  padding: 10px 14px 10px 38px;
-  border-radius: 8px;
-  border: 1.2px solid #e2e8f0;
-  background-color: #ffffff;
-  font-size: 0.86rem;
-  color: #0f172a;
-  transition: all 0.2s ease;
-  outline: none;
-  font-family: inherit;
-}
-
-.custom-input-control::placeholder {
-  color: #94a3b8;
-  font-size: 0.82rem;
-}
-
-.custom-input-control:focus {
-  border-color: #0284c7;
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
-}
-
-.custom-input-control.is-invalid,
-.custom-input-control.error {
-  border-color: #ef4444;
-  background-color: #fff8f8;
-}
-
-.custom-select-control {
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  padding-right: 36px;
-  background-color: #ffffff;
-}
-
-.custom-select-arrow {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #64748b;
-  display: flex;
-  align-items: center;
-}
-
-.custom-textarea-control {
-  padding: 11px 14px 11px 38px;
-  min-height: 90px;
-  resize: vertical;
-  line-height: 1.45;
-}
-
-.form-error-msg {
-  font-size: 0.72rem;
-  color: #dc2626;
-  margin-top: 0.25rem;
-  min-height: 0.95rem;
-  display: block;
-}
-
-.contact-form-action-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.4rem;
-}
-
-.btn-submit-enquiry {
-  background-color: #0284c7;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.88rem;
-  padding: 11px 22px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.2);
-}
-
-.btn-submit-enquiry:hover {
-  background-color: #0369a1;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
-}
-
-.btn-submit-enquiry:active {
-  transform: translateY(0);
-}
-
-.contact-response-pill {
-  background-color: #e0f2fe;
-  color: #0369a1;
-  border-radius: 8px;
-  padding: 9px 14px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-
-.contact-response-pill svg {
-  flex-shrink: 0;
-}
-
-/* --------------------------------------------------------------------------
-   Bottom 3-Column Logistics Section matching Image 1
-   -------------------------------------------------------------------------- */
-.contact-bottom-section {
+  gap: 1.5rem;
   margin-top: 1.75rem;
 }
 
-.contact-bottom-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr 0.95fr;
-  gap: 1.25rem;
-  align-items: stretch;
-}
-
-/* Card 1 (Left): Wholesale Warehouse Hub */
-.card-warehouse-hub {
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-  border: 1px solid #bae6fd;
-  border-radius: 14px;
-  padding: 14px 18px;
+.contact-channel {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.hub-thumb-wrap {
-  width: 105px;
-  height: 76px;
-  border-radius: 8px;
-  overflow: hidden;
-  flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-}
-
-.hub-thumb-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hub-text-wrap {
-  flex: 1;
-  min-width: 0;
-}
-
-.hub-company-name {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #0284c7;
-  margin-bottom: 2px;
-}
-
-.hub-title {
-  font-size: 1.02rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 3px;
-  line-height: 1.2;
-}
-
-.hub-address {
-  font-size: 0.78rem;
-  color: #475569;
-  line-height: 1.3;
-}
-
-.hub-dispatches {
-  font-size: 0.74rem;
-  color: #64748b;
-  margin-top: 2px;
-}
-
-/* Card 2 (Center): Dark Navy 4-Feature Strip */
-.card-navy-features {
-  background-color: #070e1a;
-  border-radius: 14px;
-  padding: 16px 20px;
+.contact-channel-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-navy-surface);
+  color: var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(7, 14, 26, 0.15);
+  flex-shrink: 0;
 }
 
-.navy-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  width: 100%;
+.contact-channel-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gold);
 }
 
-.navy-feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contact-channel-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.contact-channel-hint {
+  font-size: 0.775rem;
+  color: #94A3B8;
+  margin-top: 0.2rem;
+}
+
+.location-card {
+  background-color: var(--color-navy);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
   text-align: center;
 }
 
-.navy-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background-color: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+.location-map-mock {
+  background-color: var(--color-navy-surface);
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius-sm);
 }
 
-.navy-feature-item:hover .navy-icon-box {
-  transform: translateY(-2px);
-  background-color: #0ea5e9;
-}
-
-.navy-feature-label {
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: #f8fafc;
-  line-height: 1.25;
-  max-width: 85px;
-}
-
-/* Card 3 (Right): Container Quote Promotion */
-.card-container-quote {
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: cover;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 18px 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
-}
-
-.quote-card-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 4px;
-  line-height: 1.2;
-}
-
-.quote-card-desc {
-  font-size: 0.78rem;
-  color: #475569;
-  line-height: 1.35;
-  margin-bottom: 12px;
-  max-width: 270px;
-}
-
-.btn-request-container-quote {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1.5px solid #0f172a;
-  background-color: transparent;
-  color: #0f172a;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  align-self: flex-start;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.btn-request-container-quote:hover {
-  background-color: #0f172a;
-  color: #ffffff;
-}
-
-/* Alert Box */
 .alert-box {
   display: flex;
   align-items: flex-start;
@@ -2736,64 +2168,6 @@ button, input, select, textarea {
 .alert-error {
   background-color: var(--color-error-bg);
   color: var(--color-error);
-}
-
-/* --------------------------------------------------------------------------
-   Responsive Adaptations
-   -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .contact-exact-container {
-    grid-template-columns: 350px minmax(140px, 1fr) 480px;
-    gap: 1.25rem;
-  }
-  .contact-bottom-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .card-container-quote {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 960px) {
-  .contact-exact-container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .contact-center-visual {
-    order: 3;
-    padding-top: 1rem;
-  }
-  .dispatch-callout {
-    top: 0;
-    left: 20%;
-  }
-  .contact-bottom-grid {
-    grid-template-columns: 1fr;
-  }
-  .card-container-quote {
-    grid-column: span 1;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-form-card {
-    padding: 1.5rem 1.25rem;
-  }
-  .contact-form-row-2 {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .contact-form-action-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .navy-feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  .contact-hero-title {
-    font-size: 2.2rem;
-  }
 }
 
 /* Fade up animation */
