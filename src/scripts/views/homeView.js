@@ -7,7 +7,7 @@ import { getCategories, getProducts } from '../../data/products.js';
 import { renderProductCard, escapeHtml } from '../components/productCard.js';
 import { renderContactView, initContactViewEvents } from './contactView.js';
 import { wholesaleReviews } from './reviewsView.js';
-import { wholesaleFaqs } from './faqView.js';
+import { renderFaqShowcaseSection, initFaqShowcaseEvents, wholesaleFaqs } from './faqView.js';
 import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
 import { renderBulkFlipCard, initFlipCards } from '../components/flipCard.js';
@@ -922,54 +922,14 @@ export function renderHomeView() {
       </div>
     </section>
 
-    <!-- Section 9 — FAQ -->
-    <section id="faq" class="section bg-soft-grey" style="padding: 4rem 0 3.5rem;">
-      <div class="container" style="max-width: 920px;">
-        <div class="section-header text-center" style="margin-bottom: 2.25rem;">
-          <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0284c7; margin-bottom: 0.35rem;">
-            WHOLESALE TRADE DESK FAQ
-          </div>
-          <h2 class="section-title" style="margin: 0;">Frequently Asked Questions</h2>
-          <p class="section-subtitle" style="margin-top: 0.35rem;">
-            Quick answers regarding Minimum Order Quantities (MOQ), Pan-India dispatch timelines, GST invoices, and sample orders.
-          </p>
-        </div>
-
-        <!-- 5 Accordion Items -->
-        <div id="home-faq-accordion" style="display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem;">
-          ${topFaqs.map(faq => `
-            <div class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 6px rgba(15,23,42,0.02); transition: border-color 0.2s;">
-              <button 
-                type="button" 
-                class="faq-header" 
-                style="width: 100%; padding: 1.15rem 1.4rem; display: flex; justify-content: space-between; align-items: center; background: none; border: none; text-align: left; cursor: pointer; gap: 1rem;"
-              >
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <span style="background: #e0f2fe; color: #0284c7; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 5px; text-transform: uppercase;">
-                    ${escapeHtml(faq.categoryLabel)}
-                  </span>
-                  <span style="font-size: 1rem; font-weight: 700; color: #0f172a; line-height: 1.35;">
-                    ${escapeHtml(faq.question)}
-                  </span>
-                </div>
-                <span class="faq-chevron" style="color: #64748b; font-size: 1.1rem; transition: transform 0.25s ease; flex-shrink: 0;">
-                  ▼
-                </span>
-              </button>
-              <div class="faq-body" style="display: none; padding: 0 1.4rem 1.15rem; font-size: 0.9rem; color: #475569; line-height: 1.55; border-top: 1px solid #f8fafc;">
-                ${escapeHtml(faq.answer)}
-              </div>
-            </div>
-          `).join('')}
-        </div>
-
-        <div style="text-align: center;">
-          <a href="#/faq" class="btn btn-outline" style="padding: 10px 22px; font-weight: 700;">
-            <span>Browse Full FAQ Knowledge Base (10+ Questions)</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
-      </div>
+    <!-- Section 9 — FAQ (Exact Match to Image 1) -->
+    <section id="faq" class="faq-exact-showcase-section">
+      ${renderFaqShowcaseSection({
+        idPrefix: 'home-faq',
+        showButton: true,
+        buttonHref: '#/faq',
+        buttonText: 'Browse Full FAQ Knowledge Base (10+ Questions)'
+      })}
     </section>
 
     <!-- Section 10 — CONTACT (Exact Match to Image 1) -->
@@ -999,35 +959,8 @@ export function initHomeViewEvents() {
   // Initialize interactive 3D physics FlipCard effect on master carton bulk deals
   initFlipCards();
 
-  // Initialize interactive FAQ Accordion on Home Page
-  initHomeFaqEvents();
-}
-
-function initHomeFaqEvents() {
-  const container = document.getElementById('home-faq-accordion');
-  if (!container) return;
-
-  container.addEventListener('click', (e) => {
-    const header = e.target.closest('.faq-header');
-    if (!header) return;
-
-    const item = header.closest('.faq-item');
-    const body = item.querySelector('.faq-body');
-    const chevron = item.querySelector('.faq-chevron');
-
-    const isOpen = body.style.display === 'block';
-
-    // Close all other items in this accordion
-    container.querySelectorAll('.faq-body').forEach(b => b.style.display = 'none');
-    container.querySelectorAll('.faq-chevron').forEach(c => c.style.transform = 'rotate(0deg)');
-    container.querySelectorAll('.faq-item').forEach(i => i.style.borderColor = '#e2e8f0');
-
-    if (!isOpen) {
-      body.style.display = 'block';
-      chevron.style.transform = 'rotate(180deg)';
-      item.style.borderColor = '#0284c7';
-    }
-  });
+  // Initialize interactive FAQ Accordion on Home Page (matching Image 1)
+  initFaqShowcaseEvents('home-faq-accordion-list');
 }
 
 /**
