@@ -5709,6 +5709,7 @@ canvas.holo-card__canvas {
 .flip-card__face--front {
   z-index: 2;
   background: #ffffff;
+  pointer-events: auto;
 }
 
 /* Back Face (Matches Image 1 Backside with clean tiers & +cart) */
@@ -5721,6 +5722,17 @@ canvas.holo-card__canvas {
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
+  pointer-events: none;
+}
+
+.flip-card.is-showing-back .flip-card__face--front {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flip-card.is-showing-back .flip-card__face--back {
+  z-index: 3;
+  pointer-events: auto;
 }
 
 .flip-card[data-axis='x'] .flip-card__face--back {

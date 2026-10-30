@@ -24,10 +24,11 @@ export function createFlipCard(cardEl, userOptions = {}) {
   const defaultOptions = {
     axis: 'y',
     flipOnClick: true,
+    flipOnHover: true,
     draggable: true,
     dragDistance: 0,
     tilt: true,
-    tiltMax: 12,
+    tiltMax: 10,
     glare: true,
     glareOpacity: 0.28,
     hoverScale: 1.03,
@@ -60,6 +61,7 @@ export function createFlipCard(cardEl, userOptions = {}) {
   let grip = null;
   let rafId = null;
   let isHovered = false;
+  let isPinned = false;
 
   // Render loop using spring smoothing
   const render = () => {
@@ -80,16 +82,20 @@ export function createFlipCard(cardEl, userOptions = {}) {
   };
 
   const updateFaceAria = () => {
+    const facingAngle = ((Math.abs(turn) % 360) + 360) % 360;
+    const isShowingBack = (facingAngle > 90 && facingAngle < 270);
     const flipped = isBack(snap(targetTurn));
     cardEl.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+    cardEl.classList.toggle('is-flipped', flipped);
+    cardEl.classList.toggle('is-showing-back', isShowingBack);
     if (frontFace) {
-      frontFace.setAttribute('aria-hidden', flipped ? 'true' : 'false');
-      if (flipped) frontFace.setAttribute('inert', '');
+      frontFace.setAttribute('aria-hidden', isShowingBack ? 'true' : 'false');
+      if (isShowingBack) frontFace.setAttribute('inert', '');
       else frontFace.removeAttribute('inert');
     }
     if (backFace) {
-      backFace.setAttribute('aria-hidden', !flipped ? 'true' : 'false');
-      if (!flipped) backFace.setAttribute('inert', '');
+      backFace.setAttribute('aria-hidden', !isShowingBack ? 'true' : 'false');
+      if (!isShowingBack) backFace.setAttribute('inert', '');
       else backFace.removeAttribute('inert');
     }
   };
@@ -103,6 +109,7 @@ export function createFlipCard(cardEl, userOptions = {}) {
     sheen += (targetSheen - sheen) * 0.2;
 
     render();
+    updateFaceAria();
 
     const delta = Math.abs(targetTurn - turn) + Math.abs(targetTiltX - tiltX) + Math.abs(targetTiltY - tiltY) + Math.abs(targetLift - lift);
 
@@ -128,8 +135,9 @@ export function createFlipCard(cardEl, userOptions = {}) {
 
   const flip = (instant = false) => {
     const base = snap(turn);
-    const to = isBack(base) ? base - 180 : base + 180;
+    const to = isBack(base) ? 0 : 180;
     targetTurn = to;
+    isPinned = (to === 180);
     if (instant || reduceMotion) {
       turn = to;
       render();
@@ -149,8 +157,21 @@ export function createFlipCard(cardEl, userOptions = {}) {
 
   // Pointer interaction
   const onPointerDown = (e) => {
-    // If user clicked on a interactive button or regular link (not a flip trigger), do not capture
+    // If user clicked/touched an interactive button or regular link (not a flip trigger), let it handle
     if (e.button !== 0 || e.target.closest('button:not(.btn-flip-trigger), a:not(.btn-flip-trigger), input, select')) {
+      return;
+    }
+
+    // On mobile touch devices, touching the card automatically turns it to the backside to show the price!
+    if (e.pointerType === 'touch') {
+      if (isBack(snap(turn))) {
+        targetTurn = 0;
+        isPinned = false;
+      } else {
+        targetTurn = 180;
+        isPinned = true;
+      }
+      startLoop();
       return;
     }
 
@@ -164,7 +185,7 @@ export function createFlipCard(cardEl, userOptions = {}) {
       startY: e.clientY,
       baseTurn: turn,
       moved: false,
-      slop: e.pointerType === 'touch' ? SLOP.coarse : SLOP.fine,
+      slop: SLOP.fine,
       hist: [{ t: performance.now(), v: turn }]
     };
 
@@ -198,6 +219,7 @@ export function createFlipCard(cardEl, userOptions = {}) {
       }
 
       render();
+      updateFaceAria();
       return;
     }
 
@@ -207,11 +229,14 @@ export function createFlipCard(cardEl, userOptions = {}) {
     const px = clamp((e.clientX - r.left) / r.width, 0, 1);
     const py = clamp((e.clientY - r.top) / r.height, 0, 1);
 
+    const facingAngle = ((Math.abs(turn) % 360) + 360) % 360;
+    const isBackFace = (facingAngle > 90 && facingAngle < 270);
+
     targetTiltX = (0.5 - py) * 2 * options.tiltMax;
-    targetTiltY = (px - 0.5) * 2 * options.tiltMax;
+    targetTiltY = (isBackFace ? (0.5 - px) : (px - 0.5)) * 2 * options.tiltMax;
     gx = px * 100;
     gy = py * 100;
-    targetSheen = 1;
+    targetSheen = 0.6;
     startLoop();
   };
 
@@ -229,7 +254,7 @@ export function createFlipCard(cardEl, userOptions = {}) {
     const g = grip;
     grip = null;
 
-    if (!isHovered) {
+    if (!isHovered && !isPinned) {
       rest();
     }
 
@@ -239,6 +264,7 @@ export function createFlipCard(cardEl, userOptions = {}) {
         flip(false);
       } else {
         targetTurn = snap(turn);
+        isPinned = isBack(targetTurn);
         startLoop();
       }
       return;
@@ -255,20 +281,29 @@ export function createFlipCard(cardEl, userOptions = {}) {
     const here = turn;
     const to = cancelled ? snap(g.baseTurn) : clamp(snap(here + velocity * FLING), snap(here) - 180, snap(here) + 180);
     targetTurn = to;
+    isPinned = isBack(snap(targetTurn));
     startLoop();
   };
 
   const onPointerEnter = (e) => {
     isHovered = true;
-    if (!reduceMotion && e.pointerType !== 'touch') {
-      targetLift = options.hoverScale;
+    if (e.pointerType !== 'touch') {
+      if (options.flipOnHover && !isPinned) {
+        targetTurn = 180; // Whenever touched by mouse cursor, automatically turn backside and show the price!
+      }
+      if (!reduceMotion) {
+        targetLift = options.hoverScale;
+      }
       startLoop();
     }
   };
 
   const onPointerLeave = () => {
     isHovered = false;
-    if (!grip) {
+    if (!grip && !isPinned) {
+      if (options.flipOnHover) {
+        targetTurn = 0; // Automatically turn back to front when cursor moves away
+      }
       rest();
     }
   };
@@ -301,11 +336,38 @@ export function createFlipCard(cardEl, userOptions = {}) {
       return;
     }
 
+    // If user clicked Add to Cart or View Details link, don't flip
+    if (e.target.closest('.btn-bulk-add-cart, .btn-card-add-cart, .bulk-card-details-link, .flip-title-link')) {
+      return;
+    }
+
     const flipTrigger = e.target.closest('.btn-flip-trigger');
     if (flipTrigger) {
       e.preventDefault();
       e.stopPropagation();
-      flip(false);
+      if (flipTrigger.classList.contains('flip-chip-btn')) {
+        // Photo button on back face: flip to front
+        targetTurn = 0;
+        isPinned = false;
+      } else {
+        // Cue bar on front face: flip to back
+        targetTurn = 180;
+        isPinned = true;
+      }
+      startLoop();
+      return;
+    }
+
+    // Clicking on card toggles and pins
+    if (options.flipOnClick) {
+      if (isBack(snap(targetTurn))) {
+        targetTurn = 0;
+        isPinned = false;
+      } else {
+        targetTurn = 180;
+        isPinned = true;
+      }
+      startLoop();
     }
   };
 
@@ -409,10 +471,8 @@ export function renderBulkFlipCard(product) {
           </div>
 
           <div class="bulk-card-body bulk-card-front-body">
-            <div class="bulk-front-meta-row">
-              <span class="bulk-card-category">${escapeHtml(categoryLabel)}</span>
-              <span class="bulk-moq-pill">MOQ: ${product.moq} pcs</span>
-            </div>
+            <!-- Category Label -->
+            <span class="bulk-card-category">${escapeHtml(categoryLabel)}</span>
 
             <!-- Product Title -->
             <h3 class="bulk-card-title">
@@ -422,22 +482,6 @@ export function renderBulkFlipCard(product) {
             <!-- Pack & Carton Specs -->
             <div class="bulk-card-specs">
               Pack of ${product.packQuantity || 1} units <span class="bulk-specs-dot">•</span> Carton: ${product.cartonQuantity || 100}
-            </div>
-
-            <!-- Front Action Row: View Details + Flip for Price (Price is hidden on front) -->
-            <div class="bulk-card-front-footer">
-              <a href="#/product?id=${encodeURIComponent(product.id)}" class="bulk-card-details-link">
-                <span>View Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-
-              <button type="button" class="btn-flip-trigger btn-flip-cta" aria-label="Flip card to view price and order">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-                <span>Flip for Price</span>
-              </button>
             </div>
 
             <!-- Tap or Drag to Flip to Price & Order -->
