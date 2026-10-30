@@ -8,6 +8,7 @@ export function initCombosViewEvents() {
 }
 
 export function renderCombosView() {
+  const baseUrl = import.meta.env.BASE_URL;
   const allProducts = getProducts();
   const comboPacks = allProducts.filter(p => p.isCombo);
 
@@ -43,7 +44,7 @@ export function renderCombosView() {
         <div class="custom-combo-card-banner fade-up">
           <!-- Left: 3D Custom Combo Box Art -->
           <div class="combo-banner-art">
-            <img src="/images/custom-combo-box.png" alt="Custom Combo Kit Assembly" class="combo-banner-art-img" />
+            <img src="${baseUrl}images/custom-combo-box.png" alt="Custom Combo Kit Assembly" class="combo-banner-art-img" />
           </div>
 
           <!-- Center: Headline, Description & Glowing Button -->

@@ -1,5 +1,6 @@
 // Page: Founder View — Pixel-perfect implementation matching user uploaded image
 export function renderFounderView() {
+  const baseUrl = import.meta.env.BASE_URL;
   return `
     <section class="founder-exact-section">
       <div class="container">
@@ -95,7 +96,7 @@ export function renderFounderView() {
           <div class="founder-portrait-col">
             <div class="founder-circle-wrap" id="founder-circle-portrait">
               <img 
-                src="/images/founder-circle-clean.png" 
+                src="${baseUrl}images/founder-circle-clean.png" 
                 alt="Joli Enterprises Founder and Leadership"
                 class="founder-circle-img"
               />

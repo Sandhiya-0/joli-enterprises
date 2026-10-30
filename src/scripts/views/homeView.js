@@ -10,6 +10,7 @@ import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
 
 export function renderHomeView() {
+  const baseUrl = import.meta.env.BASE_URL;
   const categories = getCategories();
   const allProducts = getProducts();
   const featuredProducts = allProducts.filter(p => p.featured || (!p.isCombo && p.cartonQuantity && p.cartonQuantity >= 100)).slice(0, 8);
@@ -210,7 +211,7 @@ export function renderHomeView() {
         <div class="custom-combo-card-banner fade-up">
           <!-- Left: 3D Custom Combo Box Art -->
           <div class="combo-banner-art">
-            <img src="/images/custom-combo-box.png" alt="Custom Combo Kit Assembly" class="combo-banner-art-img" />
+            <img src="${baseUrl}images/custom-combo-box.png" alt="Custom Combo Kit Assembly" class="combo-banner-art-img" />
           </div>
 
           <!-- Center: Headline, Description & Glowing Button -->
@@ -550,7 +551,7 @@ export function renderHomeView() {
           <div class="founder-portrait-col">
             <div class="founder-circle-wrap" id="home-founder-circle-portrait">
               <img 
-                src="/images/founder-circle-clean.png" 
+                src="${baseUrl}images/founder-circle-clean.png" 
                 alt="Joli Enterprises Founder and Leadership Operations"
                 class="founder-circle-img"
               />
