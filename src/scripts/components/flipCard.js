@@ -322,13 +322,13 @@ export function createFlipCard(cardEl, userOptions = {}) {
 
 /**
  * Renders a 3D Flip Card for Master Carton Volume Deals
- * Front: High-res product image, badges, category, product title, pack/carton details & flip prompt
- * Back: Full wholesale price breakdown table, resale margin badge, key specs, dispatch SLA & +Cart button
+ * Front: Exactly matches Image 2 (Product image, badges, category, and product title)
+ * Back: Exactly matches Image 3 (White card background, pack/carton, wholesale price, tiered table, +Cart button, and dashed blue cue bar)
  */
 export function renderBulkFlipCard(product) {
   const badgeHtml = product.badge
     ? `<span class="badge product-card-badge">${escapeHtml(product.badge)}</span>`
-    : `<span class="badge product-card-badge" style="background:#04ADFE; color:#070E1A;">Volume Deal</span>`;
+    : `<span class="badge product-card-badge" style="background:#E0F2FE; color:#0284C7; font-weight:800;">Volume Deal</span>`;
 
   const lowestPrice = product.priceTiers && product.priceTiers.length > 0
     ? product.priceTiers[product.priceTiers.length - 1].price
@@ -347,7 +347,7 @@ export function renderBulkFlipCard(product) {
       <span class="flip-card__shadow" aria-hidden="true"></span>
 
       <div class="flip-card__rotor">
-        <!-- 1. FRONT FACE: Image & Product Highlights -->
+        <!-- 1. FRONT FACE (Exact match to Image 2: Image, Badges, Category, MOQ & Title) -->
         <div class="flip-card__face flip-card__face--front">
           <div class="flip-front-img-wrap">
             ${badgeHtml}
@@ -377,21 +377,8 @@ export function renderBulkFlipCard(product) {
               <a href="#/product?id=${encodeURIComponent(product.id)}" class="flip-title-link">${escapeHtml(product.name)}</a>
             </h3>
 
-            <div class="flip-front-specs-row">
-              <span>${product.packQuantity ? `Pack of ${product.packQuantity} units` : ''}</span>
-              ${product.cartonQuantity ? `<span class="specs-dot">•</span> <span>Carton: ${product.cartonQuantity}</span>` : ''}
-            </div>
-
-            <div class="flip-front-price-row">
-              <div class="price-stack">
-                <span class="wholesale-price-label">Wholesale Price</span>
-                <div class="product-card-price">${formatINR(product.unitPrice)} <span class="price-unit">/ unit</span></div>
-                ${lowestPrice < product.unitPrice ? `<span class="price-bulk-hint">As low as ${formatINR(lowestPrice)} on carton</span>` : ''}
-              </div>
-            </div>
-
-            <!-- Bottom Flip Prompt Button -->
-            <div class="flip-cue-bar btn-flip-trigger">
+            <!-- Front Flip Hint Button -->
+            <div class="flip-cue-bar btn-flip-trigger" aria-label="Tap to view pricing details">
               <span class="flip-cue-pulse"></span>
               <span class="flip-cue-text">Tap or Drag to view Pricing Tiers &amp; Specs</span>
               <svg class="flip-cue-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
@@ -402,80 +389,52 @@ export function renderBulkFlipCard(product) {
           <span class="flip-card__glare" aria-hidden="true"></span>
         </div>
 
-        <!-- 2. BACK FACE: Price Details, Tier Table, Specs & Quick Actions -->
+        <!-- 2. BACK FACE (Exact match to Image 3: White background, Pack/Carton, Wholesale Price, Tiers, +Cart & Dashed Box) -->
         <div class="flip-card__face flip-card__face--back">
-          <div class="flip-back-header">
-            <div class="flip-back-eyebrow">
-              <span class="flip-back-tag">VOLUME SPECIAL</span>
-              <span class="flip-back-cat">${escapeHtml(product.categoryName)}</span>
+          <div class="flip-back-top-row">
+            <div class="flip-back-specs-line">
+              ${product.packQuantity ? `Pack of ${product.packQuantity} units` : ''} 
+              ${product.cartonQuantity ? `<span class="specs-dot">•</span> Carton: ${product.cartonQuantity}` : ''}
             </div>
-            <button type="button" class="flip-back-close-btn btn-flip-trigger" aria-label="Flip back to front view">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-              <span>Back</span>
+            <button type="button" class="flip-chip-btn btn-flip-trigger flip-chip-btn-sm" aria-label="Flip back to product photo">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <span>Photo</span>
             </button>
           </div>
 
-          <h4 class="flip-back-title">${escapeHtml(product.name)}</h4>
+          <h4 class="flip-back-title-clean">${escapeHtml(product.name)}</h4>
 
-          <!-- Price Details & Margin -->
-          <div class="flip-pricing-block">
-            <div class="flip-price-headline">
-              <div>
-                <div class="flip-price-sub">Starting Wholesale Rate</div>
-                <div class="flip-price-large">${formatINR(product.unitPrice)} <span class="unit">/ unit</span></div>
-              </div>
-              <div class="flip-margin-badge">
-                <span class="margin-lbl">Retail Margin</span>
-                <span class="margin-val">35% – 55%</span>
-              </div>
+          <!-- Price Section (Matches Image 3) -->
+          <div class="flip-back-price-block">
+            <div class="wholesale-price-label">WHOLESALE PRICE</div>
+            <div class="product-card-price flip-price-num">
+              ${formatINR(product.unitPrice)} <span class="price-unit">/ unit</span>
             </div>
-
-            <!-- Tiered Wholesale Breakdown Table -->
-            <div class="flip-tiers-table">
-              <div class="flip-tier-head-row">
-                <span>Volume Bracket</span>
-                <span>Wholesale Rate</span>
-                <span>Savings</span>
-              </div>
-              ${(product.priceTiers || []).map((tier, idx) => {
-                const isCarton = idx === product.priceTiers.length - 1;
-                const savingsPct = Math.round(((product.unitPrice - tier.price) / product.unitPrice) * 100);
-                return `
-                  <div class="flip-tier-data-row ${isCarton ? 'is-best-deal' : ''}">
-                    <span class="tier-bracket">
-                      ${tier.minQty}+ pcs
-                      ${isCarton ? `<span class="carton-tag">Carton</span>` : ''}
-                    </span>
-                    <span class="tier-rate">${formatINR(tier.price)}</span>
-                    <span class="tier-discount">${savingsPct > 0 ? `Save ${savingsPct}%` : 'Base MOQ'}</span>
-                  </div>
-                `;
-              }).join('')}
-            </div>
+            ${lowestPrice < product.unitPrice ? `<div class="flip-low-hint">As low as ${formatINR(lowestPrice)} on carton</div>` : ''}
           </div>
 
-          <!-- Key Commercial Specs -->
-          <div class="flip-specs-list">
-            <div class="flip-spec-item">
-              <span class="spec-k">Master Carton:</span>
-              <span class="spec-v">${product.cartonQuantity ? `${product.cartonQuantity} pcs` : 'Standard'}</span>
+          <!-- Clean Volume Tier Breakdown Table -->
+          <div class="flip-tiers-clean-table">
+            <div class="tier-clean-head">
+              <span>Volume Bracket</span>
+              <span>Rate / Unit</span>
+              <span>Savings</span>
             </div>
-            <div class="flip-spec-item">
-              <span class="spec-k">Pack Size:</span>
-              <span class="spec-v">${product.packQuantity ? `${product.packQuantity} units` : 'Retail Pack'}</span>
-            </div>
-            <div class="flip-spec-item">
-              <span class="spec-k">Dispatch:</span>
-              <span class="spec-v highlight-cyan">24h Express Cargo</span>
-            </div>
-            <div class="flip-spec-item">
-              <span class="spec-k">GST Invoice:</span>
-              <span class="spec-v highlight-cyan">100% ITC Eligible</span>
-            </div>
+            ${(product.priceTiers || []).map((tier, idx) => {
+              const isCarton = idx === product.priceTiers.length - 1;
+              const savingsPct = Math.round(((product.unitPrice - tier.price) / product.unitPrice) * 100);
+              return `
+                <div class="tier-clean-row ${isCarton ? 'is-best-deal' : ''}">
+                  <span class="t-bracket">${tier.minQty}+ pcs ${isCarton ? '<span class="t-carton-badge">Carton</span>' : ''}</span>
+                  <span class="t-rate">${formatINR(tier.price)}</span>
+                  <span class="t-save">${savingsPct > 0 ? `Save ${savingsPct}%` : 'Base MOQ'}</span>
+                </div>
+              `;
+            }).join('')}
           </div>
 
-          <!-- Action Footer -->
-          <div class="flip-back-actions">
+          <!-- Quick Action Buttons (+ Cart & Details) -->
+          <div class="flip-back-action-row">
             <button 
               type="button" 
               class="btn btn-primary btn-sm btn-card-add-cart" 
@@ -486,10 +445,17 @@ export function renderBulkFlipCard(product) {
               <span>+ Cart (${product.moq})</span>
             </button>
 
-            <a href="#/product?id=${encodeURIComponent(product.id)}" class="btn-flip-view-detail" aria-label="View Full Product Details">
-              <span>Full Details</span>
+            <a href="#/product?id=${encodeURIComponent(product.id)}" class="btn-flip-detail-link" aria-label="View Full Product Details">
+              <span>Details</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
+          </div>
+
+          <!-- Exact Dashed Interactive Box from Image 3 -->
+          <div class="flip-cue-bar btn-flip-trigger" aria-label="Flip back to product photo">
+            <span class="flip-cue-pulse"></span>
+            <span class="flip-cue-text">Tap or Drag to view Photo</span>
+            <svg class="flip-cue-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
           </div>
 
           <!-- Glare Sheen Reflection on Back -->
