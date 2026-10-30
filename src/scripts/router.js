@@ -3,12 +3,12 @@
 
 import { renderHomeView, initHomeViewEvents } from './views/homeView.js';
 import { renderAboutView } from './views/aboutView.js';
-import { renderFounderView } from './views/founderView.js';
+import { renderFounderView, initFounderViewEvents } from './views/founderView.js';
 import { renderCategoriesView } from './views/categoriesView.js';
 import { renderProductsView, initProductsViewEvents } from './views/productsView.js';
 import { renderShopView, initShopViewEvents } from './views/shopView.js';
 import { renderBulkDealsView } from './views/bulkDealsView.js';
-import { renderCombosView } from './views/combosView.js';
+import { renderCombosView, initCombosViewEvents } from './views/combosView.js';
 import { renderContactView, initContactViewEvents } from './views/contactView.js';
 import { renderCategoryView } from './views/categoryView.js';
 import { renderProductDetailView, initProductDetailViewEvents } from './views/productDetailView.js';
@@ -28,11 +28,17 @@ export function initRouter() {
 
   // Global event delegation for interactive elements
   document.addEventListener('click', (e) => {
-    // 1. Navigation items (HOME, ABOUT, FOUNDER, CATEGORIES, PRODUCTS, BULK DEALS, COMBOS, CONTACT)
-    const navLink = e.target.closest('.nav-link, .mobile-drawer-link, #brand-logo-link');
+    // 1. Navigation items (HOME, ABOUT, FOUNDER, CATEGORIES, PRODUCTS, BULK DEALS, COMBOS, CONTACT, ENQUIRY)
+    const navLink = e.target.closest('.nav-link, .mobile-drawer-link, #brand-logo-link, .btn-header-enquire');
     if (navLink) {
       closeMobileDrawer();
       closeAllHeaderModals();
+      const route = navLink.getAttribute('data-route') || (navLink.getAttribute('href') || '').replace('#/', '');
+      if (route === 'founder') {
+        setTimeout(() => {
+          initFounderViewEvents();
+        }, 50);
+      }
       return;
     }
 
@@ -40,11 +46,16 @@ export function initRouter() {
     const scrollCue = e.target.closest('.hero-scroll-cue');
     if (scrollCue) {
       e.preventDefault();
-      const aboutSec = document.getElementById('about');
-      if (aboutSec) {
-        aboutSec.scrollIntoView({ behavior: 'smooth' });
+      const comboSec = document.getElementById('combos');
+      if (comboSec) {
+        comboSec.scrollIntoView({ behavior: 'smooth' });
       } else {
-        window.location.hash = '#/about';
+        const aboutSec = document.getElementById('about');
+        if (aboutSec) {
+          aboutSec.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.hash = '#/combos';
+        }
       }
       return;
     }
@@ -97,6 +108,9 @@ function handleRoute() {
 
   // Clean path string (e.g. '/about' -> 'about', '/home' -> 'home')
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const isLanding = (cleanPath === '' || cleanPath === 'home');
+  document.body.classList.toggle('is-landing-page', isLanding);
+  window.dispatchEvent(new CustomEvent('routechange', { detail: { isLanding, cleanPath } }));
 
   // Route to the appropriate distinct page view
   switch (cleanPath) {
@@ -117,6 +131,7 @@ function handleRoute() {
     case 'founder':
       // 3. FOUNDER: Dedicated Founder & Leadership Page
       appContent.innerHTML = renderFounderView();
+      initFounderViewEvents();
       setActiveNav('founder');
       break;
 
@@ -148,6 +163,7 @@ function handleRoute() {
     case 'combos':
       // 7. COMBOS: Dedicated Combos & Kits Page
       appContent.innerHTML = renderCombosView();
+      initCombosViewEvents();
       setActiveNav('combos');
       break;
 

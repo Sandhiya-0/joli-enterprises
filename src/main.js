@@ -7,15 +7,36 @@ import { formatINR } from './scripts/utils/cart.js';
 import { escapeHtml } from './scripts/components/productCard.js';
 
 function initApp() {
-  // Initialize Header Scroll Dynamics
+  // Initialize Header Scroll Dynamics (Full-frame Landing Page: hidden at top, pops up on scroll)
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
+
+  function updateHeaderState() {
+    const scrollY = window.scrollY;
+    const isLanding = document.body.classList.contains('is-landing-page');
+
+    if (isLanding) {
+      if (scrollY > 60) {
+        header?.classList.add('is-visible');
+      } else {
+        header?.classList.remove('is-visible');
+      }
+    } else {
+      header?.classList.add('is-visible');
+    }
+
+    if (scrollY > 20) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+  window.addEventListener('routechange', updateHeaderState);
+  window.addEventListener('hashchange', () => {
+    setTimeout(updateHeaderState, 15);
+  });
+  updateHeaderState();
 
   // Initialize Mobile Drawer Navigation
   const mobileToggle = document.getElementById('mobile-toggle');

@@ -79,6 +79,8 @@ export const initialProducts = [
     featured: true,
     isCombo: true,
     badge: "Super Bulk Combo",
+    holoPreset: "bursts",
+    holoFoilColor: "#e2e6ec",
     comboItems: [
       "30 x Premium HB Graphite Pencils",
       "10 x Dust-Free Vinyl Erasers",
@@ -126,6 +128,8 @@ export const initialProducts = [
     featured: true,
     isCombo: true,
     badge: "Exam Season Hit",
+    holoPreset: "shards",
+    holoFoilColor: "#fcd34d",
     comboItems: [
       "1 x Heavy-Gauge Clear Zipper Pouch",
       "2 x Smooth-Glide 0.7mm Blue Gel Pens",
@@ -170,6 +174,8 @@ export const initialProducts = [
     featured: true,
     isCombo: true,
     badge: "Trending Gift",
+    holoPreset: "glitter",
+    holoFoilColor: "#f472b6",
     comboItems: [
       "1 x Embossed Double-Tier Tin Pencil Box",
       "1 x 6-in-1 Multicolor Retractable Ballpoint Pen",
@@ -182,6 +188,58 @@ export const initialProducts = [
       { label: "Box Material", value: "Printed Tinplate Metal" },
       { label: "Color Options", value: "Pastel Pink, Lavender, Mint Blue Assorted" },
       { label: "Display Unit", value: "Shrink-wrapped Retail Gift Box" }
+    ]
+  },
+  {
+    id: "creative-art-activity-combo-kit",
+    slug: "creative-art-activity-combo-kit",
+    name: "Creative Art & Colouring Activity Combo Kit (48 Items)",
+    category: "stationery",
+    categoryName: "Stationery Products",
+    subcategory: "School Kits & Combos",
+    sku: "JLI-STN-CMB04",
+    shortDescription: "Complete student art activity bundle packed in a durable snap-lock carry case: 12 watercolor cakes, 12 oil pastels, 12 color pencils, sketch pens, brush, eraser, and drawing pad.",
+    fullDescription: "High-demand retail combo package designed for back-to-school art seasons, birthday return gifts, and school activity kits. Pre-sorted inside individual molded slots in a transparent-lid carrying case with handle.",
+    images: [
+      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1000&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?w=1000&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=1000&auto=format&fit=crop&q=80"
+    ],
+    unitPrice: 82.00,
+    packPrice: 1312.00,
+    packQuantity: 16,
+    cartonQuantity: 96,
+    moq: 16,
+    increment: 16,
+    priceTiers: [
+      { minQty: 16, price: 82.00 },
+      { minQty: 48, price: 74.00 },
+      { minQty: 96, price: 66.00 }
+    ],
+    inStock: true,
+    stockCount: 880,
+    featured: true,
+    isCombo: true,
+    badge: "All-in-One Art Kit",
+    holoPreset: "cosmos",
+    holoFoilColor: "#38bdf8",
+    comboItems: [
+      "12 x Vibrant Watercolour Cakes with Mixing Palette",
+      "12 x Rich-Pigment Non-Toxic Oil Pastels",
+      "12 x Pre-Sharpened Break-Resistant Colour Pencils",
+      "6 x Fine-Tip Water-Washable Sketch Pens",
+      "1 x Pony-Hair Fine Paintbrush",
+      "1 x Dust-Free Polymer Eraser",
+      "1 x Safety Pencil Sharpener",
+      "1 x Heavy-Duty Snap-Lock Carry Case with Handle",
+      "2 x Spiral Drawing Sheets (Pre-inserted)"
+    ],
+    specifications: [
+      { label: "Item Count", value: "48 Verified Pieces in Molded Tray" },
+      { label: "Case Material", value: "Shatter-Resistant Virgin Polypropylene" },
+      { label: "Packaging", value: "Individually Shrink-Wrapped with Full-Colour Retail Sleeve" },
+      { label: "Compliance", value: "EN-71 & ASTM D-4236 Certified Non-Toxic" },
+      { label: "Carton Weight", value: "18.2 kg per 96 units" }
     ]
   },
   {

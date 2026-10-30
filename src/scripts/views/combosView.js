@@ -1,6 +1,11 @@
 // Page: Combos View — Ready-Made Wholesale Bundles & School Kits
 import { getProducts } from '../../data/products.js';
 import { renderProductCard } from '../components/productCard.js';
+import { initHoloCards } from '../components/holoCard.js';
+
+export function initCombosViewEvents() {
+  initHoloCards();
+}
 
 export function renderCombosView() {
   const allProducts = getProducts();
@@ -34,21 +39,91 @@ export function renderCombosView() {
           ${comboPacks.map(p => renderProductCard(p)).join('')}
         </div>
 
-        <!-- Custom Combo Assembly Banner -->
-        <div style="background: var(--color-navy); color: var(--color-white); padding: 2.75rem 2.25rem; text-align: center; max-width: 860px; margin: 0 auto; border-radius: var(--radius-md); box-shadow: 0 12px 35px rgba(14, 26, 41, 0.25);" class="fade-up">
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(201, 162, 94, 0.2); padding: 0.25rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 800; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;">
-            Custom Assembly Service
+        <!-- Custom Combo Assembly Widescreen Banner (Image 2 Redesign) -->
+        <div class="custom-combo-card-banner fade-up">
+          <!-- Left: 3D Custom Combo Box Art -->
+          <div class="combo-banner-art">
+            <img src="/images/custom-combo-box.png" alt="Custom Combo Kit Assembly" class="combo-banner-art-img" />
           </div>
-          <h2 style="font-size: 1.65rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.65rem;">
-            Need Custom Kits for Your School or Institution?
-          </h2>
-          <p style="font-size: 0.95rem; color: #CBD5E1; max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">
-            We assemble, shrink-wrap, and barcode custom stationery packages, return gift bundles, and exam kits to your exact piece specifications.
-          </p>
-          <a href="#/bulk-enquiry?category=stationery&product=Custom+Combo+Kit" class="btn btn-primary btn-lg">
-            <span>Request Custom Kit Assembly</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
+
+          <!-- Center: Headline, Description & Glowing Button -->
+          <div class="combo-banner-center">
+            <div class="combo-banner-header-wrap">
+              <span class="combo-confetti-left" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 12 L9 10 M5 6 L8 9 M11 4 L10 9" stroke="#FF5396" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <h2 class="combo-banner-title">
+                Need a <span class="combo-highlight-cyan">Custom Combo</span> Assembled<br>
+                for Your School or Brand?
+              </h2>
+              <span class="combo-confetti-right" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 12 L15 10 M19 6 L16 9 M13 4 L14 9" stroke="#04ADFE" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <a href="#/bulk-enquiry?category=combos&product=Custom+Kit+Assembly" class="combo-banner-cta-btn">
+              <span>Request Custom Combo Assembly</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Right: 3 Feature Items with Glowing Circular Badges -->
+          <div class="combo-banner-features">
+            <div class="combo-banner-feature-item">
+              <div class="combo-feature-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <div class="combo-feature-text">
+                <div class="combo-feature-title">Custom Item Selection</div>
+                <div class="combo-feature-sub">Choose any products & quantities</div>
+              </div>
+            </div>
+
+            <div class="combo-feature-divider"></div>
+
+            <div class="combo-banner-feature-item">
+              <div class="combo-feature-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3 3"></path>
+                  <path d="M12 3v1.5"></path>
+                  <path d="M21 12h-1.5"></path>
+                  <path d="M12 21v-1.5"></path>
+                  <path d="M3 12h1.5"></path>
+                </svg>
+              </div>
+              <div class="combo-feature-text">
+                <div class="combo-feature-title">Branding & Packaging</div>
+                <div class="combo-feature-sub">Add your logo and custom labels</div>
+              </div>
+            </div>
+
+            <div class="combo-feature-divider"></div>
+
+            <div class="combo-banner-feature-item">
+              <div class="combo-feature-icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 3h15v13H1z"></path>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div class="combo-feature-text">
+                <div class="combo-feature-title">Bulk Pricing</div>
+                <div class="combo-feature-sub">Best rates for schools and businesses</div>
+              </div>
+            </div>
+
+            <div class="combo-banner-star" aria-hidden="true">✦</div>
+          </div>
         </div>
       </div>
     </section>

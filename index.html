@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/styles/index.css">
 </head>
-<body>
+<body class="is-landing-page">
   <div id="app">
 
     <!-- Sticky Site Header -->
@@ -19,7 +19,7 @@
         <!-- Left Curve Dome: Brand Logo -->
         <a href="#/home" class="brand-logo" id="brand-logo-link" aria-label="Nivox Wholesale Home">
           <div class="brand-mark brand-mark-nivox">
-            <img src="./images/nivox-icon-transparent.png" alt="Nivox Logo" class="brand-mark-icon">
+            <img src="/images/nivox-icon-transparent.png" alt="Nivox Logo" class="brand-mark-icon">
           </div>
           <div>
             <div class="brand-name">NIVOX</div>
@@ -40,15 +40,16 @@
           </ul>
         </nav>
 
-        <!-- Right Curve Dome: Enquire CTA + Action Icons -->
+        <!-- Right Curve Dome: Action Group (Enquiry Tab & Cart Icon) -->
         <div class="nav-actions header-icons-group">
-          <!-- Wholesale Buyer Account Icon Circle Button -->
-          <button type="button" class="header-icon-circle account-circle-btn" id="btn-header-account" aria-label="Wholesale Buyer Account">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
+          <!-- Quick Wholesale Enquiry Tab (Beside Cart on Left) -->
+          <a href="#/bulk-enquiry" class="btn-header-enquire" id="btn-header-enquire" aria-label="Quick Wholesale Enquiry">
+            <span>ENQUIRY</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-          </button>
+          </a>
 
           <!-- Cart / Bag Icon Circle Button -->
           <a href="#/cart" class="header-icon-circle cart-circle-btn" aria-label="View Shopping Cart">
@@ -59,14 +60,6 @@
             </svg>
             <span class="cart-badge-count" style="display: none;">0</span>
           </a>
-
-          <!-- Search Icon Circle Button -->
-          <button type="button" class="header-icon-circle" id="btn-header-search" aria-label="Search Wholesale Products">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
 
           <!-- Mobile Navigation Toggle -->
           <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
