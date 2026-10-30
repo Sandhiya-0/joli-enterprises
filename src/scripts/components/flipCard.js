@@ -409,8 +409,10 @@ export function renderBulkFlipCard(product) {
           </div>
 
           <div class="bulk-card-body bulk-card-front-body">
-            <!-- Category Label -->
-            <span class="bulk-card-category">${escapeHtml(categoryLabel)}</span>
+            <div class="bulk-front-meta-row">
+              <span class="bulk-card-category">${escapeHtml(categoryLabel)}</span>
+              <span class="bulk-moq-pill">MOQ: ${product.moq} pcs</span>
+            </div>
 
             <!-- Product Title -->
             <h3 class="bulk-card-title">
@@ -420,6 +422,22 @@ export function renderBulkFlipCard(product) {
             <!-- Pack & Carton Specs -->
             <div class="bulk-card-specs">
               Pack of ${product.packQuantity || 1} units <span class="bulk-specs-dot">•</span> Carton: ${product.cartonQuantity || 100}
+            </div>
+
+            <!-- Front Action Row: View Details + Flip for Price (Price is hidden on front) -->
+            <div class="bulk-card-front-footer">
+              <a href="#/product?id=${encodeURIComponent(product.id)}" class="bulk-card-details-link">
+                <span>View Details</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <button type="button" class="btn-flip-trigger btn-flip-cta" aria-label="Flip card to view price and order">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Flip for Price</span>
+              </button>
             </div>
 
             <!-- Tap or Drag to Flip to Price & Order -->
