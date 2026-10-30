@@ -595,10 +595,7 @@ export function renderHomeView() {
       <div class="container">
         <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
           <div>
-            <h2 class="section-title">Master Carton Volume Specials</h2>
-            <p class="section-subtitle">
-              High turnover daily household, mobile accessories, and stationery items available in factory master carton lots.
-            </p>
+            <h2 class="section-title" style="margin-bottom: 0;">Master Carton Volume Specials</h2>
           </div>
           <a href="#/bulk-enquiry" class="btn btn-outline">
             <span>Request Container Quote</span>

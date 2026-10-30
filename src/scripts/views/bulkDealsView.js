@@ -51,10 +51,7 @@ export function renderBulkDealsView() {
         <!-- High Volume Carton Deals -->
         <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
           <div>
-            <h2 class="section-title" style="margin-bottom: 0.35rem;">Master Carton Volume Specials</h2>
-            <p class="section-subtitle" style="margin: 0;">
-              High-velocity everyday essentials available in factory-sealed lots at direct tier discounts.
-            </p>
+            <h2 class="section-title" style="margin-bottom: 0;">Master Carton Volume Specials</h2>
           </div>
           <a href="#/bulk-enquiry" class="btn btn-outline btn-sm">
             <span>Request Container Quote &rarr;</span>
