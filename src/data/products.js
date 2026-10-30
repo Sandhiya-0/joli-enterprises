@@ -1,6 +1,8 @@
 // Joli Enterprises — Centralized Wholesale Product & Category Data Store
 // Categories: Stationery, Household, Fashion Accessories, Mobile Accessories, Gift & General Items
 
+const baseUrl = import.meta.env.BASE_URL || '/';
+
 export const initialCategories = [
   {
     id: "stationery",
@@ -253,8 +255,8 @@ export const initialProducts = [
     shortDescription: "Waterproof Japanese ink 0.5mm tip gel pens with rubberized comfort grip for students and corporate offices.",
     fullDescription: "Consistent fast-drying Japanese formula ink that resists smudging and water seepage. High volume daily wholesale item supplied to retail stores and coaching centers.",
     images: [
-      "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=1000&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=1000&auto=format&fit=crop&q=80"
+      `${baseUrl}images/bulk-gel-pens.jpg`,
+      "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=1000&auto=format&fit=crop&q=80"
     ],
     unitPrice: 6.50,
     packPrice: 325.00,
@@ -289,6 +291,7 @@ export const initialProducts = [
     shortDescription: "Super soft dust-free synthetic rubber erasers in assorted macaron pastel shades housed in a transparent display jar.",
     fullDescription: "Non-smudging polymer erasers that roll debris into a single neat strand without tearing school notebook paper. Supplied in a counter-top display jar designed for retail billing desks.",
     images: [
+      `${baseUrl}images/bulk-pastel-erasers.jpg`,
       "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=1000&auto=format&fit=crop&q=80"
     ],
     unitPrice: 3.20,
@@ -429,8 +432,8 @@ export const initialProducts = [
     shortDescription: "Transparent acrylic backing with stainless steel hooks holding up to 8kg on tiles, glass, wood, and marble without drilling.",
     fullDescription: "One of the highest velocity daily household items for convenience stores and plastic retail shops. 100% waterproof adhesive that bonds firmly in wet bathroom and kitchen environments.",
     images: [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&auto=format&fit=crop&q=80"
+      `${baseUrl}images/bulk-adhesive-hooks.jpg`,
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&auto=format&fit=crop&q=80"
     ],
     unitPrice: 28.00,
     packPrice: 560.00,
@@ -465,6 +468,7 @@ export const initialProducts = [
     shortDescription: "High-density polyurethane foam with abrasive green scouring pad for non-scratch dishwashing and heavy grease removal.",
     fullDescription: "Durable kitchen scourer sponges packed in ready-to-hang retail blister strips. Superior lather retention and fast air-drying foam.",
     images: [
+      `${baseUrl}images/bulk-kitchen-sponges.jpg`,
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&auto=format&fit=crop&q=80"
     ],
     unitPrice: 7.50,

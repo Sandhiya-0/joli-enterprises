@@ -322,20 +322,37 @@ export function createFlipCard(cardEl, userOptions = {}) {
 
 /**
  * Renders a 3D Flip Card for Master Carton Volume Deals
- * Front: Exactly matches Image 2 (Product image, badges, category, and product title)
- * Back: Exactly matches Image 3 (White card background, pack/carton, wholesale price, tiered table, +Cart button, and dashed blue cue bar)
+ * Front: Exactly matches Image 1 (Badges, heart button, category tag, title, specs, pricing with green low-price, MOQ box, View Details link, and Add to Cart button)
+ * Back: Retains smooth 3D flip card effect revealing wholesale pricing tier matrix & specs
  */
 export function renderBulkFlipCard(product) {
-  const badgeHtml = product.badge
-    ? `<span class="badge product-card-badge">${escapeHtml(product.badge)}</span>`
-    : `<span class="badge product-card-badge" style="background:#E0F2FE; color:#0284C7; font-weight:800;">Volume Deal</span>`;
+  // Determine badge styling and icon matching Image 1
+  let badgeClass = 'badge-orange';
+  let badgeIcon = '🔥';
+  const badgeText = product.badge || 'High Turnover';
+
+  if (badgeText.toLowerCase().includes('moving')) {
+    badgeClass = 'badge-green';
+    badgeIcon = '⚡';
+  } else if (badgeText.toLowerCase().includes('wholesale') || badgeText.toLowerCase().includes('seller')) {
+    badgeClass = 'badge-yellow';
+    badgeIcon = '⭐';
+  } else if (badgeText.toLowerCase().includes('essential')) {
+    badgeClass = 'badge-purple';
+    badgeIcon = '💎';
+  } else if (badgeText.toLowerCase().includes('turnover')) {
+    badgeClass = 'badge-orange';
+    badgeIcon = '🔥';
+  }
 
   const lowestPrice = product.priceTiers && product.priceTiers.length > 0
     ? product.priceTiers[product.priceTiers.length - 1].price
     : product.unitPrice;
 
+  const categoryLabel = (product.categoryName || 'Wholesale Products').toUpperCase();
+
   return `
-    <article class="flip-card product-card fade-up"
+    <article class="flip-card product-card"
       role="region"
       tabindex="0"
       aria-label="${escapeHtml(product.name)} Wholesale Volume Card"
@@ -347,17 +364,23 @@ export function renderBulkFlipCard(product) {
       <span class="flip-card__shadow" aria-hidden="true"></span>
 
       <div class="flip-card__rotor">
-        <!-- 1. FRONT FACE (Exact match to Image 2: Image, Badges, Category, MOQ & Title) -->
+        <!-- 1. FRONT FACE (Exact match to Image 1) -->
         <div class="flip-card__face flip-card__face--front">
-          <div class="flip-front-img-wrap">
-            ${badgeHtml}
+          <div class="bulk-card-img-wrap">
+            <!-- Badge Top-Left -->
+            <div class="bulk-card-badge-pill ${badgeClass}">
+              <span class="badge-icon">${badgeIcon}</span>
+              <span class="badge-text">${escapeHtml(badgeText)}</span>
+            </div>
 
-            <!-- Quick Flip Chip (Top Right) -->
-            <button type="button" class="flip-chip-btn btn-flip-trigger" aria-label="Flip to see wholesale price tiers">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-              <span>Flip for Tiers</span>
+            <!-- Heart Wishlist Button Top-Right -->
+            <button type="button" class="bulk-card-wish-btn" aria-label="Add to wishlist">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
             </button>
 
+            <!-- Product Photo -->
             <img 
               src="${escapeHtml(product.images[0])}" 
               alt="${escapeHtml(product.name)}" 
@@ -367,21 +390,67 @@ export function renderBulkFlipCard(product) {
             />
           </div>
 
-          <div class="flip-front-body">
-            <div class="flip-front-meta">
-              <span class="product-card-cat">${escapeHtml(product.categoryName)}</span>
-              <span class="flip-moq-pill">MOQ: ${product.moq} pcs</span>
-            </div>
+          <div class="bulk-card-body">
+            <!-- Category Label -->
+            <span class="bulk-card-category">${escapeHtml(categoryLabel)}</span>
 
-            <h3 class="product-card-title flip-card-title">
+            <!-- Product Title -->
+            <h3 class="bulk-card-title">
               <a href="#/product?id=${encodeURIComponent(product.id)}" class="flip-title-link">${escapeHtml(product.name)}</a>
             </h3>
 
-            <!-- Front Flip Hint Button -->
-            <div class="flip-cue-bar btn-flip-trigger" aria-label="Tap to view pricing details">
-              <span class="flip-cue-pulse"></span>
-              <span class="flip-cue-text">Tap or Drag to view Pricing Tiers &amp; Specs</span>
-              <svg class="flip-cue-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <!-- Pack & Carton Specs -->
+            <div class="bulk-card-specs">
+              Pack of ${product.packQuantity || 1} units <span class="bulk-specs-dot">•</span> Carton: ${product.cartonQuantity || 100}
+            </div>
+
+            <!-- Pricing & MOQ Row -->
+            <div class="bulk-card-price-moq-row">
+              <div class="bulk-card-price-col">
+                <div class="bulk-price-main">
+                  <span class="bulk-price-currency">₹</span>${product.unitPrice.toFixed(2)} <span class="bulk-price-unit">/ unit</span>
+                </div>
+                ${lowestPrice < product.unitPrice ? `<div class="bulk-price-low">As low as ₹${lowestPrice.toFixed(2)}</div>` : ''}
+              </div>
+
+              <div class="bulk-card-moq-box">
+                <div class="bulk-moq-cube">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <div class="bulk-moq-meta">
+                  <span class="bulk-moq-lbl">MOQ</span>
+                  <strong class="bulk-moq-val">${product.moq} pcs</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Action Row -->
+            <div class="bulk-card-footer-row">
+              <a href="#/product?id=${encodeURIComponent(product.id)}" class="bulk-card-details-link">
+                <span>View Details</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <button 
+                type="button" 
+                class="btn-bulk-add-cart btn-card-add-cart" 
+                data-product-id="${escapeHtml(product.id)}"
+                aria-label="Add ${product.moq} units of ${escapeHtml(product.name)} to Cart"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span>Add to Cart (${product.moq})</span>
+              </button>
             </div>
           </div>
 
@@ -389,22 +458,22 @@ export function renderBulkFlipCard(product) {
           <span class="flip-card__glare" aria-hidden="true"></span>
         </div>
 
-        <!-- 2. BACK FACE (Exact match to Image 3: White background, Pack/Carton, Wholesale Price, Tiers, +Cart & Dashed Box) -->
+        <!-- 2. BACK FACE (Preserves 3D flip effect with full tiered pricing details) -->
         <div class="flip-card__face flip-card__face--back">
           <div class="flip-back-top-row">
             <div class="flip-back-specs-line">
               ${product.packQuantity ? `Pack of ${product.packQuantity} units` : ''} 
               ${product.cartonQuantity ? `<span class="specs-dot">•</span> Carton: ${product.cartonQuantity}` : ''}
             </div>
-            <button type="button" class="flip-chip-btn btn-flip-trigger flip-chip-btn-sm" aria-label="Flip back to product photo">
+            <button type="button" class="flip-chip-btn btn-flip-trigger flip-chip-btn-sm" aria-label="Flip back to front">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-              <span>Photo</span>
+              <span>Back</span>
             </button>
           </div>
 
           <h4 class="flip-back-title-clean">${escapeHtml(product.name)}</h4>
 
-          <!-- Price Section (Matches Image 3) -->
+          <!-- Price Section -->
           <div class="flip-back-price-block">
             <div class="wholesale-price-label">WHOLESALE PRICE</div>
             <div class="product-card-price flip-price-num">
@@ -433,16 +502,16 @@ export function renderBulkFlipCard(product) {
             }).join('')}
           </div>
 
-          <!-- Quick Action Buttons (+ Cart & Details) -->
+          <!-- Action Row -->
           <div class="flip-back-action-row">
             <button 
               type="button" 
-              class="btn btn-primary btn-sm btn-card-add-cart" 
+              class="btn-bulk-add-cart btn-card-add-cart" 
               data-product-id="${escapeHtml(product.id)}"
-              aria-label="Add MOQ of ${escapeHtml(product.name)} to Cart"
+              aria-label="Add ${product.moq} to Cart"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-              <span>+ Cart (${product.moq})</span>
+              <span>Add to Cart (${product.moq})</span>
             </button>
 
             <a href="#/product?id=${encodeURIComponent(product.id)}" class="btn-flip-detail-link" aria-label="View Full Product Details">
@@ -451,8 +520,8 @@ export function renderBulkFlipCard(product) {
             </a>
           </div>
 
-          <!-- Exact Dashed Interactive Box from Image 3 -->
-          <div class="flip-cue-bar btn-flip-trigger" aria-label="Flip back to product photo">
+          <!-- Flip Cue hint to flip back -->
+          <div class="flip-cue-bar btn-flip-trigger" aria-label="Flip back to front">
             <span class="flip-cue-pulse"></span>
             <span class="flip-cue-text">Tap or Drag to view Photo</span>
             <svg class="flip-cue-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
