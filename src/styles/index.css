@@ -7916,3 +7916,413 @@ body.offers-modal-active {
     padding-left: 16px;
   }
 }
+
+/* ==========================================================================
+   EXACT REVIEWS SHOWCASE REDESIGN (IMAGE 2 MATCH)
+   ========================================================================== */
+.review-exact-showcase-section {
+  background: linear-gradient(180deg, #f9fafd 0%, #f1f4ff 50%, #ede9fe 100%);
+  padding: 4.5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-exact-ambient-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(196, 181, 253, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(167, 139, 250, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(199, 210, 254, 0.4) 0%, transparent 50%);
+}
+
+.review-exact-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.review-exact-top-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(340px, 1fr) minmax(200px, 260px);
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2.75rem;
+}
+
+.review-exact-phone-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-exact-phone-wrapper {
+  width: 100%;
+  max-width: 370px;
+}
+
+.review-exact-phone-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(99, 102, 241, 0.12));
+}
+
+.review-exact-center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.review-exact-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  margin-bottom: 0.85rem;
+  border: 1px solid rgba(2, 132, 199, 0.15);
+}
+
+.review-exact-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0 0 0.65rem;
+}
+
+.review-title-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.review-title-swoosh {
+  width: 100%;
+  max-width: 170px;
+  height: 14px;
+  display: block;
+  margin: -4px auto 0;
+  overflow: visible;
+}
+
+.review-exact-subtitle {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0 auto 1.25rem;
+  max-width: 460px;
+}
+
+.review-exact-badges-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.review-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+
+.review-badge-item .badge-icon {
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-badge-item .badge-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.25;
+}
+
+.review-badge-item .badge-sub {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.review-exact-floating-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-exact-floating-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(99, 102, 241, 0.1));
+}
+
+.review-exact-carousel-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.review-exact-cards-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 48px;
+}
+
+.review-carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+}
+
+.review-carousel-arrow:hover {
+  background: #ffffff;
+  border-color: #7c3aed;
+  color: #7c3aed;
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+}
+
+.review-card-item {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.review-card-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.12);
+}
+
+.review-card-item.is-featured {
+  border: 2px solid #7c3aed;
+  box-shadow: 0 12px 36px rgba(124, 58, 237, 0.18);
+  transform: translateY(-4px);
+}
+
+.review-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 125px;
+  overflow: hidden;
+}
+
+.review-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.review-quote-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+.review-card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.review-card-quote {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.45;
+  margin: 0 0 12px;
+  min-height: 50px;
+}
+
+.review-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+}
+
+.review-avatar-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #7c3aed;
+  flex-shrink: 0;
+}
+
+.review-author-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-author-name {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.review-author-role {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 1px 0 2px;
+}
+
+.review-stars-gold {
+  color: #f59e0b;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.review-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 1.25rem 0 1.25rem;
+}
+
+.review-carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c4b5fd;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.review-carousel-dots .dot.active {
+  width: 22px;
+  border-radius: 9999px;
+  background: #4f46e5;
+}
+
+.review-exact-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 0.5rem;
+}
+
+.btn-review-showcase {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #2563eb 100%);
+  color: #ffffff !important;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 11px 26px;
+  border-radius: 9999px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-review-showcase:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.45);
+}
+
+.btn-play-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -2px;
+}
+
+.review-slate-decor {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  width: 64px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.review-slate-decor img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .review-exact-top-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .review-exact-cards-track {
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+  }
+  .review-slate-decor {
+    display: none;
+  }
+}

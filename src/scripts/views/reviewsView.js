@@ -88,34 +88,351 @@ export const wholesaleReviews = [
   }
 ];
 
+export const featuredReviewCards = [
+  {
+    id: 1,
+    name: "R. Aravind Kumar",
+    role: "Retail Store Owner, Chennai",
+    quote: "Nivox has been a game-changer for our business. The quality and pricing are outstanding!",
+    image: "images/review-photo-1.jpg",
+    avatar: "images/review-avatar-1.jpg",
+    rating: 5,
+    isFeatured: false
+  },
+  {
+    id: 2,
+    name: "Priya S",
+    role: "Shop Owner, Madurai",
+    quote: "Fast delivery, excellent support, and great product range. Highly recommended!",
+    image: "images/review-photo-2.jpg",
+    avatar: "images/review-avatar-2.jpg",
+    rating: 5,
+    isFeatured: true
+  },
+  {
+    id: 3,
+    name: "Vikram Patel",
+    role: "Distributor, Coimbatore",
+    quote: "Bulk orders are now so easy with Nivox. Amazing experience!",
+    image: "images/review-photo-3.jpg",
+    avatar: "images/review-avatar-3.jpg",
+    rating: 5,
+    isFeatured: false
+  },
+  {
+    id: 4,
+    name: "R. Sundararaman",
+    role: "Murthy Book Depot, Chennai",
+    quote: "Highest profit margin merchandise in our store this school season. Packaging is top-tier.",
+    image: "images/review-photo-1.jpg",
+    avatar: "images/review-avatar-1.jpg",
+    rating: 5,
+    isFeatured: false
+  },
+  {
+    id: 5,
+    name: "Anand K. Mehta",
+    role: "Krishna Novelties, Bengaluru",
+    quote: "Fast dispatch and zero transit damage across 800+ pieces. Will definitely reorder.",
+    image: "images/review-photo-2.jpg",
+    avatar: "images/review-avatar-2.jpg",
+    rating: 5,
+    isFeatured: false
+  },
+  {
+    id: 6,
+    name: "Sister Mary Teresa",
+    role: "St. Joseph Supplies, Coimbatore",
+    quote: "Flawless institutional supply for 1,200 students without a single missing item.",
+    image: "images/review-photo-3.jpg",
+    avatar: "images/review-avatar-3.jpg",
+    rating: 5,
+    isFeatured: false
+  }
+];
+
+/**
+ * Renders the exact Reviews showcase layout matching Image 2
+ */
+export function renderReviewsShowcaseSection(options = {}) {
+  const {
+    idPrefix = 'showcase-rev',
+    showButton = true,
+    buttonHref = '#/reviews',
+    buttonText = 'View All Reviews'
+  } = options;
+  const baseUrl = import.meta.env.BASE_URL;
+  const displayCards = featuredReviewCards.slice(0, 3);
+
+  return `
+    <div class="review-exact-ambient-glow" aria-hidden="true"></div>
+
+    <div class="container review-exact-container">
+      <!-- Top 3-Column Split Hero (Matching Image 2 Top Half) -->
+      <div class="review-exact-top-hero">
+        
+        <!-- Left: Phone Mockup with Play Video & 4.9/5 Rating Badge -->
+        <div class="review-exact-phone-col">
+          <div class="review-exact-phone-wrapper">
+            <img 
+              src="${baseUrl}images/review-hero-phone.png" 
+              alt="Customer video review - Nivox wholesale verified retailer" 
+              class="review-exact-phone-img" 
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Center: Eyebrow + Real Voices. Real Stories. + Subtitle + 3 Value Badges -->
+        <div class="review-exact-center-col">
+          <!-- Eyebrow Pill -->
+          <div class="review-exact-eyebrow-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0284c7" stroke="none" aria-hidden="true">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+            </svg>
+            <span>Trusted by 2,840+ Retail Stores</span>
+          </div>
+
+          <!-- Heading with Gradient & Swoosh Underline -->
+          <h2 class="review-exact-title">
+            <span>Real Voices.</span>
+            <span class="review-title-gradient">
+              Real Stories.
+              <svg class="review-title-swoosh" viewBox="0 0 170 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 12C38 3 132 2 167 12" stroke="url(#purpleSwooshGrad-${idPrefix})" stroke-width="4.5" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="purpleSwooshGrad-${idPrefix}" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#7c3aed"/>
+                    <stop offset="100%" stop-color="#4f46e5"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+          </h2>
+
+          <!-- Subtitle -->
+          <p class="review-exact-subtitle">
+            Hear from our happy customers who trust Nivox for their wholesale needs.
+          </p>
+
+          <!-- 3 Feature Badges -->
+          <div class="review-exact-badges-row">
+            <div class="review-badge-item">
+              <span class="badge-icon">🤝</span>
+              <div>
+                <div class="badge-title">Trusted</div>
+                <div class="badge-sub">Partner</div>
+              </div>
+            </div>
+            <div class="review-badge-item">
+              <span class="badge-icon">💎</span>
+              <div>
+                <div class="badge-title">Premium</div>
+                <div class="badge-sub">Quality</div>
+              </div>
+            </div>
+            <div class="review-badge-item">
+              <span class="badge-icon">🎧</span>
+              <div>
+                <div class="badge-title">Dedicated</div>
+                <div class="badge-sub">Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Floating Testimonial Cards & Sparkle Accents -->
+        <div class="review-exact-floating-col">
+          <img 
+            src="${baseUrl}images/review-floating-cards.png" 
+            alt="Retailer feedback ratings" 
+            class="review-exact-floating-img" 
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+
+      <!-- Bottom Carousel / Cards Track (Matching Image 2 Bottom Half) -->
+      <div class="review-exact-carousel-wrap">
+        <!-- Left Arrow -->
+        <button type="button" class="review-carousel-arrow prev" id="${idPrefix}-prev-btn" aria-label="Previous review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- 3 Cards Track -->
+        <div class="review-exact-cards-track" id="${idPrefix}-cards-track">
+          ${displayCards.map(c => `
+            <div class="review-card-item ${c.isFeatured ? 'is-featured' : ''}" data-card-id="${c.id}">
+              <div class="review-card-img-wrap">
+                <img src="${baseUrl}${c.image}" alt="${escapeHtml(c.name)} shop" class="review-card-img" loading="lazy" />
+                <div class="review-quote-badge" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff">
+                    <path d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="review-card-body">
+                <p class="review-card-quote">"${escapeHtml(c.quote)}"</p>
+                <div class="review-card-footer">
+                  <img src="${baseUrl}${c.avatar}" alt="${escapeHtml(c.name)}" class="review-avatar-img" />
+                  <div class="review-author-info">
+                    <h4 class="review-author-name">${escapeHtml(c.name)}</h4>
+                    <div class="review-author-role">${escapeHtml(c.role)}</div>
+                    <div class="review-stars-gold" aria-label="5 stars">★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Right Arrow -->
+        <button type="button" class="review-carousel-arrow next" id="${idPrefix}-next-btn" aria-label="Next review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Carousel Dots -->
+      <div class="review-carousel-dots" id="${idPrefix}-dots">
+        <span class="dot" data-index="0"></span>
+        <span class="dot active" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+
+      <!-- Bottom Action Pill with Side Purple Rays Doodles -->
+      ${showButton ? `
+        <div class="review-exact-btn-wrap">
+          <svg class="review-btn-ray-left" width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#6366f1" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+            <line x1="2" y1="12" x2="16" y2="12"></line>
+            <line x1="6" y1="4" x2="18" y2="8"></line>
+            <line x1="6" y1="20" x2="18" y2="16"></line>
+          </svg>
+
+          <a href="${buttonHref}" class="btn-review-showcase">
+            <span class="btn-play-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </span>
+            <span>${buttonText}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <svg class="review-btn-ray-right" width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#6366f1" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+            <line x1="26" y1="12" x2="12" y2="12"></line>
+            <line x1="22" y1="4" x2="10" y2="8"></line>
+            <line x1="22" y1="20" x2="10" y2="16"></line>
+          </svg>
+        </div>
+      ` : ''}
+
+      <!-- Bottom-left Film Slate Doodle -->
+      <div class="review-slate-decor" aria-hidden="true">
+        <img src="${baseUrl}images/review-film-slate.png" alt="" />
+      </div>
+
+    </div>
+  `;
+}
+
+export function initReviewsShowcaseEvents(idPrefix = 'showcase-rev') {
+  const prevBtn = document.getElementById(`${idPrefix}-prev-btn`);
+  const nextBtn = document.getElementById(`${idPrefix}-next-btn`);
+  const track = document.getElementById(`${idPrefix}-cards-track`);
+  const dotsContainer = document.getElementById(`${idPrefix}-dots`);
+  if (!track) return;
+
+  const baseUrl = import.meta.env.BASE_URL;
+  let startIndex = 0;
+  const total = featuredReviewCards.length;
+
+  function updateCards() {
+    const cardElements = track.querySelectorAll('.review-card-item');
+    cardElements.forEach((el, i) => {
+      const card = featuredReviewCards[(startIndex + i) % total];
+      const isCenter = (i === 1);
+
+      el.classList.toggle('is-featured', isCenter);
+      const img = el.querySelector('.review-card-img');
+      if (img) img.src = `${baseUrl}${card.image}`;
+      const quote = el.querySelector('.review-card-quote');
+      if (quote) quote.textContent = `"${card.quote}"`;
+      const avatar = el.querySelector('.review-avatar-img');
+      if (avatar) avatar.src = `${baseUrl}${card.avatar}`;
+      const name = el.querySelector('.review-author-name');
+      if (name) name.textContent = card.name;
+      const role = el.querySelector('.review-author-role');
+      if (role) role.textContent = card.role;
+    });
+
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.dot');
+      const activeDotIndex = Math.floor((startIndex + 1) % 3);
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === activeDotIndex);
+      });
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      startIndex = (startIndex + 1) % total;
+      updateCards();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      startIndex = (startIndex - 1 + total) % total;
+      updateCards();
+    });
+  }
+
+  if (dotsContainer) {
+    dotsContainer.addEventListener('click', (e) => {
+      const dot = e.target.closest('.dot');
+      if (!dot) return;
+      const idx = parseInt(dot.getAttribute('data-index') || '1', 10);
+      startIndex = (idx - 1 + total) % total;
+      updateCards();
+    });
+  }
+}
+
 export function renderReviewsView() {
   return `
     <div class="reviews-page">
-      <!-- Top Hero Header -->
-      <header class="about-hero" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%); color: #ffffff; padding: 3.5rem 0 3rem;">
-        <div class="container">
-          <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin-bottom: 1rem;">
-            <a href="#/" style="color: rgba(255,255,255,0.75);">Home</a>
-            <span class="separator" style="color: rgba(255,255,255,0.4);">/</span>
-            <span class="current" style="color: #38bdf8; font-weight: 700;">Retailer Reviews</span>
+      <!-- Breadcrumbs Bar -->
+      <div style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 0;">
+        <div class="container" style="max-width: 1220px; padding: 0 1.5rem;">
+          <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin: 0;">
+            <a href="#/" style="color: #64748b; text-decoration: none;">Home</a>
+            <span class="separator" style="color: #cbd5e1; margin: 0 6px;">/</span>
+            <span class="current" style="color: #7c3aed; font-weight: 800;">Retailer Reviews</span>
           </nav>
-
-          <div style="max-width: 820px;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); padding: 5px 14px; border-radius: 9999px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.2);">
-              <span style="color: #fbbf24;">★★★★★</span> VERIFIED B2B MERCHANT RATINGS
-            </div>
-            <h1 class="section-title" style="color: #ffffff; font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.15; margin-bottom: 0.85rem;">
-              Wholesale Customer &amp; Dealer Reviews
-            </h1>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.6; max-width: 720px;">
-              Read authentic feedback from 2,840+ stationery dealers, retail gift stores, school suppliers, and general merchants stocking Nivox merchandise across India.
-            </p>
-          </div>
         </div>
-      </header>
+      </div>
+
+      <!-- Prime Hero Showcase Matching Image 2 Exactly -->
+      <section class="review-exact-showcase-section">
+        ${renderReviewsShowcaseSection({
+          idPrefix: 'reviews-page-hero',
+          showButton: true,
+          buttonHref: '#reviews-all-feed',
+          buttonText: 'Explore All 1,480+ Reviews & Ratings ↓'
+        })}
+      </section>
 
       <!-- Scorecard & Metrics Summary -->
-      <section class="section" style="padding: 2.5rem 0; background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+      <section id="reviews-all-feed" class="section" style="padding: 2.5rem 0; background: #ffffff; border-bottom: 1px solid #e2e8f0;">
         <div class="container">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
             
@@ -330,6 +647,9 @@ function renderReviewCard(r) {
 }
 
 export function initReviewsViewEvents() {
+  // Initialize top hero showcase carousel events
+  initReviewsShowcaseEvents('reviews-page-hero');
+
   const modal = document.getElementById('review-modal');
   const openBtn = document.getElementById('btn-open-review-form');
   const closeBtn = document.getElementById('btn-close-review-modal');

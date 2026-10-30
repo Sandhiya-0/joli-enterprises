@@ -6,7 +6,7 @@
 import { getCategories, getProducts } from '../../data/products.js';
 import { renderProductCard, escapeHtml } from '../components/productCard.js';
 import { renderContactView, initContactViewEvents } from './contactView.js';
-import { wholesaleReviews } from './reviewsView.js';
+import { renderReviewsShowcaseSection, initReviewsShowcaseEvents, wholesaleReviews } from './reviewsView.js';
 import { renderFaqShowcaseSection, initFaqShowcaseEvents, wholesaleFaqs } from './faqView.js';
 import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
@@ -843,83 +843,14 @@ export function renderHomeView() {
       </div>
     </section>
 
-    <!-- Section 8 — REVIEWS -->
-    <section id="reviews" class="section" style="padding: 4rem 0 3.5rem; background: #ffffff;">
-      <div class="container">
-        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.25rem;">
-          <div>
-            <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0284c7; margin-bottom: 0.35rem;">
-              ★★★★★ VERIFIED B2B MERCHANT RATINGS
-            </div>
-            <h2 class="section-title" style="margin: 0;">Trusted by 2,840+ Retail Stores Across India</h2>
-            <p class="section-subtitle" style="margin-top: 0.35rem; max-width: 650px;">
-              Read authentic feedback from retail shop owners, school stationery suppliers, and general merchants.
-            </p>
-          </div>
-          <a href="#/reviews" class="btn btn-outline" style="white-space: nowrap;">
-            <span>Read All 1,480+ Reviews</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
-
-        <!-- Scorecard Banner -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
-          <div style="display: flex; align-items: center; gap: 1.25rem;">
-            <div style="font-size: 2.75rem; font-weight: 900; color: #0f172a; line-height: 1; font-family: var(--font-heading);">
-              4.9<span style="font-size: 1.2rem; color: #64748b; font-weight: 600;">/5</span>
-            </div>
-            <div>
-              <div style="color: #f59e0b; font-size: 1.15rem; letter-spacing: 1px;">★★★★★</div>
-              <div style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">1,480+ Verified Dispatches</div>
-            </div>
-          </div>
-          <div style="display: flex; gap: 1.75rem; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: #166534;">
-              <span style="font-size: 1.1rem;">✓</span> 99.4% On-Time Delivery
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: #166534;">
-              <span style="font-size: 1.1rem;">✓</span> Zero Damage Guarantee
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: #166534;">
-              <span style="font-size: 1.1rem;">✓</span> 100% GST ITC Invoicing
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 Top Review Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-          ${topReviews.map(r => `
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
-                  <div style="color: #f59e0b; font-size: 0.95rem; letter-spacing: 1px;">
-                    ${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}
-                  </div>
-                  <span style="font-size: 0.74rem; color: #94a3b8;">${r.date}</span>
-                </div>
-                <h4 style="font-size: 0.98rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.35;">
-                  ${escapeHtml(r.title)}
-                </h4>
-                <p style="font-size: 0.84rem; color: #475569; line-height: 1.5; margin-bottom: 0.85rem;">
-                  "${escapeHtml(r.comment)}"
-                </p>
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 8px; font-size: 0.74rem; color: #64748b; margin-bottom: 1rem;">
-                  <span style="font-weight: 700; color: #0284c7;">Ordered:</span> ${escapeHtml(r.orderItem)}
-                </div>
-              </div>
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                  <div style="font-weight: 800; font-size: 0.86rem; color: #0f172a;">${escapeHtml(r.name)}</div>
-                  <div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(r.shopName)} • ${escapeHtml(r.city)}</div>
-                </div>
-                <div style="background: #e0f2fe; color: #0369a1; border-radius: 6px; padding: 2px 6px; font-size: 0.68rem; font-weight: 700;">
-                  ✓ GST Verified
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
+    <!-- Section 8 — REVIEWS (Exact Match to Image 2) -->
+    <section id="reviews" class="review-exact-showcase-section">
+      ${renderReviewsShowcaseSection({
+        idPrefix: 'home-rev',
+        showButton: true,
+        buttonHref: '#/reviews',
+        buttonText: 'View All Reviews'
+      })}
     </section>
 
     <!-- Section 9 — FAQ (Exact Match to Image 1) -->
@@ -958,6 +889,9 @@ export function initHomeViewEvents() {
 
   // Initialize interactive 3D physics FlipCard effect on master carton bulk deals
   initFlipCards();
+
+  // Initialize interactive Reviews Carousel on Home Page (matching Image 2)
+  initReviewsShowcaseEvents('home-rev');
 
   // Initialize interactive FAQ Accordion on Home Page (matching Image 1)
   initFaqShowcaseEvents('home-faq-accordion-list');
