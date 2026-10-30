@@ -10,6 +10,9 @@ import { renderShopView, initShopViewEvents } from './views/shopView.js';
 import { renderBulkDealsView, initBulkDealsViewEvents } from './views/bulkDealsView.js';
 import { renderCombosView, initCombosViewEvents } from './views/combosView.js';
 import { renderContactView, initContactViewEvents } from './views/contactView.js';
+import { renderOwnProductsView, initOwnProductsViewEvents } from './views/ownProductsView.js';
+import { renderReviewsView, initReviewsViewEvents } from './views/reviewsView.js';
+import { renderFaqView, initFaqViewEvents } from './views/faqView.js';
 import { renderCategoryView } from './views/categoryView.js';
 import { renderProductDetailView, initProductDetailViewEvents } from './views/productDetailView.js';
 import { renderCartView, initCartViewEvents } from './views/cartView.js';
@@ -173,6 +176,27 @@ function handleRoute() {
       appContent.innerHTML = renderContactView(queryParams);
       initContactViewEvents();
       setActiveNav('contact');
+      break;
+
+    case 'own-products':
+      // 9. OWN PRODUCTS: Nivox In-House Manufactured & Branded Merchandise
+      appContent.innerHTML = renderOwnProductsView();
+      initOwnProductsViewEvents();
+      setActiveNav('own-products');
+      break;
+
+    case 'reviews':
+      // 10. REVIEWS: Verified Wholesale Retailer Experiences
+      appContent.innerHTML = renderReviewsView();
+      initReviewsViewEvents();
+      setActiveNav('reviews');
+      break;
+
+    case 'faq':
+      // 11. FAQ: Wholesale Trade Desk Frequently Asked Questions
+      appContent.innerHTML = renderFaqView();
+      initFaqViewEvents();
+      setActiveNav('faq');
       break;
 
     case 'category':

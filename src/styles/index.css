@@ -3924,7 +3924,7 @@ body:not(.is-landing-page) #app-content {
 .site-header .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: clamp(0.55rem, 0.95vw, 1.15rem);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -3932,12 +3932,12 @@ body:not(.is-landing-page) #app-content {
 
 .site-header .nav-link {
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: clamp(0.7rem, 0.76vw, 0.79rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #FFFFFF !important;
-  padding: 0.4rem 0;
+  padding: 0.35rem 0;
   position: relative;
   text-decoration: none;
   transition: color var(--transition-fast);
@@ -4115,7 +4115,7 @@ body:not(.is-landing-page) #app-content {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1120px) {
   .site-header .header-nav-center,
   .site-header .btn-header-enquire {
     display: none;
@@ -4130,6 +4130,41 @@ body:not(.is-landing-page) #app-content {
     border-radius: 9999px;
   }
 }
+
+/* Reusable Filter Tag Buttons */
+.btn-filter-tag {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-filter-tag:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-filter-tag.active {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+}
+
+.faq-header:hover {
+  background: #f8fafc !important;
+}
+
+.faq-header:hover .faq-chevron {
+  color: #0284c7 !important;
+}
+
 
 
 /* ==========================================================================
