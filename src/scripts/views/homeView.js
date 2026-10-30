@@ -6,6 +6,8 @@
 import { getCategories, getProducts } from '../../data/products.js';
 import { renderProductCard, escapeHtml } from '../components/productCard.js';
 import { renderContactView, initContactViewEvents } from './contactView.js';
+import { wholesaleReviews } from './reviewsView.js';
+import { wholesaleFaqs } from './faqView.js';
 import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
 import { renderBulkFlipCard, initFlipCards } from '../components/flipCard.js';
@@ -18,6 +20,9 @@ export function renderHomeView() {
   const featuredProducts = allProducts.filter(p => p.featured || (!p.isCombo && p.cartonQuantity && p.cartonQuantity >= 100)).slice(0, 8);
   const volumeDeals = allProducts.filter(p => !p.isCombo && p.cartonQuantity && p.cartonQuantity >= 200).slice(0, 4);
   const comboPacks = allProducts.filter(p => p.isCombo).slice(0, 4);
+  const ownProductsList = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50)).slice(0, 4);
+  const topReviews = wholesaleReviews.slice(0, 3);
+  const topFaqs = wholesaleFaqs.slice(0, 5);
 
   return `
     <!-- Section 1 — HOME (Full Background Video) -->
@@ -792,7 +797,182 @@ export function renderHomeView() {
       </div>
     </section>
 
-    <!-- Section 7 — CONTACT (Exact Match to Image 1) -->
+    <!-- Section 7 — OWN PRODUCTS -->
+    <section id="own-products" class="section bg-soft-grey" style="padding: 4rem 0 3.5rem;">
+      <div class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.25rem;">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0284c7; margin-bottom: 0.35rem;">
+              ★ IN-HOUSE MANUFACTURED &amp; PRIVATE LABEL
+            </div>
+            <h2 class="section-title" style="margin: 0;">Our In-House Manufactured &amp; Branded Line</h2>
+            <p class="section-subtitle" style="margin-top: 0.35rem; max-width: 650px;">
+              Direct from our Chennai factory floor. Highest retailer margins, zero middlemen, strict QA lab testing, and custom branding support.
+            </p>
+          </div>
+          <a href="#/own-products" class="btn btn-outline" style="white-space: nowrap;">
+            <span>Explore All Own Products</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- 4 Value Pillars -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2.5rem;">
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">🏭 Factory Direct Pricing</div>
+            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Save 30–40% vs distributors to maximize your shop's counter profit.</div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">🏷️ Private Label &amp; OEM</div>
+            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Custom school &amp; store logo printing available for 500+ unit bulk lots.</div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">🛡️ Lab Tested Quality</div>
+            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Non-toxic child-safe inks, durable polymers, and tamper-sealed packs.</div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">📦 Master Carton Ready</div>
+            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Pre-strapped master cartons with barcode labels for instant dispatch.</div>
+          </div>
+        </div>
+
+        <!-- 4 In-House Products Cards -->
+        <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+          ${ownProductsList.map(p => renderProductCard(p)).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8 — REVIEWS -->
+    <section id="reviews" class="section" style="padding: 4rem 0 3.5rem; background: #ffffff;">
+      <div class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.25rem;">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0284c7; margin-bottom: 0.35rem;">
+              ★★★★★ VERIFIED B2B MERCHANT RATINGS
+            </div>
+            <h2 class="section-title" style="margin: 0;">Trusted by 2,840+ Retail Stores Across India</h2>
+            <p class="section-subtitle" style="margin-top: 0.35rem; max-width: 650px;">
+              Read authentic feedback from retail shop owners, school stationery suppliers, and general merchants.
+            </p>
+          </div>
+          <a href="#/reviews" class="btn btn-outline" style="white-space: nowrap;">
+            <span>Read All 1,480+ Reviews</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Scorecard Banner -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; gap: 1.25rem;">
+            <div style="font-size: 2.75rem; font-weight: 900; color: #0f172a; line-height: 1; font-family: var(--font-heading);">
+              4.9<span style="font-size: 1.2rem; color: #64748b; font-weight: 600;">/5</span>
+            </div>
+            <div>
+              <div style="color: #f59e0b; font-size: 1.15rem; letter-spacing: 1px;">★★★★★</div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: #0f172a;">1,480+ Verified Dispatches</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1.75rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: #166534;">
+              <span style="font-size: 1.1rem;">✓</span> 99.4% On-Time Delivery
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: #166534;">
+              <span style="font-size: 1.1rem;">✓</span> Zero Damage Guarantee
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: #166534;">
+              <span style="font-size: 1.1rem;">✓</span> 100% GST ITC Invoicing
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Top Review Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          ${topReviews.map(r => `
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                  <div style="color: #f59e0b; font-size: 0.95rem; letter-spacing: 1px;">
+                    ${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}
+                  </div>
+                  <span style="font-size: 0.74rem; color: #94a3b8;">${r.date}</span>
+                </div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; line-height: 1.35;">
+                  ${escapeHtml(r.title)}
+                </h4>
+                <p style="font-size: 0.84rem; color: #475569; line-height: 1.5; margin-bottom: 0.85rem;">
+                  "${escapeHtml(r.comment)}"
+                </p>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 8px; font-size: 0.74rem; color: #64748b; margin-bottom: 1rem;">
+                  <span style="font-weight: 700; color: #0284c7;">Ordered:</span> ${escapeHtml(r.orderItem)}
+                </div>
+              </div>
+              <div style="border-top: 1px solid #f1f5f9; padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 800; font-size: 0.86rem; color: #0f172a;">${escapeHtml(r.name)}</div>
+                  <div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(r.shopName)} • ${escapeHtml(r.city)}</div>
+                </div>
+                <div style="background: #e0f2fe; color: #0369a1; border-radius: 6px; padding: 2px 6px; font-size: 0.68rem; font-weight: 700;">
+                  ✓ GST Verified
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9 — FAQ -->
+    <section id="faq" class="section bg-soft-grey" style="padding: 4rem 0 3.5rem;">
+      <div class="container" style="max-width: 920px;">
+        <div class="section-header text-center" style="margin-bottom: 2.25rem;">
+          <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0284c7; margin-bottom: 0.35rem;">
+            WHOLESALE TRADE DESK FAQ
+          </div>
+          <h2 class="section-title" style="margin: 0;">Frequently Asked Questions</h2>
+          <p class="section-subtitle" style="margin-top: 0.35rem;">
+            Quick answers regarding Minimum Order Quantities (MOQ), Pan-India dispatch timelines, GST invoices, and sample orders.
+          </p>
+        </div>
+
+        <!-- 5 Accordion Items -->
+        <div id="home-faq-accordion" style="display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem;">
+          ${topFaqs.map(faq => `
+            <div class="faq-item" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 6px rgba(15,23,42,0.02); transition: border-color 0.2s;">
+              <button 
+                type="button" 
+                class="faq-header" 
+                style="width: 100%; padding: 1.15rem 1.4rem; display: flex; justify-content: space-between; align-items: center; background: none; border: none; text-align: left; cursor: pointer; gap: 1rem;"
+              >
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="background: #e0f2fe; color: #0284c7; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 5px; text-transform: uppercase;">
+                    ${escapeHtml(faq.categoryLabel)}
+                  </span>
+                  <span style="font-size: 1rem; font-weight: 700; color: #0f172a; line-height: 1.35;">
+                    ${escapeHtml(faq.question)}
+                  </span>
+                </div>
+                <span class="faq-chevron" style="color: #64748b; font-size: 1.1rem; transition: transform 0.25s ease; flex-shrink: 0;">
+                  ▼
+                </span>
+              </button>
+              <div class="faq-body" style="display: none; padding: 0 1.4rem 1.15rem; font-size: 0.9rem; color: #475569; line-height: 1.55; border-top: 1px solid #f8fafc;">
+                ${escapeHtml(faq.answer)}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div style="text-align: center;">
+          <a href="#/faq" class="btn btn-outline" style="padding: 10px 22px; font-weight: 700;">
+            <span>Browse Full FAQ Knowledge Base (10+ Questions)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10 — CONTACT (Exact Match to Image 1) -->
     <section id="contact" class="home-contact-section" style="padding: 2.5rem 0 1rem;">
       ${renderContactView()}
     </section>
@@ -818,6 +998,36 @@ export function initHomeViewEvents() {
 
   // Initialize interactive 3D physics FlipCard effect on master carton bulk deals
   initFlipCards();
+
+  // Initialize interactive FAQ Accordion on Home Page
+  initHomeFaqEvents();
+}
+
+function initHomeFaqEvents() {
+  const container = document.getElementById('home-faq-accordion');
+  if (!container) return;
+
+  container.addEventListener('click', (e) => {
+    const header = e.target.closest('.faq-header');
+    if (!header) return;
+
+    const item = header.closest('.faq-item');
+    const body = item.querySelector('.faq-body');
+    const chevron = item.querySelector('.faq-chevron');
+
+    const isOpen = body.style.display === 'block';
+
+    // Close all other items in this accordion
+    container.querySelectorAll('.faq-body').forEach(b => b.style.display = 'none');
+    container.querySelectorAll('.faq-chevron').forEach(c => c.style.transform = 'rotate(0deg)');
+    container.querySelectorAll('.faq-item').forEach(i => i.style.borderColor = '#e2e8f0');
+
+    if (!isOpen) {
+      body.style.display = 'block';
+      chevron.style.transform = 'rotate(180deg)';
+      item.style.borderColor = '#0284c7';
+    }
+  });
 }
 
 /**
