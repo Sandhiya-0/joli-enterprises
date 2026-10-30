@@ -2067,7 +2067,689 @@ button, input, select, textarea {
   margin: 0;
 }
 
-/* Contact Section Styles */
+/* ==========================================================================
+   CONTACT PAGE — EXACT MATCH TO REFERENCE DESIGN (IMAGE 1)
+   Wholesale Desk, Warehouse Backdrop, Circular Pan-India Badge, Stacked Pallet,
+   Floating White Commercial Form Card, and Wide Bottom Hub Bar
+   ========================================================================== */
+
+.contact-v1-page {
+  background-color: #f0f5fa;
+  min-height: calc(100vh - var(--header-height, 76px));
+  padding: 2.5rem 0 3.5rem;
+}
+
+.contact-v1-main-container {
+  max-width: 1240px;
+}
+
+/* --------------------------------------------------------------------------
+   Main Showcase Hero Box
+   -------------------------------------------------------------------------- */
+.contact-v1-hero {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  margin-bottom: 1.5rem;
+  padding: 3rem 2.8rem 2.5rem;
+}
+
+/* Warehouse Backdrop Image positioned from center to right */
+.contact-v1-backdrop-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 65%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  opacity: 0.88;
+  z-index: 1;
+}
+
+/* Smooth Convex Curved White Overlay separating Left Column */
+.contact-v1-curve-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 42%;
+  background-color: #ffffff;
+  border-radius: 0 160px 160px 0 / 0 50% 50% 0;
+  z-index: 2;
+  box-shadow: 8px 0 24px rgba(255, 255, 255, 0.95);
+}
+
+.contact-v1-hero-content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 360px minmax(180px, 1fr) 510px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Wholesale Desk & 4 Information Rows
+   -------------------------------------------------------------------------- */
+.contact-v1-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 4;
+}
+
+.contact-v1-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.eyebrow-blue-dash {
+  color: #0284c7;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.contact-v1-title {
+  font-family: var(--font-heading);
+  font-size: 2.65rem;
+  font-weight: 900;
+  color: #0a192f;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.contact-v1-title .highlight-blue {
+  color: #0284c7;
+}
+
+.contact-v1-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  max-width: 340px;
+}
+
+.contact-v1-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-v1-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-v1-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+
+.contact-v1-info-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-v1-info-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.contact-v1-info-label {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+.contact-v1-info-strong {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-top: 1px;
+}
+
+.contact-v1-info-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.35;
+  margin-top: 1px;
+}
+
+.contact-v1-info-sub .text-muted-hint {
+  color: #94a3b8;
+  font-size: 0.74rem;
+}
+
+.contact-v1-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin-top: 2px;
+  transition: transform 0.2s ease;
+}
+
+.contact-v1-link-arrow:hover {
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Center Visual: Stacked Pallet of Cartons + Glowing Badge + Curved Arrow
+   -------------------------------------------------------------------------- */
+.contact-v1-center-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  align-self: stretch;
+  min-height: 480px;
+}
+
+.contact-v1-curved-arrow {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: 5;
+}
+
+.contact-v1-dispatch-badge {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 146px;
+  height: 146px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #0369a1 100%);
+  box-shadow: 0 12px 32px rgba(2, 132, 199, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  z-index: 6;
+}
+
+.dispatch-badge-icon {
+  margin-bottom: 2px;
+}
+
+.dispatch-badge-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.dispatch-badge-sub {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.15;
+}
+
+.contact-v1-pallet-wrap {
+  width: 280px;
+  max-width: 100%;
+  margin-top: auto;
+  position: relative;
+  z-index: 4;
+}
+
+.contact-v1-pallet-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.25));
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Floating Elevated White Wholesale Enquiry Card
+   -------------------------------------------------------------------------- */
+.contact-v1-form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.2rem 2.4rem;
+  box-shadow: 0 12px 42px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(241, 245, 249, 0.95);
+  position: relative;
+  z-index: 5;
+}
+
+.contact-v1-form-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.contact-v1-form-title {
+  font-family: var(--font-heading);
+  font-size: 1.95rem;
+  font-weight: 800;
+  color: #0a192f;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.35rem;
+}
+
+.contact-v1-form-title .highlight-blue {
+  color: #0284c7;
+}
+
+.contact-v1-form-desc {
+  font-size: 0.84rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin-bottom: 1.3rem;
+}
+
+.contact-v1-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group-v1 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.85rem;
+}
+
+.label-v1 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.35rem;
+}
+
+.input-wrap-v1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon-v1 {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.textarea-icon-v1 {
+  top: 13px;
+  transform: none;
+}
+
+.input-control-v1 {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border-radius: 8px;
+  border: 1.2px solid #e2e8f0;
+  background-color: #ffffff;
+  font-size: 0.86rem;
+  color: #0f172a;
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.input-control-v1::placeholder {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.input-control-v1:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.input-control-v1.is-invalid,
+.input-control-v1.error {
+  border-color: #ef4444;
+  background-color: #fff8f8;
+}
+
+.select-control-v1 {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+  background-color: #ffffff;
+}
+
+.select-arrow-v1 {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+
+.textarea-control-v1 {
+  padding: 11px 14px 11px 38px;
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.form-error-msg {
+  font-size: 0.72rem;
+  color: #dc2626;
+  margin-top: 0.25rem;
+  min-height: 0.95rem;
+  display: block;
+}
+
+.contact-v1-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.btn-submit-v1 {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 10px 14px 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.25);
+}
+
+.btn-submit-v1:hover {
+  background-color: #0369a1;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+}
+
+.btn-submit-v1:active {
+  transform: translateY(0);
+}
+
+.btn-arrow-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-submit-v1:hover .btn-arrow-circle {
+  transform: translateX(2px);
+}
+
+.contact-v1-response-pill {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.contact-v1-response-pill svg {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Bar: Wide Card matching Image 1
+   -------------------------------------------------------------------------- */
+.contact-v1-bottom-bar {
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.bottom-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.bottom-hub-thumb {
+  width: 175px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bottom-hub-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottom-hub-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.bottom-hub-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.bottom-hub-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.bottom-hub-line {
+  width: 34px;
+  height: 3px;
+  background-color: #0284c7;
+  border-radius: 2px;
+}
+
+.bottom-bar-features {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+  border-left: 1px solid #e2e8f0;
+}
+
+.bottom-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottom-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bottom-feature-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 1140px) {
+  .contact-v1-hero-content {
+    grid-template-columns: 320px minmax(140px, 1fr) 460px;
+    gap: 1rem;
+  }
+
+  .contact-v1-bottom-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 18px 20px;
+  }
+
+  .bottom-bar-features {
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+    padding-left: 0;
+    padding-top: 1rem;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-v1-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-v1-curve-overlay,
+  .contact-v1-backdrop-img {
+    display: none;
+  }
+
+  .contact-v1-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-v1-center-visual {
+    order: 3;
+    min-height: auto;
+    padding: 1.5rem 0;
+  }
+
+  .contact-v1-curved-arrow {
+    display: none;
+  }
+
+  .contact-v1-dispatch-badge {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-v1-form-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .contact-v1-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-v1-action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bottom-bar-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-hub-thumb {
+    width: 100%;
+    height: 140px;
+  }
+
+  .bottom-bar-features {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-v1-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Fallback styles for previous contact components */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -2163,6 +2845,11 @@ button, input, select, textarea {
 .alert-success {
   background-color: var(--color-success-bg);
   color: var(--color-success);
+}
+
+.alert-error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
 }
 
 .alert-error {
