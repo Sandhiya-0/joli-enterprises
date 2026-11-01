@@ -8011,10 +8011,12 @@ body.offers-modal-active {
    EXACT REVIEWS SHOWCASE REDESIGN (IMAGE 2 MATCH)
    ========================================================================== */
 .review-exact-showcase-section {
-  background: linear-gradient(180deg, #f9fafd 0%, #f1f4ff 50%, #ede9fe 100%);
+  background: linear-gradient(180deg, #f9fafd 0%, #f1f4ff 50%, #f4f8fd 100%);
   padding: 4.5rem 0 4rem;
   position: relative;
   overflow: hidden;
+  margin: 0;
+  border: none;
 }
 
 .review-exact-ambient-glow {

@@ -7,7 +7,6 @@ import { getCategories, getProducts } from '../../data/products.js';
 import { renderProductCard, escapeHtml } from '../components/productCard.js';
 import { renderContactView, initContactViewEvents } from './contactView.js';
 import { renderReviewsShowcaseSection, initReviewsShowcaseEvents, wholesaleReviews } from './reviewsView.js';
-import { renderFaqShowcaseSection, initFaqShowcaseEvents, wholesaleFaqs } from './faqView.js';
 import { initHoloCards } from '../components/holoCard.js';
 import { initBounceCards } from '../components/bounceCards.js';
 import { renderBulkFlipCard, initFlipCards } from '../components/flipCard.js';
@@ -853,18 +852,7 @@ export function renderHomeView() {
       })}
     </section>
 
-    <!-- Section 9 — FAQ (Exact Match to Image 1) -->
-    <section id="faq" class="faq-exact-showcase-section">
-      ${renderFaqShowcaseSection({
-        idPrefix: 'home-faq',
-        showButton: true,
-        buttonHref: '#/faq',
-        buttonText: 'Browse Full FAQ Knowledge Base (10+ Questions)',
-        items: wholesaleFaqs.slice(0, 5)
-      })}
-    </section>
-
-    <!-- Section 10 — CONTACT (Exact Match to Image 1) -->
+    <!-- Section 9 — CONTACT (Exact Match to Image 1) -->
     <section id="contact" class="home-contact-section">
       ${renderContactView()}
     </section>
@@ -893,9 +881,6 @@ export function initHomeViewEvents() {
 
   // Initialize interactive Reviews Carousel on Home Page (matching Image 2)
   initReviewsShowcaseEvents('home-rev');
-
-  // Initialize interactive FAQ Accordion on Home Page (matching Image 1)
-  initFaqShowcaseEvents('home-faq-accordion-list');
 }
 
 /**
