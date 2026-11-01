@@ -4,6 +4,7 @@ import { escapeHtml } from '../components/productCard.js';
 export const showcaseFaqs = [
   {
     id: 1,
+    category: "orders",
     badgeText: "ORDERS & MOQ",
     badgeColor: "#0284c7",
     badgeBg: "#eff6ff",
@@ -14,6 +15,7 @@ export const showcaseFaqs = [
   },
   {
     id: 2,
+    category: "shipping",
     badgeText: "SHIPPING & FREIGHT",
     badgeColor: "#16a34a",
     badgeBg: "#f0fdf4",
@@ -24,6 +26,7 @@ export const showcaseFaqs = [
   },
   {
     id: 3,
+    category: "gst",
     badgeText: "GST & INVOICING",
     badgeColor: "#9333ea",
     badgeBg: "#faf5ff",
@@ -34,6 +37,7 @@ export const showcaseFaqs = [
   },
   {
     id: 4,
+    category: "shipping",
     badgeText: "SHIPPING & FREIGHT",
     badgeColor: "#ea580c",
     badgeBg: "#fff7ed",
@@ -44,6 +48,7 @@ export const showcaseFaqs = [
   },
   {
     id: 5,
+    category: "samples",
     badgeText: "SAMPLES & TRIALS",
     badgeColor: "#db2777",
     badgeBg: "#fdf2f8",
@@ -51,81 +56,65 @@ export const showcaseFaqs = [
     iconSvg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>`,
     question: "Can I request sample pieces before ordering a master carton?",
     answer: "Yes. You can order single MOQ sample packs directly on our storefront to inspect the build quality, retail finish, and packaging before committing to factory master carton lots. Contact our wholesale commercial desk if you need mixed-category sample assortments."
-  }
-];
-
-export const wholesaleFaqs = [
-  {
-    id: 1,
-    category: "orders",
-    categoryLabel: "Orders & MOQ",
-    question: "What is the Minimum Order Quantity (MOQ) for Nivox products?",
-    answer: "Every wholesale product has a clearly designated MOQ displayed on its product page (typically between 6 to 24 units for small merchandise, or 1 master carton lot). For ready-made combo kits, MOQ starts at 10 to 24 kits. We do not enforce large pallet minimums, making it easy for small and medium retail shopkeepers to order multiple variety batches."
-  },
-  {
-    id: 2,
-    category: "shipping",
-    categoryLabel: "Shipping & Freight",
-    question: "How fast are wholesale carton orders dispatched, and what are delivery timelines?",
-    answer: "All confirmed orders placed before 3:00 PM IST on business days are packed and dispatched from our Chennai Wholesale Commercial Hub within 24 to 48 hours. Consignments are shipped via reputed B2B surface cargo carriers (V-Trans, Safexpress, Spoton, and Speed Post). Delivery typically takes 24–48 hours across South India and 3–5 business days for North, West, and East India."
-  },
-  {
-    id: 3,
-    category: "gst",
-    categoryLabel: "GST & Invoicing",
-    question: "Do you provide official GST invoices for Input Tax Credit (ITC)?",
-    answer: "Yes, 100%. All dispatches are accompanied by an official GST tax invoice and valid E-Way bills. During checkout or enquiry quotation, simply enter your 15-digit GSTIN number and business trade name. Input tax credit is automatically filed in your monthly GSTR-2B."
-  },
-  {
-    id: 4,
-    category: "shipping",
-    categoryLabel: "Shipping & Freight",
-    question: "How are freight and transportation charges calculated for heavy carton lots?",
-    answer: "Orders are shipped either on 'To-Pay' freight basis directly through the transport agency of your choice, or prepaid freight based on actual volumetric weight calculated at checkout. For master carton bulk volume deals, subsidized transport rates apply."
-  },
-  {
-    id: 5,
-    category: "samples",
-    categoryLabel: "Samples & Trials",
-    question: "Can I request sample pieces before ordering a master carton?",
-    answer: "Yes. You can order single MOQ sample packs directly on our storefront to inspect the build quality, retail finish, and packaging before committing to factory master carton lots. Contact our wholesale commercial desk if you need mixed-category sample assortments."
   },
   {
     id: 6,
     category: "custom",
-    categoryLabel: "Custom Combos & OEM",
+    badgeText: "CUSTOM & OEM",
+    badgeColor: "#4f46e5",
+    badgeBg: "#eef2ff",
+    iconBg: "#e0e7ff",
+    iconSvg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>`,
     question: "Do you support custom logo printing or private labeling for schools and businesses?",
     answer: "Yes! For orders exceeding 500+ pieces or 10+ master cartons, we provide OEM private labeling. We can imprint your school logo, stationery store branding, or corporate event graphics on stationery pouches, exam boards, and combo boxes. Fill out our Bulk Enquiry Form for a customized digital mockup."
   },
   {
     id: 7,
     category: "orders",
-    categoryLabel: "Orders & MOQ",
+    badgeText: "ORDERS & MOQ",
+    badgeColor: "#0284c7",
+    badgeBg: "#eff6ff",
+    iconBg: "#e0f2fe",
+    iconSvg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>`,
     question: "Can I mix and match different items inside a single wholesale shipment?",
     answer: "Absolutely. You can add the minimum order quantities of as many different products as you want into a single cart. They will be consolidated into a unified parcel or bundled master cartons to reduce total freight costs."
   },
   {
     id: 8,
     category: "support",
-    categoryLabel: "Damages & Returns",
+    badgeText: "DAMAGES & SUPPORT",
+    badgeColor: "#dc2626",
+    badgeBg: "#fef2f2",
+    iconBg: "#fee2e2",
+    iconSvg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>`,
     question: "What is your policy if cartons arrive damaged or items are missing?",
     answer: "All cartons are strapped with security tape and tamper-evident seals. If you receive a visibly damaged outer box, please mention 'damaged condition' on the delivery challan and share a brief unboxing video within 48 hours to our WhatsApp trade desk (+91 98765 43210). We immediately issue a credit note or dispatch free replacements."
   },
   {
     id: 9,
     category: "orders",
-    categoryLabel: "Orders & MOQ",
+    badgeText: "PAYMENTS & BILLING",
+    badgeColor: "#059669",
+    badgeBg: "#ecfdf5",
+    iconBg: "#d1fae5",
+    iconSvg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`,
     question: "What payment methods are accepted for commercial B2B orders?",
     answer: "We accept NEFT/RTGS bank transfers, UPI commercial payments, Net Banking, and major Business Credit/Debit cards. Proforma invoices with our verified bank account details are generated immediately upon order submission."
   },
   {
     id: 10,
     category: "shipping",
-    categoryLabel: "Shipping & Freight",
+    badgeText: "SHIPPING & FREIGHT",
+    badgeColor: "#ea580c",
+    badgeBg: "#fff7ed",
+    iconBg: "#ffedd5",
+    iconSvg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`,
     question: "How do I track my wholesale consignment after dispatch?",
     answer: "As soon as your shipment is picked up by the logistics carrier, our trade desk sends an automated WhatsApp message and email containing the LR (Lorry Receipt) / Docket number and tracking link to monitor your delivery status in real time."
   }
 ];
+
+export const wholesaleFaqs = showcaseFaqs;
 
 /**
  * Renders the exact 2-column showcase layout matching Image 1
@@ -135,14 +124,17 @@ export function renderFaqShowcaseSection(options = {}) {
     idPrefix = 'showcase',
     showButton = true,
     buttonHref = '#/faq',
-    buttonText = 'Browse Full FAQ Knowledge Base (10+ Questions)'
+    buttonText = 'Browse Full FAQ Knowledge Base (10+ Questions)',
+    items = showcaseFaqs,
+    showFilterPills = false,
+    isFullPage = false
   } = options;
   const baseUrl = import.meta.env.BASE_URL;
 
   return `
-    <div class="faq-exact-container">
+    <div class="faq-exact-container ${isFullPage ? 'faq-exact-container-fullpage' : ''}">
       <!-- Left Column: 3D Visual with Cartons, Plant, Pedestal & 4 Floating Bubble Pills -->
-      <div class="faq-exact-visual-col">
+      <div class="faq-exact-visual-col ${isFullPage ? 'is-sticky-visual' : ''}">
         <div class="faq-exact-visual-wrapper">
           <img 
             src="${baseUrl}images/faq-3d-visual.png" 
@@ -153,7 +145,7 @@ export function renderFaqShowcaseSection(options = {}) {
         </div>
       </div>
 
-      <!-- Right Column: Wholesale Trade Desk Header + 5 Elevated Cards + Capsule Button -->
+      <!-- Right Column: Wholesale Trade Desk Header + Category Filter Pills + Elevated Cards + Capsule Button -->
       <div class="faq-exact-content-col">
         <!-- Header -->
         <div class="faq-exact-header">
@@ -175,10 +167,22 @@ export function renderFaqShowcaseSection(options = {}) {
           </p>
         </div>
 
-        <!-- 5 Elevated Accordion Cards Matching Image 1 -->
+        ${showFilterPills ? `
+          <!-- Interactive Category Filter Pills -->
+          <div class="faq-showcase-filters" id="${idPrefix}-filters">
+            <button type="button" class="faq-filter-pill active" data-filter="all">All Topics (${items.length})</button>
+            <button type="button" class="faq-filter-pill" data-filter="orders">Orders &amp; MOQ</button>
+            <button type="button" class="faq-filter-pill" data-filter="shipping">Shipping &amp; Timelines</button>
+            <button type="button" class="faq-filter-pill" data-filter="gst">GST &amp; Invoices</button>
+            <button type="button" class="faq-filter-pill" data-filter="custom">Custom &amp; OEM</button>
+            <button type="button" class="faq-filter-pill" data-filter="support">Damages &amp; Support</button>
+          </div>
+        ` : ''}
+
+        <!-- Elevated Accordion Cards Matching Image 1 -->
         <div class="faq-exact-accordion-list" id="${idPrefix}-accordion-list">
-          ${showcaseFaqs.map(faq => `
-            <div class="faq-exact-card" data-faq-id="${faq.id}">
+          ${items.map(faq => `
+            <div class="faq-exact-card" data-faq-id="${faq.id}" data-category="${faq.category}">
               <button 
                 type="button" 
                 class="faq-exact-card-header" 
@@ -224,8 +228,7 @@ export function renderFaqShowcaseSection(options = {}) {
 
             <a href="${buttonHref}" class="btn-faq-showcase">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
               <span>${buttonText}</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -278,191 +281,54 @@ export function initFaqShowcaseEvents(listId = 'showcase-accordion-list') {
   });
 }
 
+/**
+ * Dedicated Full-Page FAQ View (Image 1 Exact Layout)
+ */
 export function renderFaqView() {
   return `
-    <div class="faq-page">
-      <!-- Breadcrumbs Bar -->
-      <div style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 0;">
-        <div class="container" style="max-width: 1220px; padding: 0 1.5rem;">
-          <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin: 0;">
-            <a href="#/" style="color: #64748b; text-decoration: none;">Home</a>
-            <span class="separator" style="color: #cbd5e1; margin: 0 6px;">/</span>
-            <span class="current" style="color: #0284c7; font-weight: 800;">FAQ</span>
-          </nav>
-        </div>
-      </div>
-
-      <!-- Prime Hero Showcase Matching Image 1 Exactly -->
-      <section class="faq-exact-showcase-section" style="padding: 2.5rem 0 3.5rem;">
+    <div class="faq-page faq-v1-fullpage">
+      <div class="faq-page-inner">
         ${renderFaqShowcaseSection({
-          idPrefix: 'faq-page-hero',
+          idPrefix: 'faq-fullpage',
           showButton: true,
-          buttonHref: '#faq-catalog',
-          buttonText: 'Explore All 10+ FAQ Topics & Search'
+          buttonHref: '#/contact',
+          buttonText: 'Have Specific Questions? Contact Trade Desk',
+          items: showcaseFaqs,
+          showFilterPills: true,
+          isFullPage: true
         })}
-      </section>
-
-      <!-- Complete Wholesale Knowledge Base Directory (Search & Filter) -->
-      <section id="faq-catalog" class="section" style="padding: 3.5rem 0 4.5rem; background: #ffffff; border-top: 1px solid #e2e8f0;">
-        <div class="container" style="max-width: 960px; padding: 0 1.5rem;">
-          
-          <div class="text-center" style="margin-bottom: 2rem;">
-            <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
-              Full Wholesale Knowledge Base
-            </h2>
-            <p style="color: #64748b; font-size: 0.95rem; margin: 0 auto; max-width: 600px;">
-              Search our complete trade manual or browse questions by category below.
-            </p>
-          </div>
-
-          <!-- Instant Search Bar -->
-          <div style="max-width: 640px; margin: 0 auto 1.75rem; position: relative;">
-            <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #64748b; display: flex; align-items: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </span>
-            <input 
-              type="text" 
-              id="faq-search-input" 
-              placeholder="Search questions (e.g. MOQ, GST invoice, dispatch timeline, sample orders)..." 
-              style="width: 100%; padding: 14px 16px 14px 48px; border-radius: 12px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; color: #0f172a; outline: none; transition: border-color 0.2s;"
-            />
-          </div>
-
-          <!-- Category Filter Tags -->
-          <div class="faq-filter-buttons" style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
-            <button type="button" class="btn-filter-tag active" data-filter="all">All Topics (${wholesaleFaqs.length})</button>
-            <button type="button" class="btn-filter-tag" data-filter="orders">Orders &amp; MOQ</button>
-            <button type="button" class="btn-filter-tag" data-filter="shipping">Shipping &amp; Freight</button>
-            <button type="button" class="btn-filter-tag" data-filter="gst">GST &amp; Invoicing</button>
-            <button type="button" class="btn-filter-tag" data-filter="custom">Custom &amp; OEM</button>
-            <button type="button" class="btn-filter-tag" data-filter="support">Damages &amp; Support</button>
-          </div>
-
-          <!-- All FAQs Accordion Container -->
-          <div id="faq-accordion-container" style="display: flex; flex-direction: column; gap: 0.85rem;">
-            ${wholesaleFaqs.map(faq => renderFaqItem(faq)).join('')}
-          </div>
-
-          <!-- Help Callout Box -->
-          <div style="margin-top: 3.5rem; background: #f8fafc; border: 1.5px solid #e0f2fe; border-radius: 18px; padding: 2.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 4px 20px rgba(2,132,199,0.06);">
-            <div style="max-width: 520px;">
-              <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 0.35rem;">
-                Still Have Questions for Our Trade Desk?
-              </h3>
-              <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">
-                Our B2B commercial desk is available Mon – Sat, 9:30 AM – 7:00 PM IST to assist with product pricing, logistics planning, or GST proformas.
-              </p>
-            </div>
-
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-              <a href="#/contact" class="btn btn-primary" style="background: #0284c7; color: #ffffff; border: none; font-weight: 700; border-radius: 8px; padding: 10px 20px; text-decoration: none;">
-                Contact Wholesale Desk
-              </a>
-              <a href="#/bulk-enquiry" class="btn btn-outline" style="border: 1.5px solid #cbd5e1; color: #0f172a; font-weight: 700; border-radius: 8px; padding: 10px 20px; text-decoration: none;">
-                Request Quotation
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </div>
-  `;
-}
-
-function renderFaqItem(faq) {
-  return `
-    <div class="faq-item" data-category="${escapeHtml(faq.category)}" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(15,23,42,0.02); transition: border-color 0.2s;">
-      <button 
-        type="button" 
-        class="faq-header" 
-        style="width: 100%; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: none; border: none; text-align: left; cursor: pointer; gap: 1rem;"
-      >
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span style="background: #e0f2fe; color: #0284c7; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase;">
-            ${escapeHtml(faq.categoryLabel)}
-          </span>
-          <span style="font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.35;">
-            ${escapeHtml(faq.question)}
-          </span>
-        </div>
-        <span class="faq-chevron" style="color: #64748b; font-size: 1.2rem; transition: transform 0.25s ease; flex-shrink: 0;">
-          ▼
-        </span>
-      </button>
-      <div class="faq-body" style="display: none; padding: 0 1.5rem 1.25rem; font-size: 0.92rem; color: #475569; line-height: 1.6; border-top: 1px solid #f8fafc;">
-        ${escapeHtml(faq.answer)}
       </div>
     </div>
   `;
 }
 
 export function initFaqViewEvents() {
-  // 1. Initialize Showcase events
-  initFaqShowcaseEvents('faq-page-hero-accordion-list');
+  // 1. Initialize Showcase events on full-page list
+  initFaqShowcaseEvents('faq-fullpage-accordion-list');
 
-  // 2. Initialize Directory Accordion
-  const container = document.getElementById('faq-accordion-container');
-  const searchInput = document.getElementById('faq-search-input');
-  const filterBtns = document.querySelectorAll('.faq-filter-buttons .btn-filter-tag');
+  // 2. Initialize Category Filter Pills
+  const filterWrap = document.getElementById('faq-fullpage-filters');
+  const accordionList = document.getElementById('faq-fullpage-accordion-list');
 
-  if (container) {
-    container.addEventListener('click', (e) => {
-      const header = e.target.closest('.faq-header');
-      if (!header) return;
+  if (filterWrap && accordionList) {
+    const pills = filterWrap.querySelectorAll('.faq-filter-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
 
-      const item = header.closest('.faq-item');
-      const body = item.querySelector('.faq-body');
-      const chevron = item.querySelector('.faq-chevron');
+        const category = pill.getAttribute('data-filter');
+        const cards = accordionList.querySelectorAll('.faq-exact-card');
 
-      const isOpen = body.style.display === 'block';
-
-      // Close all others
-      container.querySelectorAll('.faq-body').forEach(b => b.style.display = 'none');
-      container.querySelectorAll('.faq-chevron').forEach(c => c.style.transform = 'rotate(0deg)');
-      container.querySelectorAll('.faq-item').forEach(i => i.style.borderColor = '#e2e8f0');
-
-      if (!isOpen) {
-        body.style.display = 'block';
-        chevron.style.transform = 'rotate(180deg)';
-        item.style.borderColor = '#0284c7';
-      }
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'all' || cardCat === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
     });
   }
-
-  // Filter Function
-  function filterFaqs() {
-    const activeBtn = document.querySelector('.faq-filter-buttons .btn-filter-tag.active');
-    const category = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
-    const query = searchInput?.value.toLowerCase().trim() || '';
-
-    if (!container) return;
-    container.querySelectorAll('.faq-item').forEach(item => {
-      const itemCategory = item.getAttribute('data-category');
-      const text = item.textContent.toLowerCase();
-
-      const matchesCat = (category === 'all' || itemCategory === category);
-      const matchesQuery = (query === '' || text.includes(query));
-
-      if (matchesCat && matchesQuery) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-
-  // Live Search
-  if (searchInput) {
-    searchInput.addEventListener('input', filterFaqs);
-  }
-
-  // Filter Buttons
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterFaqs();
-    });
-  });
 }

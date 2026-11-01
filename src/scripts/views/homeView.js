@@ -859,7 +859,8 @@ export function renderHomeView() {
         idPrefix: 'home-faq',
         showButton: true,
         buttonHref: '#/faq',
-        buttonText: 'Browse Full FAQ Knowledge Base (10+ Questions)'
+        buttonText: 'Browse Full FAQ Knowledge Base (10+ Questions)',
+        items: wholesaleFaqs.slice(0, 5)
       })}
     </section>
 

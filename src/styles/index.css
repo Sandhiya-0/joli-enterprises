@@ -7934,6 +7934,80 @@ body.offers-modal-active {
 }
 
 /* ==========================================================================
+   FULL-PAGE FAQ DEDICATED VIEW (Image 1 Exact Layout)
+   ========================================================================== */
+.faq-page.faq-v1-fullpage {
+  background-color: #f4f8fd;
+  min-height: calc(100vh - var(--header-height, 76px));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem 0 4.5rem;
+  margin: 0;
+}
+
+.faq-page-inner {
+  width: 100%;
+}
+
+.faq-exact-container-fullpage {
+  max-width: 1260px;
+}
+
+.faq-exact-visual-col.is-sticky-visual {
+  position: sticky;
+  top: 105px;
+  align-self: flex-start;
+}
+
+.faq-showcase-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.faq-filter-pill {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 15px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.faq-filter-pill:hover {
+  border-color: #0084ff;
+  color: #0084ff;
+  background: #f0f7ff;
+  transform: translateY(-1px);
+}
+
+.faq-filter-pill.active {
+  background: #0084ff;
+  border-color: #0084ff;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 132, 255, 0.3);
+}
+
+@media (max-width: 992px) {
+  .faq-page.faq-v1-fullpage {
+    padding: 2rem 0 3rem;
+  }
+  .faq-exact-visual-col.is-sticky-visual {
+    position: static;
+  }
+}
+
+/* ==========================================================================
    EXACT REVIEWS SHOWCASE REDESIGN (IMAGE 2 MATCH)
    ========================================================================== */
 .review-exact-showcase-section {
