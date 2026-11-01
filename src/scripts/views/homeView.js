@@ -864,7 +864,7 @@ export function renderHomeView() {
     </section>
 
     <!-- Section 10 — CONTACT (Exact Match to Image 1) -->
-    <section id="contact" class="home-contact-section" style="padding: 2.5rem 0 1rem;">
+    <section id="contact" class="home-contact-section">
       ${renderContactView()}
     </section>
   `;

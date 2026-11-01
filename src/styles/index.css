@@ -2015,6 +2015,8 @@ button, input, select, textarea {
 #products,
 #bulk-deals,
 #combos,
+#reviews,
+#faq,
 #contact {
   scroll-margin-top: 110px;
 }
@@ -2074,9 +2076,21 @@ button, input, select, textarea {
    ========================================================================== */
 
 .contact-v1-page {
-  background-color: #f0f5fa;
+  background-color: #f4f8fd;
   min-height: calc(100vh - var(--header-height, 76px));
   padding: 2.5rem 0 3.5rem;
+}
+
+.home-contact-section {
+  background-color: #f4f8fd;
+  margin: 0;
+  padding: 0;
+}
+
+.home-contact-section .contact-v1-page {
+  background-color: #f4f8fd;
+  min-height: auto;
+  padding-top: 1.5rem;
 }
 
 .contact-v1-main-container {
@@ -7679,6 +7693,8 @@ body.offers-modal-active {
   padding: 4rem 0 3.5rem;
   overflow: hidden;
   position: relative;
+  margin: 0;
+  border: none;
 }
 
 .faq-exact-container {
