@@ -1,12 +1,9 @@
 name: Deploy Web App to GitHub Pages
 
 on:
-  # Automatic live update on push disabled:
-  # push:
-  #   branches:
-  #     - main
-
-  # Only trigger live deployment manually via GitHub Actions
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
