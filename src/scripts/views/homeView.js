@@ -21,7 +21,7 @@ export function renderHomeView() {
   const featuredProducts = allProducts.filter(p => p.featured || (!p.isCombo && p.cartonQuantity && p.cartonQuantity >= 100)).slice(0, 8);
   const volumeDeals = allProducts.filter(p => !p.isCombo && p.cartonQuantity && p.cartonQuantity >= 200).slice(0, 4);
   const comboPacks = allProducts.filter(p => p.isCombo).slice(0, 4);
-  const ownProductsList = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50)).slice(0, 4);
+  const ownProductsList = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50)).slice(0, 8);
   const topReviews = wholesaleReviews.slice(0, 3);
 
 
@@ -798,10 +798,10 @@ export function renderHomeView() {
       </div>
     </section>
 
-    <!-- Section 7 — OWN PRODUCTS -->
-    <section id="own-products" class="section bg-soft-grey" style="padding: 4rem 0 3.5rem;">
+    <!-- Section 7 — OWN PRODUCTS (Expanded Full Length Showcase) -->
+    <section id="own-products" class="section bg-soft-grey" style="padding: 5.5rem 0 5rem;">
       <div class="container">
-        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.25rem;">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem;">
           <div>
             <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0284c7; margin-bottom: 0.35rem;">
               ★ IN-HOUSE MANUFACTURED &amp; PRIVATE LABEL
@@ -818,28 +818,52 @@ export function renderHomeView() {
         </div>
 
         <!-- 4 Value Pillars -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2.5rem;">
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
-            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">🏭 Factory Direct Pricing</div>
-            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Save 30–40% vs distributors to maximize your shop's counter profit.</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 2.75rem;">
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 1rem; margin-bottom: 0.35rem;">🏭 Factory Direct Pricing</div>
+            <div style="font-size: 0.84rem; color: #64748b; line-height: 1.45;">Save 30–40% vs distributors to maximize your shop's counter profit margins.</div>
           </div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
-            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">🏷️ Private Label &amp; OEM</div>
-            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Custom school &amp; store logo printing available for 500+ unit bulk lots.</div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 1rem; margin-bottom: 0.35rem;">🏷️ Private Label &amp; OEM</div>
+            <div style="font-size: 0.84rem; color: #64748b; line-height: 1.45;">Custom school &amp; store logo printing available for 500+ unit bulk lots.</div>
           </div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
-            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">🛡️ Lab Tested Quality</div>
-            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Non-toxic child-safe inks, durable polymers, and tamper-sealed packs.</div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 1rem; margin-bottom: 0.35rem;">🛡️ Lab Tested Quality</div>
+            <div style="font-size: 0.84rem; color: #64748b; line-height: 1.45;">Non-toxic child-safe inks, durable polymers, and tamper-sealed packs.</div>
           </div>
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(15,23,42,0.02);">
-            <div style="font-weight: 800; color: #0284c7; font-size: 0.95rem; margin-bottom: 0.2rem;">📦 Master Carton Ready</div>
-            <div style="font-size: 0.8rem; color: #64748b; line-height: 1.4;">Pre-strapped master cartons with barcode labels for instant dispatch.</div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 14px rgba(15,23,42,0.03);">
+            <div style="font-weight: 800; color: #0284c7; font-size: 1rem; margin-bottom: 0.35rem;">📦 Master Carton Ready</div>
+            <div style="font-size: 0.84rem; color: #64748b; line-height: 1.45;">Pre-strapped master cartons with barcode labels for instant dispatch.</div>
           </div>
         </div>
 
-        <!-- 4 In-House Products Cards -->
-        <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+        <!-- 8 In-House Products Cards (2 Full Rows) -->
+        <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.75rem;">
           ${ownProductsList.map(p => renderProductCard(p)).join('')}
+        </div>
+
+        <!-- Factory OEM Capability Callout Banner -->
+        <div style="margin-top: 3.5rem; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 18px; padding: 2.5rem 2.25rem; color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.75rem; box-shadow: 0 12px 32px rgba(15,23,42,0.12);">
+          <div style="max-width: 680px;">
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 9999px; margin-bottom: 0.75rem; border: 1px solid rgba(56, 189, 248, 0.25);">
+              🏭 Chennai Manufacturing &amp; Assembly Facility
+            </div>
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: #ffffff; margin: 0 0 0.5rem; line-height: 1.25;">
+              Need Custom Branding, Store Logos, or 1000+ Master Carton Lots?
+            </h3>
+            <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+              We offer turnkey OEM private-label production for schools, stationery chains, and wholesale distributors. Custom packaging, barcode labeling, and direct factory-floor dispatch.
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+            <a href="#/bulk-enquiry" class="btn btn-primary" style="white-space: nowrap; padding: 13px 26px; font-weight: 700;">
+              <span>Request Private Label Quote</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#/own-products" class="btn btn-outline" style="white-space: nowrap; border-color: rgba(255,255,255,0.3); color: #ffffff; padding: 13px 26px;">
+              <span>Browse Full Catalogue &rarr;</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
