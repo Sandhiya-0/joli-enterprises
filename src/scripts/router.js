@@ -24,10 +24,18 @@ import { getProductById } from '../data/products.js';
 
 export function initRouter() {
   window.addEventListener('hashchange', handleRoute);
-  window.addEventListener('load', () => {
-    updateCartBadge();
-    handleRoute();
-  });
+  
+  // Immediately render route and cart badge upon router initialization
+  updateCartBadge();
+  handleRoute();
+
+  // Fallback if window load hasn't completed yet
+  if (document.readyState !== 'complete') {
+    window.addEventListener('load', () => {
+      updateCartBadge();
+      handleRoute();
+    });
+  }
 
   // Global event delegation for interactive elements
   document.addEventListener('click', (e) => {
@@ -145,8 +153,7 @@ function handleRoute() {
       break;
 
     case 'products':
-    case 'shop':
-      // Product page removed per user request — redirect to categories
+      // Redirect to categories overview
       window.location.hash = '#/categories';
       break;
 
