@@ -7699,12 +7699,12 @@ body.offers-modal-active {
 
 .faq-exact-container {
   display: grid;
-  grid-template-columns: minmax(320px, 420px) minmax(480px, 1fr);
-  gap: 2.75rem;
+  grid-template-columns: minmax(340px, 460px) minmax(520px, 1fr);
+  gap: 3rem;
   align-items: center;
-  max-width: 1240px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .faq-exact-visual-col {

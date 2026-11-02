@@ -854,16 +854,16 @@ export function renderHomeView() {
       })}
     </section>
 
-    <!-- Section 9 — FAQ (Full Length Showcase on Home Page) -->
-    <section id="faq" class="faq-exact-showcase-section faq-home-full-length">
+    <!-- Section 9 — FAQ (Top 5 Questions Showcase on Home Page) -->
+    <section id="faq" class="faq-exact-showcase-section">
       ${renderFaqShowcaseSection({
         idPrefix: 'home-faq',
         showButton: true,
-        buttonHref: '#/contact',
-        buttonText: 'Have Specific Questions? Contact Trade Desk',
-        items: showcaseFaqs,
-        showFilterPills: true,
-        isFullPage: true
+        buttonHref: '#/faq',
+        buttonText: 'Browse Full FAQ Knowledge Base (10+ Questions)',
+        items: showcaseFaqs.slice(0, 5),
+        showFilterPills: false,
+        isFullPage: false
       })}
     </section>
 
@@ -897,9 +897,8 @@ export function initHomeViewEvents() {
   // Initialize interactive Reviews Carousel on Home Page (matching Image 2)
   initReviewsShowcaseEvents('home-rev');
 
-  // Initialize interactive FAQ Accordion and Category Filter Pills on Home Page
+  // Initialize interactive FAQ Accordion on Home Page (matching Image 1)
   initFaqShowcaseEvents('home-faq-accordion-list');
-  initFaqFilters('home-faq-filters', 'home-faq-accordion-list');
 }
 
 /**
