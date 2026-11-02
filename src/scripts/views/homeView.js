@@ -21,7 +21,7 @@ export function renderHomeView() {
   const comboPacks = allProducts.filter(p => p.isCombo).slice(0, 4);
   const ownProductsList = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50)).slice(0, 4);
   const topReviews = wholesaleReviews.slice(0, 3);
-  const topFaqs = wholesaleFaqs.slice(0, 5);
+
 
   return `
     <!-- Section 1 — HOME (Full Background Video) -->
