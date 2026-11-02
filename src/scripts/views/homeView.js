@@ -21,7 +21,7 @@ export function renderHomeView() {
   const featuredProducts = allProducts.filter(p => p.featured || (!p.isCombo && p.cartonQuantity && p.cartonQuantity >= 100)).slice(0, 8);
   const volumeDeals = allProducts.filter(p => !p.isCombo && p.cartonQuantity && p.cartonQuantity >= 200).slice(0, 4);
   const comboPacks = allProducts.filter(p => p.isCombo).slice(0, 4);
-  const ownProductsList = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50)).slice(0, 8);
+  const ownProductsList = allProducts.filter(p => p.isCombo).slice(0, 4);
   const topReviews = wholesaleReviews.slice(0, 3);
 
 

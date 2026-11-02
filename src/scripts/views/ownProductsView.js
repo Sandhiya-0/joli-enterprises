@@ -4,8 +4,8 @@ import { renderProductCard, escapeHtml } from '../components/productCard.js';
 
 export function renderOwnProductsView() {
   const allProducts = getProducts();
-  // Highlight products that are in-house manufactured / branded / high-volume combos
-  const ownProducts = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50));
+  // Highlight products that are in-house manufactured / branded combos
+  const ownProducts = allProducts.filter(p => p.isCombo);
 
   return `
     <div class="own-products-page">
@@ -147,7 +147,7 @@ export function renderOwnProductsView() {
 export function initOwnProductsViewEvents() {
   const filterBtns = document.querySelectorAll('.own-filter-buttons .btn-filter-tag');
   const allProducts = getProducts();
-  const ownProducts = allProducts.filter(p => p.isCombo || p.featured || (p.cartonQuantity && p.cartonQuantity >= 50));
+  const ownProducts = allProducts.filter(p => p.isCombo);
   const grid = document.getElementById('own-products-grid');
 
   filterBtns.forEach(btn => {
