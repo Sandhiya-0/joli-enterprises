@@ -173,13 +173,62 @@ export function renderReviewsShowcaseSection(options = {}) {
         
         <!-- Left: Phone Mockup with Play Video & 4.9/5 Rating Badge -->
         <div class="review-exact-phone-col">
-          <div class="review-exact-phone-wrapper">
-            <img 
-              src="${baseUrl}images/review-hero-phone.png" 
-              alt="Customer video review - Nivox wholesale verified retailer" 
-              class="review-exact-phone-img" 
-              loading="lazy"
-            />
+          <div class="review-exact-phone-wrapper" id="${idPrefix}-phone-box">
+            
+            <!-- Static Poster Card (Matches User Reference Image 100%) -->
+            <div class="review-hero-poster-wrap" id="${idPrefix}-poster-wrap" role="button" tabindex="0" aria-label="Play boutique owner unboxing review video">
+              <img 
+                src="${baseUrl}images/review-hero-phone.png" 
+                alt="Customer video review - Nivox wholesale verified retailer" 
+                class="review-exact-phone-img" 
+                loading="lazy"
+              />
+              <!-- Interactive Animated Play Pulse Button (matches artwork play circle) -->
+              <div class="review-play-click-target" title="Click to play wholesale unboxing video">
+                <span class="review-play-pulse-wave"></span>
+                <span class="review-play-icon-glow">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#6366f1" aria-hidden="true">
+                    <polygon points="7 4 19 12 7 20 7 4"></polygon>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Active Video Stage (Zero Layout Shift - Locks to identical dimensions) -->
+            <div class="review-hero-video-wrap" id="${idPrefix}-video-wrap">
+              <video 
+                id="${idPrefix}-video-player"
+                class="review-hero-video-element"
+                src="${baseUrl}videos/boutique-unboxing-review.mp4"
+                poster="${baseUrl}images/boutique-unboxing-poster.jpg"
+                preload="metadata"
+                playsinline
+                controls
+              >
+                Your browser does not support HTML5 video.
+              </video>
+              
+              <!-- Video Topbar with Live Badge, Rating & Exit Button -->
+              <div class="review-video-topbar">
+                <div class="review-video-badge-group">
+                  <span class="review-video-badge">
+                    <span class="review-video-live-dot"></span>
+                    Verified Unboxing
+                  </span>
+                  <span class="review-video-rating-pill">
+                    <span class="rating-stars">★★★★★</span>
+                    <span>4.9/5</span>
+                  </span>
+                </div>
+                <button type="button" class="review-video-back-btn" id="${idPrefix}-video-back" title="Exit video" aria-label="Exit video">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="6"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -344,6 +393,57 @@ export function renderReviewsShowcaseSection(options = {}) {
 }
 
 export function initReviewsShowcaseEvents(idPrefix = 'showcase-rev') {
+  // 1. Video Player Event Listeners (Zero layout shift inline playback)
+  const phoneBox = document.getElementById(`${idPrefix}-phone-box`);
+  const posterWrap = document.getElementById(`${idPrefix}-poster-wrap`);
+  const videoPlayer = document.getElementById(`${idPrefix}-video-player`);
+  const backBtn = document.getElementById(`${idPrefix}-video-back`);
+
+  if (phoneBox && posterWrap && videoPlayer) {
+    function startVideoPlayback() {
+      phoneBox.classList.add('is-playing');
+      const playPromise = videoPlayer.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn('Playback interrupted or requires muted fallback:', err);
+          // If browser policy restricts unmuted autoplay, retry with muted
+          videoPlayer.muted = true;
+          videoPlayer.play();
+        });
+      }
+    }
+
+    function stopVideoPlayback() {
+      videoPlayer.pause();
+      phoneBox.classList.remove('is-playing');
+    }
+
+    posterWrap.addEventListener('click', (e) => {
+      e.preventDefault();
+      startVideoPlayback();
+    });
+
+    posterWrap.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        startVideoPlayback();
+      }
+    });
+
+    if (backBtn) {
+      backBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        stopVideoPlayback();
+      });
+    }
+
+    // Auto-clean on ended if user reaches end
+    videoPlayer.addEventListener('ended', () => {
+      // Keeps player open so user can scrub or replay, or user can click backBtn
+    });
+  }
+
+  // 2. Carousel Controls & Autoplay (matching Image 2)
   const prevBtn = document.getElementById(`${idPrefix}-prev-btn`);
   const nextBtn = document.getElementById(`${idPrefix}-next-btn`);
   const track = document.getElementById(`${idPrefix}-cards-track`);

@@ -8060,14 +8060,228 @@ body.offers-modal-active {
 .review-exact-phone-wrapper {
   width: 100%;
   max-width: 370px;
+  aspect-ratio: 780 / 610;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-hero-poster-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+  border-radius: 28px;
+  outline: none;
+}
+
+.review-hero-poster-wrap:focus-visible {
+  box-shadow: 0 0 0 3px #6366f1;
 }
 
 .review-exact-phone-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 14px 28px rgba(99, 102, 241, 0.12));
+  filter: drop-shadow(0 14px 28px rgba(99, 102, 241, 0.14));
+  pointer-events: none;
+  user-select: none;
+}
+
+.review-play-click-target {
+  position: absolute;
+  left: 48.4%;
+  top: 53.4%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.review-hero-poster-wrap:hover .review-play-click-target {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.review-play-pulse-wave {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.32);
+  animation: reviewPlayPulse 2.2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes reviewPlayPulse {
+  0% { transform: scale(0.92); opacity: 0.85; }
+  60% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.review-play-icon-glow {
+  width: 52px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.38), 0 2px 8px rgba(15, 23, 42, 0.12);
+  padding-left: 3px;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.review-hero-poster-wrap:hover .review-play-icon-glow {
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5), 0 4px 12px rgba(15, 23, 42, 0.16);
+  background: #faf5ff;
+}
+
+/* Active Video Container - Guarantees zero layout shift */
+.review-hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25), 0 0 0 2px rgba(99, 102, 241, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1;
+}
+
+.review-exact-phone-wrapper.is-playing .review-hero-poster-wrap {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.review-exact-phone-wrapper.is-playing .review-hero-video-wrap {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 5;
+}
+
+.review-hero-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000000;
+}
+
+.review-video-topbar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.review-video-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #f8fafc;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review-video-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review-video-rating-pill .rating-stars {
+  color: #f59e0b;
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+}
+
+.review-video-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: reviewLiveDot 1.8s infinite ease-in-out;
+}
+
+@keyframes reviewLiveDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.review-video-back-btn {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review-video-back-btn:hover {
+  background: rgba(220, 38, 38, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
 }
 
 .review-exact-center-col {
