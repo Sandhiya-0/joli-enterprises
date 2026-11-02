@@ -181,12 +181,14 @@ export function renderFaqShowcaseSection(options = {}) {
 
         <!-- Elevated Accordion Cards Matching Image 1 -->
         <div class="faq-exact-accordion-list" id="${idPrefix}-accordion-list">
-          ${items.map(faq => `
-            <div class="faq-exact-card" data-faq-id="${faq.id}" data-category="${faq.category}">
+          ${items.map((faq, idx) => {
+            const isOpenByDefault = (idx === 0);
+            return `
+            <div class="faq-exact-card ${isOpenByDefault ? 'is-open' : ''}" data-faq-id="${faq.id}" data-category="${faq.category}">
               <button 
                 type="button" 
                 class="faq-exact-card-header" 
-                aria-expanded="false"
+                aria-expanded="${isOpenByDefault ? 'true' : 'false'}"
                 aria-controls="${idPrefix}-body-${faq.id}"
               >
                 <div class="faq-card-left">
@@ -209,12 +211,13 @@ export function renderFaqShowcaseSection(options = {}) {
               <div 
                 id="${idPrefix}-body-${faq.id}" 
                 class="faq-exact-card-body" 
-                style="display: none;"
+                style="${isOpenByDefault ? 'display: block;' : 'display: none;'}"
               >
                 <p style="margin: 0;">${escapeHtml(faq.answer)}</p>
               </div>
             </div>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
 
         <!-- Bottom Action Pill with Side Blue Rays Doodles -->
