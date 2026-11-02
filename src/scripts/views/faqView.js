@@ -302,13 +302,9 @@ export function renderFaqView() {
   `;
 }
 
-export function initFaqViewEvents() {
-  // 1. Initialize Showcase events on full-page list
-  initFaqShowcaseEvents('faq-fullpage-accordion-list');
-
-  // 2. Initialize Category Filter Pills
-  const filterWrap = document.getElementById('faq-fullpage-filters');
-  const accordionList = document.getElementById('faq-fullpage-accordion-list');
+export function initFaqFilters(filterWrapId, listId) {
+  const filterWrap = document.getElementById(filterWrapId);
+  const accordionList = document.getElementById(listId);
 
   if (filterWrap && accordionList) {
     const pills = filterWrap.querySelectorAll('.faq-filter-pill');
@@ -331,4 +327,12 @@ export function initFaqViewEvents() {
       });
     });
   }
+}
+
+export function initFaqViewEvents() {
+  // 1. Initialize Showcase events on full-page list
+  initFaqShowcaseEvents('faq-fullpage-accordion-list');
+
+  // 2. Initialize Category Filter Pills
+  initFaqFilters('faq-fullpage-filters', 'faq-fullpage-accordion-list');
 }

@@ -7953,6 +7953,11 @@ body.offers-modal-active {
 
 .faq-exact-container-fullpage {
   max-width: 1260px;
+  align-items: flex-start;
+}
+
+.faq-exact-showcase-section.faq-home-full-length {
+  padding: 5rem 0 5rem;
 }
 
 .faq-exact-visual-col.is-sticky-visual {
