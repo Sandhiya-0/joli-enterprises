@@ -129,12 +129,12 @@ export function renderOwnProductsView() {
             </div>
 
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="#/bulk-enquiry" class="btn btn-primary btn-lg" style="background: #0284c7; color: #ffffff; border: none; font-weight: 700; border-radius: 10px; padding: 12px 24px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                <span>Request Custom Quote</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <a href="#/bulk-enquiry" class="btn btn-primary btn-lg" style="background: #0284c7; color: #ffffff !important; border: none; font-weight: 700; border-radius: 10px; padding: 12px 24px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <span style="color: #ffffff !important;">Request Custom Quote</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
-              <a href="#/contact" class="btn btn-outline btn-lg" style="border: 1.5px solid rgba(255,255,255,0.3); color: #ffffff; font-weight: 700; border-radius: 10px; padding: 12px 24px; text-decoration: none;">
-                Contact Factory Desk
+              <a href="#/contact" class="btn btn-lg" style="white-space: nowrap; background: #ffffff; color: #0C182A !important; font-weight: 800; border-radius: 10px; padding: 12px 24px; text-decoration: none; border: 1.5px solid #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
+                <span style="color: #0C182A !important; font-weight: 800;">Contact Factory Desk</span>
               </a>
             </div>
           </div>

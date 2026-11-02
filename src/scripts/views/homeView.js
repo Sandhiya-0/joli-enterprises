@@ -856,12 +856,12 @@ export function renderHomeView() {
             </p>
           </div>
           <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
-            <a href="#/bulk-enquiry" class="btn btn-primary" style="white-space: nowrap; padding: 13px 26px; font-weight: 700;">
-              <span>Request Private Label Quote</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <a href="#/bulk-enquiry" class="btn btn-primary" style="white-space: nowrap; padding: 13px 26px; font-weight: 700; color: #070E1A !important;">
+              <span style="color: #070E1A !important;">Request Private Label Quote</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#070E1A" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href="#/own-products" class="btn btn-outline" style="white-space: nowrap; border-color: rgba(255,255,255,0.3); color: #ffffff; padding: 13px 26px;">
-              <span>Browse Full Catalogue &rarr;</span>
+            <a href="#/own-products" class="btn" style="white-space: nowrap; background: #ffffff; color: #0C182A !important; font-weight: 800; padding: 13px 26px; border: 1.5px solid #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
+              <span style="color: #0C182A !important; font-weight: 800;">Browse Full Catalogue &rarr;</span>
             </a>
           </div>
         </div>
