@@ -5338,6 +5338,33 @@ canvas.holo-card__canvas {
   display: block;
 }
 
+/* Exact Reference Card Frame (Matches User Uploaded ShopNest Image 100%) */
+.about-v2-frame-card.about-v2-frame-card--clean {
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  max-width: 520px;
+  width: 100%;
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.about-v2-frame-card.about-v2-frame-card--clean:hover {
+  transform: rotate(0deg) scale(1.02);
+  filter: drop-shadow(0 20px 40px rgba(0, 162, 232, 0.22));
+}
+
+.about-v2-frame-img-exact {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 814;
+  object-fit: cover;
+  border-radius: 28px;
+  display: block;
+  box-shadow: 0 16px 40px rgba(0, 132, 180, 0.16);
+}
+
 /* Floating Badge: Top-Right (500+ Retail Partners) */
 .about-v2-badge-top {
   position: absolute;

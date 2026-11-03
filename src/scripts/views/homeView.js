@@ -314,51 +314,21 @@ export function renderHomeView() {
             <div class="about-v2-blob-bg" aria-hidden="true"></div>
             <div class="about-v2-blob-accent" aria-hidden="true"></div>
 
-            <div class="about-v2-frame-card">
-              <!-- Top-Right Floating Badge: 500+ Retail Partners -->
-              <div class="about-v2-badge-top">
-                <div class="about-v2-badge-icon-blue">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                  </svg>
-                </div>
-                <div>
-                  <div class="about-v2-badge-val">500+</div>
-                  <div class="about-v2-badge-sub">Retail Partners</div>
-                </div>
-              </div>
-
-              <!-- Main Cardboard Box & Warehouse Photo -->
+            <div class="about-v2-frame-card about-v2-frame-card--clean">
+              <!-- Main Cardboard Box & Warehouse Photo (Exact Match to User Reference Image) -->
               <img 
                 src="${import.meta.env.BASE_URL}images/about-product-box.jpg" 
-                alt="Ecommerce Platform Wholesale Warehouse and Open Product Box" 
-                class="about-v2-frame-img"
+                alt="ShopNest Wholesale Merchandise and Open Product Box" 
+                class="about-v2-frame-img-exact"
                 loading="lazy"
               >
-
-              <!-- Bottom-Left Floating Badge: Wide Range of Products -->
-              <div class="about-v2-badge-bottom">
-                <div class="about-v2-badge-icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                    <rect x="2" y="7" width="20" height="5"></rect>
-                    <line x1="12" y1="22" x2="12" y2="7"></line>
-                  </svg>
-                </div>
-                <div>
-                  <div class="about-v2-badge-val" style="font-size: 0.95rem;">Wide Range</div>
-                  <div class="about-v2-badge-sub">of Products</div>
-                </div>
-              </div>
             </div>
           </div>
 
           <!-- Right Column: Eyebrow, Title, Underline, Copy, 2-Col Channel Cards, Action Buttons -->
           <div class="about-v2-content-col fade-up">
             <div class="about-v2-eyebrow">
-              <span class="about-v2-eyebrow-pill">— ABOUT ECOMMERCE PLATFORM</span>
+              <span class="about-v2-eyebrow-pill">— ABOUT SHOPNEST</span>
             </div>
 
             <h2 class="about-v2-title">
@@ -370,7 +340,7 @@ export function renderHomeView() {
 
             <div class="about-v2-copy">
               <p class="about-v2-p">
-                <strong class="about-v2-brand-highlight">Ecommerce Platform</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
+                <strong class="about-v2-brand-highlight">ShopNest</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
               </p>
               <p class="about-v2-p">
                 Every batch comes with guaranteed piece counts, accessible MOQs from 12 units, and honest wholesale margins of 35% to 65% on standard resale.

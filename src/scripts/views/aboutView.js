@@ -1,4 +1,4 @@
-// Page: About Us View — Joli Enterprises Wholesale Merchandise
+// Page: About Us View — ShopNest Wholesale Merchandise
 // Comprehensive Long-Form Brand, Commercial Pillars, Infrastructure & Retailer Partner Showcase
 
 export function renderAboutView() {
@@ -30,51 +30,21 @@ export function renderAboutView() {
             <div class="about-v2-blob-bg" aria-hidden="true"></div>
             <div class="about-v2-blob-accent" aria-hidden="true"></div>
 
-            <div class="about-v2-frame-card">
-              <!-- Top-Right Floating Badge: 500+ Retail Partners -->
-              <div class="about-v2-badge-top">
-                <div class="about-v2-badge-icon-blue">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                  </svg>
-                </div>
-                <div>
-                  <div class="about-v2-badge-val">500+</div>
-                  <div class="about-v2-badge-sub">Retail Partners</div>
-                </div>
-              </div>
-
-              <!-- Main Cardboard Box & Warehouse Photo -->
+            <div class="about-v2-frame-card about-v2-frame-card--clean">
+              <!-- Main Cardboard Box & Warehouse Photo (Exact Match to User Reference Image) -->
               <img 
                 src="${baseUrl}images/about-product-box.jpg" 
-                alt="Ecommerce Platform Wholesale Warehouse and Open Product Box" 
-                class="about-v2-frame-img"
+                alt="ShopNest Wholesale Merchandise and Open Product Box" 
+                class="about-v2-frame-img-exact"
                 loading="lazy"
               >
-
-              <!-- Bottom-Left Floating Badge: Wide Range of Products -->
-              <div class="about-v2-badge-bottom">
-                <div class="about-v2-badge-icon-gold">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                    <rect x="2" y="7" width="20" height="5"></rect>
-                    <line x1="12" y1="22" x2="12" y2="7"></line>
-                  </svg>
-                </div>
-                <div>
-                  <div class="about-v2-badge-val" style="font-size: 0.95rem;">Wide Range</div>
-                  <div class="about-v2-badge-sub">of Products</div>
-                </div>
-              </div>
             </div>
           </div>
 
           <!-- Right Column: Eyebrow, Title, Underline, Copy, 2-Col Channel Cards, Action Buttons -->
           <div class="about-v2-content-col fade-up">
             <div class="about-v2-eyebrow">
-              <span class="about-v2-eyebrow-pill">— ABOUT ECOMMERCE PLATFORM</span>
+              <span class="about-v2-eyebrow-pill">— ABOUT SHOPNEST</span>
             </div>
 
             <h2 class="about-v2-title">
@@ -86,7 +56,7 @@ export function renderAboutView() {
 
             <div class="about-v2-copy">
               <p class="about-v2-p">
-                <strong class="about-v2-brand-highlight">Ecommerce Platform</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
+                <strong class="about-v2-brand-highlight">ShopNest</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
               </p>
               <p class="about-v2-p">
                 Every batch comes with guaranteed piece counts, accessible MOQs from 12 units, and honest wholesale margins of 35% to 65% on standard resale.
@@ -220,11 +190,11 @@ export function renderAboutView() {
             </ul>
           </div>
 
-          <!-- Card 2: The Ecommerce Platform Standard -->
+          <!-- Card 2: The ShopNest Standard -->
           <div class="about-story-card joli-way fade-up">
             <div class="about-story-tag">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <span>The Ecommerce Platform Solution</span>
+              <span>The ShopNest Solution</span>
             </div>
             <h3 class="about-story-card-title">Direct Factory Sourcing & Accessible Micro-MOQs</h3>
             <ul class="about-story-points">
@@ -257,7 +227,7 @@ export function renderAboutView() {
           <span style="font-size: 0.8rem; font-weight: 800; color: #B88E4B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             Why Retailers Choose Us
           </span>
-          <h2 class="section-title">The 6 Pillars of the Ecommerce Platform Wholesale Advantage</h2>
+          <h2 class="section-title">The 6 Pillars of the ShopNest Wholesale Advantage</h2>
           <p class="section-subtitle">
             Purpose-built purchasing benefits engineered to protect retailer cash flow, eliminate stock risk, and accelerate inventory turnover.
           </p>
@@ -527,7 +497,7 @@ export function renderAboutView() {
           <div class="about-warehouse-media">
             <img 
               src="${baseUrl}images/hero-warehouse-bg.jpg" 
-              alt="Ecommerce Platform Modern B2B Wholesale Distribution Center" 
+              alt="ShopNest Modern B2B Wholesale Distribution Center" 
               loading="lazy"
             >
           </div>
@@ -542,7 +512,7 @@ export function renderAboutView() {
           <span style="font-size: 0.8rem; font-weight: 800; color: #B88E4B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             Merchant Trust
           </span>
-          <h2 class="section-title">What Indian Retailers Say About Ecommerce Platform</h2>
+          <h2 class="section-title">What Indian Retailers Say About ShopNest</h2>
           <p class="section-subtitle">
             Trusted by independent shopkeepers who depend on our guaranteed piece counts and reliable profit margins.
           </p>
@@ -553,7 +523,7 @@ export function renderAboutView() {
           <div class="about-testimonial-card fade-up">
             <div class="about-test-stars">★★★★★</div>
             <p class="about-test-quote">
-              "Before Ecommerce Platform, we had to travel to wholesale markets in Sowcarpet and carry heavy stock. With Ecommerce Platform, cartons arrive directly at my shop in Madurai with exact piece counts and transparent bills. Our profit margin is consistently 45%."
+              "Before ShopNest, we had to travel to wholesale markets in Sowcarpet and carry heavy stock. With ShopNest, cartons arrive directly at my shop in Madurai with exact piece counts and transparent bills. Our profit margin is consistently 45%."
             </p>
             <div class="about-test-author">
               <div class="about-test-avatar">RS</div>
@@ -676,9 +646,9 @@ export function renderAboutView() {
         <div class="about-founder-strip fade-up">
           <div class="about-founder-strip-info">
             <span class="about-founder-strip-tag">Leadership & Vision</span>
-            <h3 class="about-founder-strip-title">Meet the Visionary Behind Ecommerce Platform</h3>
+            <h3 class="about-founder-strip-title">Meet the Visionary Behind ShopNest</h3>
             <p class="about-founder-strip-desc">
-              Discover the founding story, commercial values, and customer-first commitment that transformed Ecommerce Platform into a trusted wholesale partner for 500+ Indian retail merchants.
+              Discover the founding story, commercial values, and customer-first commitment that transformed ShopNest into a trusted wholesale partner for 500+ Indian retail merchants.
             </p>
           </div>
           <a href="#/founder" class="btn btn-outline" style="border-color: #B88E4B; color: #0E1A29; font-weight: 700; white-space: nowrap;">
