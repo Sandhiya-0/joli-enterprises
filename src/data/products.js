@@ -1,4 +1,4 @@
-// Joli Enterprises — Centralized Wholesale Product & Category Data Store
+// ShopNest — Centralized Wholesale Product & Category Data Store
 // Categories: Stationery, Household, Fashion Accessories, Mobile Accessories, Gift & General Items
 
 const baseUrl = import.meta.env.BASE_URL || '/';

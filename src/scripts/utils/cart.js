@@ -1,4 +1,4 @@
-// Joli Enterprises Wholesale Cart Management Utility
+// ShopNest Wholesale Cart Management Utility
 import { getProductById, calculateTieredPrice } from '../../data/products.js';
 
 const CART_STORAGE_KEY = 'joli_wholesale_cart_v1';

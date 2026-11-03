@@ -451,7 +451,7 @@ export function renderHomeView() {
             </h2>
 
             <p class="founder-para-lead">
-              <strong>Ecommerce Platform</strong> was founded to empower independent shopkeepers with direct factory pricing, realistic pack sizes, and zero middleman markups.
+              <strong>ShopNest</strong> was founded to empower independent shopkeepers with direct factory pricing, realistic pack sizes, and zero middleman markups.
             </p>
 
             <p class="founder-para-sub">
@@ -530,7 +530,7 @@ export function renderHomeView() {
             <div class="founder-circle-wrap" id="home-founder-circle-portrait">
               <img 
                 src="${baseUrl}images/founder-circle-clean.png" 
-                alt="Ecommerce Platform Founder and Leadership Operations"
+                alt="ShopNest Founder and Leadership Operations"
                 class="founder-circle-img"
               />
             </div>

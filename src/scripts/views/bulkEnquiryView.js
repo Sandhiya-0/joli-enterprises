@@ -28,7 +28,7 @@ export function renderBulkEnquiryView(queryParams = {}) {
         <div class="contact-grid">
           <!-- Left Column: Wholesale Desk Info -->
           <div class="contact-info-card fade-up">
-            <h3>Ecommerce Platform Wholesale Desk</h3>
+            <h3>ShopNest Wholesale Desk</h3>
             <p>
               We partner directly with retail shop owners, school stationery suppliers, gift boutique curators, and corporate resellers across India.
             </p>
@@ -165,7 +165,7 @@ export function renderBulkEnquiryView(queryParams = {}) {
                 <label class="filter-checkbox-label" style="display: flex; gap: 0.5rem; align-items: flex-start; cursor: pointer;">
                   <input type="checkbox" id="bulk-consent" checked style="margin-top: 0.25rem;">
                   <span style="font-size: 0.8rem; color: var(--color-text-muted);">
-                    I consent to Ecommerce Platform contacting me via WhatsApp or telephone regarding wholesale rate quotations and commercial terms.
+                    I consent to ShopNest contacting me via WhatsApp or telephone regarding wholesale rate quotations and commercial terms.
                   </span>
                 </label>
               </div>
