@@ -20,7 +20,7 @@ export function renderOwnProductsView() {
 
           <div style="max-width: 820px;">
             <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); padding: 5px 14px; border-radius: 9999px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.2);">
-              <span style="color: #38bdf8;">★</span> NIVOX IN-HOUSE MANUFACTURED &amp; OEM
+              <span style="color: #38bdf8;">★</span> ECOMMERCE PLATFORM IN-HOUSE MANUFACTURED &amp; OEM
             </div>
             <h1 class="section-title" style="color: #ffffff; font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.15; margin-bottom: 0.85rem;">
               Our In-House Manufactured &amp; Branded Line
@@ -91,7 +91,7 @@ export function renderOwnProductsView() {
                 EXCLUSIVE INVENTORY
               </div>
               <h2 style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: #0f172a; margin: 0;">
-                Nivox Proprietary Product Catalogue
+                Ecommerce Platform Proprietary Product Catalogue
               </h2>
             </div>
             

@@ -330,10 +330,10 @@ export function renderHomeView() {
                 </div>
               </div>
 
-              <!-- Main Joli Cardboard Box & Warehouse Photo -->
+              <!-- Main Cardboard Box & Warehouse Photo -->
               <img 
                 src="${import.meta.env.BASE_URL}images/about-product-box.jpg" 
-                alt="Joli Enterprises Wholesale Warehouse and Open Product Box" 
+                alt="Ecommerce Platform Wholesale Warehouse and Open Product Box" 
                 class="about-v2-frame-img"
                 loading="lazy"
               >
@@ -358,7 +358,7 @@ export function renderHomeView() {
           <!-- Right Column: Eyebrow, Title, Underline, Copy, 2-Col Channel Cards, Action Buttons -->
           <div class="about-v2-content-col fade-up">
             <div class="about-v2-eyebrow">
-              <span class="about-v2-eyebrow-pill">— ABOUT JOLI ENTERPRISES</span>
+              <span class="about-v2-eyebrow-pill">— ABOUT ECOMMERCE PLATFORM</span>
             </div>
 
             <h2 class="about-v2-title">
@@ -370,7 +370,7 @@ export function renderHomeView() {
 
             <div class="about-v2-copy">
               <p class="about-v2-p">
-                <strong class="about-v2-brand-highlight">Joli Enterprises</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
+                <strong class="about-v2-brand-highlight">Ecommerce Platform</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
               </p>
               <p class="about-v2-p">
                 Every batch comes with guaranteed piece counts, accessible MOQs from 12 units, and honest wholesale margins of 35% to 65% on standard resale.
@@ -481,7 +481,7 @@ export function renderHomeView() {
             </h2>
 
             <p class="founder-para-lead">
-              <strong>Joli Enterprises</strong> was founded to empower independent shopkeepers with direct factory pricing, realistic pack sizes, and zero middleman markups.
+              <strong>Ecommerce Platform</strong> was founded to empower independent shopkeepers with direct factory pricing, realistic pack sizes, and zero middleman markups.
             </p>
 
             <p class="founder-para-sub">
@@ -560,7 +560,7 @@ export function renderHomeView() {
             <div class="founder-circle-wrap" id="home-founder-circle-portrait">
               <img 
                 src="${baseUrl}images/founder-circle-clean.png" 
-                alt="Joli Enterprises Founder and Leadership Operations"
+                alt="Ecommerce Platform Founder and Leadership Operations"
                 class="founder-circle-img"
               />
             </div>

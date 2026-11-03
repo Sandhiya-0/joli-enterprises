@@ -236,7 +236,7 @@ export function renderCategoriesView() {
           <span style="font-size: 0.8rem; font-weight: 800; color: #B88E4B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             Profitability Mechanics
           </span>
-          <h2 class="section-title">How Joli Delivers High Retail Gross Margins</h2>
+          <h2 class="section-title">How Ecommerce Platform Delivers High Retail Gross Margins</h2>
           <p class="section-subtitle">
             Concrete unit economics demonstrating how neighbourhood shopkeepers make 35% to 65% profit per carton.
           </p>
@@ -583,7 +583,7 @@ export function renderCategoriesView() {
           <span style="font-size: 0.8rem; font-weight: 800; color: #B88E4B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             Quality Protocol
           </span>
-          <h2 class="section-title">The Joli Sourcing Advantage Across All 5 Lines</h2>
+          <h2 class="section-title">The Ecommerce Platform Sourcing Advantage Across All 5 Lines</h2>
           <p class="section-subtitle">
             Every category benefits from our factory-direct contracting, standardized packaging, and zero-shortage audits.
           </p>
@@ -648,7 +648,7 @@ export function renderCategoriesView() {
               Q. Can I mix items from different categories in a single order?
             </div>
             <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6;">
-              Yes! One of the biggest advantages of Joli Enterprises is mixed-carton shipping. You can order 1 pack of gel pens, 1 tub of claw clips, and 1 pack of fast cables in a single dispatch box.
+              Yes! One of the biggest advantages of Ecommerce Platform is mixed-carton shipping. You can order 1 pack of gel pens, 1 tub of claw clips, and 1 pack of fast cables in a single dispatch box.
             </p>
           </div>
 

@@ -13,7 +13,7 @@ export const wholesaleReviews = [
     orderItem: "12 Master Cartons • Mega Back-to-School Combo & Pastel Highlighters",
     date: "18 Oct 2026",
     title: "Highest profit margin merchandise in our store this school season",
-    comment: "We have been buying school combo kits from Nivox for 8 months. The packaging quality of their transparent exam pouches is superior to local wholesale market goods. Every carton arrived with tamper-proof strapping and complete GST e-way bills. Customers love the pastel stationery items.",
+    comment: "We have been buying school combo kits from Ecommerce Platform for 8 months. The packaging quality of their transparent exam pouches is superior to local wholesale market goods. Every carton arrived with tamper-proof strapping and complete GST e-way bills. Customers love the pastel stationery items.",
     helpfulCount: 42
   },
   {
@@ -27,7 +27,7 @@ export const wholesaleReviews = [
     orderItem: "8 Master Cartons • Unicorn Pastel Gift Sets & Washi Tapes",
     date: "12 Oct 2026",
     title: "Fast dispatch and zero transit damage across 800+ pieces",
-    comment: "Return gift items are high impulse sales in our Mall shop. Nivox's wholesale carton pricing allowed us to price them competitively while keeping a 45% retailer margin. Surface logistics reached Bangalore within 28 hours. Will definitely reorder for Diwali.",
+    comment: "Return gift items are high impulse sales in our Mall shop. Ecommerce Platform's wholesale carton pricing allowed us to price them competitively while keeping a 45% retailer margin. Surface logistics reached Bangalore within 28 hours. Will definitely reorder for Diwali.",
     helpfulCount: 35
   },
   {
@@ -41,7 +41,7 @@ export const wholesaleReviews = [
     orderItem: "1,200 Sets • Custom Exam Activity & Writing Combos",
     date: "04 Oct 2026",
     title: "Flawless institutional supply for 1,200 students",
-    comment: "We placed an institutional order for our annual exams. Nivox pre-assembled every student kit with our school seal printed on the exam kit bag. Delivered 2 days before our scheduled distribution date without a single missing item.",
+    comment: "We placed an institutional order for our annual exams. Ecommerce Platform pre-assembled every student kit with our school seal printed on the exam kit bag. Delivered 2 days before our scheduled distribution date without a single missing item.",
     helpfulCount: 29
   },
   {
@@ -83,7 +83,7 @@ export const wholesaleReviews = [
     orderItem: "10 Master Cartons • Braided Fast Charging Cables & Phone Stands",
     date: "15 Sep 2026",
     title: "Durable cables with genuine wholesale warranty support",
-    comment: "Customers frequently complain about cheap charging cables stopping after 2 weeks. Nivox cables have heavy nylon braiding and we have had practically zero defect returns across 500 units sold. Excellent wholesale partner.",
+    comment: "Customers frequently complain about cheap charging cables stopping after 2 weeks. Ecommerce Platform cables have heavy nylon braiding and we have had practically zero defect returns across 500 units sold. Excellent wholesale partner.",
     helpfulCount: 27
   }
 ];
@@ -93,7 +93,7 @@ export const featuredReviewCards = [
     id: 1,
     name: "R. Aravind Kumar",
     role: "Retail Store Owner, Chennai",
-    quote: "Nivox has been a game-changer for our business. The quality and pricing are outstanding!",
+    quote: "Ecommerce Platform has been a game-changer for our business. The quality and pricing are outstanding!",
     image: "images/review-photo-1.jpg",
     avatar: "images/review-avatar-1.jpg",
     rating: 5,
@@ -113,7 +113,7 @@ export const featuredReviewCards = [
     id: 3,
     name: "Vikram Patel",
     role: "Distributor, Coimbatore",
-    quote: "Bulk orders are now so easy with Nivox. Amazing experience!",
+    quote: "Bulk orders are now so easy with Ecommerce Platform. Amazing experience!",
     image: "images/review-photo-3.jpg",
     avatar: "images/review-avatar-3.jpg",
     rating: 5,
@@ -179,7 +179,7 @@ export function renderReviewsShowcaseSection(options = {}) {
             <div class="review-hero-poster-wrap" id="${idPrefix}-poster-wrap" role="button" tabindex="0" aria-label="Play boutique owner unboxing review video">
               <img 
                 src="${baseUrl}images/review-hero-phone.png" 
-                alt="Customer video review - Nivox wholesale verified retailer" 
+                alt="Customer video review - Ecommerce Platform wholesale verified retailer" 
                 class="review-exact-phone-img" 
                 loading="lazy"
               />
@@ -261,7 +261,7 @@ export function renderReviewsShowcaseSection(options = {}) {
 
           <!-- Subtitle -->
           <p class="review-exact-subtitle">
-            Hear from our happy customers who trust Nivox for their wholesale needs.
+            Hear from our happy customers who trust Ecommerce Platform for their wholesale needs.
           </p>
 
           <!-- 3 Feature Badges -->
@@ -622,7 +622,7 @@ export function renderReviewsView() {
             Submit Your Wholesale Experience
           </h3>
           <p style="font-size: 0.84rem; color: #64748b; margin-bottom: 1.25rem;">
-            Help fellow store owners and stationery buyers learn about Nivox products and delivery service.
+            Help fellow store owners and stationery buyers learn about Ecommerce Platform products and delivery service.
           </p>
 
           <form id="form-submit-review">

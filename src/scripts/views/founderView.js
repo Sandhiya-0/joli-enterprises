@@ -18,7 +18,7 @@ export function renderFounderView() {
             </h1>
 
             <p class="founder-para-lead">
-              <strong>Joli Enterprises</strong> was founded to empower independent shopkeepers with direct factory pricing, realistic pack sizes, and zero middleman markups.
+              <strong>Ecommerce Platform</strong> was founded to empower independent shopkeepers with direct factory pricing, realistic pack sizes, and zero middleman markups.
             </p>
 
             <p class="founder-para-sub">
@@ -97,7 +97,7 @@ export function renderFounderView() {
             <div class="founder-circle-wrap" id="founder-circle-portrait">
               <img 
                 src="${baseUrl}images/founder-circle-clean.png" 
-                alt="Joli Enterprises Founder and Leadership"
+                alt="Ecommerce Platform Founder and Leadership"
                 class="founder-circle-img"
               />
             </div>

@@ -1,4 +1,4 @@
-// Client-side Hash Router for Joli Enterprises Wholesale E-Commerce
+// Client-side Hash Router for Ecommerce Platform Wholesale E-Commerce
 // Multi-page routing architecture: each navigation bar item maps to its own separate full page
 
 import { renderHomeView, initHomeViewEvents } from './views/homeView.js';
@@ -186,7 +186,7 @@ function handleRoute() {
       break;
 
     case 'own-products':
-      // 9. OWN PRODUCTS: Nivox In-House Manufactured & Branded Merchandise
+      // 9. OWN PRODUCTS: Ecommerce Platform In-House Manufactured & Branded Merchandise
       appContent.innerHTML = renderOwnProductsView();
       initOwnProductsViewEvents();
       setActiveNav('own-products');

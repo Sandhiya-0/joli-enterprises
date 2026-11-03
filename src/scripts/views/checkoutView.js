@@ -372,7 +372,7 @@ export function initCheckoutViewEvents() {
           <div style="background: var(--color-white); border: 1px solid var(--color-border); padding: 2rem; margin-bottom: 2rem;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem;">
               <div>
-                <div style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--color-navy);">JOLI ENTERPRISES</div>
+                <div style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--color-navy);">ECOMMERCE PLATFORM</div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted);">B2B Wholesale Merchandise Consignment Note</div>
               </div>
               <div style="text-align: right;">

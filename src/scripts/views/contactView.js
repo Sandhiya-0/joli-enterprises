@@ -22,7 +22,7 @@ export function renderContactView(queryParams = {}) {
             <!-- LEFT COLUMN: Wholesale Desk & 4 Contact Information Rows -->
             <div class="contact-v1-left-col">
               <div class="contact-v1-eyebrow">
-                <span class="eyebrow-blue-dash">—</span> JOLI ENTERPRISES
+                <span class="eyebrow-blue-dash">—</span> ECOMMERCE PLATFORM
               </div>
               
               <h1 class="contact-v1-title">Wholesale <span class="highlight-blue">Desk</span></h1>
@@ -74,7 +74,7 @@ export function renderContactView(queryParams = {}) {
                   </div>
                   <div class="contact-v1-info-text">
                     <div class="contact-v1-info-label">Official Wholesale Email</div>
-                    <div class="contact-v1-info-strong">wholesale@jolienterprises.sample</div>
+                    <div class="contact-v1-info-strong">wholesale@ecommerceplatform.sample</div>
                     <div class="contact-v1-info-sub">Proforma invoices &amp; bulk order confirmations</div>
                   </div>
                 </div>
@@ -276,10 +276,10 @@ export function renderContactView(queryParams = {}) {
           <!-- Left: Warehouse Building Illustration + Title + Address + Accent Line -->
           <div class="bottom-bar-left">
             <div class="bottom-hub-thumb">
-              <img src="${baseUrl}images/contact-warehouse-hub-exact.png" alt="Joli Enterprises Wholesale Warehouse Hub" class="bottom-hub-img" />
+              <img src="${baseUrl}images/contact-warehouse-hub-exact.png" alt="Ecommerce Platform Wholesale Warehouse Hub" class="bottom-hub-img" />
             </div>
             <div class="bottom-hub-info">
-              <h3 class="bottom-hub-title">Joli Enterprises Wholesale Warehouse Hub</h3>
+              <h3 class="bottom-hub-title">Ecommerce Platform Wholesale Warehouse Hub</h3>
               <div class="bottom-hub-sub">Industrial Estate, Chennai &bull; Logistics Dispatches Pan-India</div>
               <div class="bottom-hub-line"></div>
             </div>

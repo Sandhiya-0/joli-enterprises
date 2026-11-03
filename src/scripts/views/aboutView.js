@@ -46,10 +46,10 @@ export function renderAboutView() {
                 </div>
               </div>
 
-              <!-- Main Joli Cardboard Box & Warehouse Photo -->
+              <!-- Main Cardboard Box & Warehouse Photo -->
               <img 
                 src="${baseUrl}images/about-product-box.jpg" 
-                alt="Joli Enterprises Wholesale Warehouse and Open Product Box" 
+                alt="Ecommerce Platform Wholesale Warehouse and Open Product Box" 
                 class="about-v2-frame-img"
                 loading="lazy"
               >
@@ -74,7 +74,7 @@ export function renderAboutView() {
           <!-- Right Column: Eyebrow, Title, Underline, Copy, 2-Col Channel Cards, Action Buttons -->
           <div class="about-v2-content-col fade-up">
             <div class="about-v2-eyebrow">
-              <span class="about-v2-eyebrow-pill">— ABOUT JOLI ENTERPRISES</span>
+              <span class="about-v2-eyebrow-pill">— ABOUT ECOMMERCE PLATFORM</span>
             </div>
 
             <h2 class="about-v2-title">
@@ -86,7 +86,7 @@ export function renderAboutView() {
 
             <div class="about-v2-copy">
               <p class="about-v2-p">
-                <strong class="about-v2-brand-highlight">Joli Enterprises</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
+                <strong class="about-v2-brand-highlight">Ecommerce Platform</strong> delivers high-turnover everyday retail merchandise directly to 500+ independent shopkeepers, stationery stores, and gift boutiques across India.
               </p>
               <p class="about-v2-p">
                 Every batch comes with guaranteed piece counts, accessible MOQs from 12 units, and honest wholesale margins of 35% to 65% on standard resale.
@@ -220,11 +220,11 @@ export function renderAboutView() {
             </ul>
           </div>
 
-          <!-- Card 2: The Joli Enterprises Standard -->
+          <!-- Card 2: The Ecommerce Platform Standard -->
           <div class="about-story-card joli-way fade-up">
             <div class="about-story-tag">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <span>The Joli Enterprises Solution</span>
+              <span>The Ecommerce Platform Solution</span>
             </div>
             <h3 class="about-story-card-title">Direct Factory Sourcing & Accessible Micro-MOQs</h3>
             <ul class="about-story-points">
@@ -257,7 +257,7 @@ export function renderAboutView() {
           <span style="font-size: 0.8rem; font-weight: 800; color: #B88E4B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             Why Retailers Choose Us
           </span>
-          <h2 class="section-title">The 6 Pillars of the Joli Wholesale Advantage</h2>
+          <h2 class="section-title">The 6 Pillars of the Ecommerce Platform Wholesale Advantage</h2>
           <p class="section-subtitle">
             Purpose-built purchasing benefits engineered to protect retailer cash flow, eliminate stock risk, and accelerate inventory turnover.
           </p>
@@ -527,7 +527,7 @@ export function renderAboutView() {
           <div class="about-warehouse-media">
             <img 
               src="${baseUrl}images/hero-warehouse-bg.jpg" 
-              alt="Joli Enterprises Modern B2B Wholesale Distribution Center" 
+              alt="Ecommerce Platform Modern B2B Wholesale Distribution Center" 
               loading="lazy"
             >
           </div>
@@ -542,7 +542,7 @@ export function renderAboutView() {
           <span style="font-size: 0.8rem; font-weight: 800; color: #B88E4B; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             Merchant Trust
           </span>
-          <h2 class="section-title">What Indian Retailers Say About Joli Enterprises</h2>
+          <h2 class="section-title">What Indian Retailers Say About Ecommerce Platform</h2>
           <p class="section-subtitle">
             Trusted by independent shopkeepers who depend on our guaranteed piece counts and reliable profit margins.
           </p>
@@ -553,7 +553,7 @@ export function renderAboutView() {
           <div class="about-testimonial-card fade-up">
             <div class="about-test-stars">★★★★★</div>
             <p class="about-test-quote">
-              "Before Joli Enterprises, we had to travel to wholesale markets in Sowcarpet and carry heavy stock. With Joli, cartons arrive directly at my shop in Madurai with exact piece counts and transparent bills. Our profit margin is consistently 45%."
+              "Before Ecommerce Platform, we had to travel to wholesale markets in Sowcarpet and carry heavy stock. With Ecommerce Platform, cartons arrive directly at my shop in Madurai with exact piece counts and transparent bills. Our profit margin is consistently 45%."
             </p>
             <div class="about-test-author">
               <div class="about-test-avatar">RS</div>
@@ -676,9 +676,9 @@ export function renderAboutView() {
         <div class="about-founder-strip fade-up">
           <div class="about-founder-strip-info">
             <span class="about-founder-strip-tag">Leadership & Vision</span>
-            <h3 class="about-founder-strip-title">Meet the Visionary Behind Joli Enterprises</h3>
+            <h3 class="about-founder-strip-title">Meet the Visionary Behind Ecommerce Platform</h3>
             <p class="about-founder-strip-desc">
-              Discover the founding story, commercial values, and customer-first commitment that transformed Joli Enterprises into a trusted wholesale partner for 500+ Indian retail merchants.
+              Discover the founding story, commercial values, and customer-first commitment that transformed Ecommerce Platform into a trusted wholesale partner for 500+ Indian retail merchants.
             </p>
           </div>
           <a href="#/founder" class="btn btn-outline" style="border-color: #B88E4B; color: #0E1A29; font-weight: 700; white-space: nowrap;">
