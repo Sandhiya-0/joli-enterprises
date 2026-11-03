@@ -8045,7 +8045,7 @@ body.offers-modal-active {
    EXACT REVIEWS SHOWCASE REDESIGN (IMAGE 2 MATCH)
    ========================================================================== */
 .review-exact-showcase-section {
-  background: linear-gradient(180deg, #f9fafd 0%, #f1f4ff 50%, #f4f8fd 100%);
+  background: linear-gradient(180deg, #f8fcff 0%, #eef8ff 50%, #f4faff 100%);
   padding: 4.5rem 0 4rem;
   position: relative;
   overflow: hidden;
@@ -8058,9 +8058,9 @@ body.offers-modal-active {
   inset: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 10% 20%, rgba(196, 181, 253, 0.4) 0%, transparent 45%),
-    radial-gradient(circle at 90% 15%, rgba(167, 139, 250, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(199, 210, 254, 0.4) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(4, 173, 254, 0.18) 0%, transparent 48%),
+    radial-gradient(circle at 90% 15%, rgba(56, 189, 248, 0.22) 0%, transparent 48%),
+    radial-gradient(circle at 50% 90%, rgba(186, 230, 253, 0.45) 0%, transparent 55%);
 }
 
 .review-exact-container {
@@ -8111,7 +8111,7 @@ body.offers-modal-active {
 }
 
 .review-hero-poster-wrap:focus-visible {
-  box-shadow: 0 0 0 3px #6366f1;
+  box-shadow: 0 0 0 3px #04ADFE;
 }
 
 .review-exact-phone-img {
@@ -8119,7 +8119,7 @@ body.offers-modal-active {
   height: 100%;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 14px 28px rgba(99, 102, 241, 0.14));
+  filter: drop-shadow(0 14px 28px rgba(4, 173, 254, 0.18));
   pointer-events: none;
   user-select: none;
 }
@@ -8148,7 +8148,7 @@ body.offers-modal-active {
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  background: rgba(99, 102, 241, 0.32);
+  background: rgba(4, 173, 254, 0.35);
   animation: reviewPlayPulse 2.2s infinite ease-out;
   pointer-events: none;
 }
@@ -8167,7 +8167,7 @@ body.offers-modal-active {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.38), 0 2px 8px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 24px rgba(4, 173, 254, 0.38), 0 2px 8px rgba(15, 23, 42, 0.12);
   padding-left: 3px;
   position: relative;
   z-index: 1;
@@ -8175,8 +8175,8 @@ body.offers-modal-active {
 }
 
 .review-hero-poster-wrap:hover .review-play-icon-glow {
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5), 0 4px 12px rgba(15, 23, 42, 0.16);
-  background: #faf5ff;
+  box-shadow: 0 10px 30px rgba(4, 173, 254, 0.5), 0 4px 12px rgba(15, 23, 42, 0.16);
+  background: #f0f9ff;
 }
 
 /* Active Video Container - Guarantees zero layout shift */
@@ -8188,7 +8188,7 @@ body.offers-modal-active {
   border-radius: 28px;
   overflow: hidden;
   background: #0f172a;
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25), 0 0 0 2px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 20px 40px rgba(4, 173, 254, 0.25), 0 0 0 2px rgba(4, 173, 254, 0.35);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -8345,7 +8345,7 @@ body.offers-modal-active {
 }
 
 .review-title-gradient {
-  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #04ADFE 0%, #029CE6 45%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
@@ -8418,7 +8418,7 @@ body.offers-modal-active {
   height: auto;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 10px 24px rgba(99, 102, 241, 0.1));
+  filter: drop-shadow(0 10px 24px rgba(4, 173, 254, 0.18));
 }
 
 .review-exact-carousel-wrap {
@@ -8457,10 +8457,10 @@ body.offers-modal-active {
 
 .review-carousel-arrow:hover {
   background: #ffffff;
-  border-color: #7c3aed;
-  color: #7c3aed;
+  border-color: #04ADFE;
+  color: #04ADFE;
   transform: scale(1.1);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 8px 24px rgba(4, 173, 254, 0.25);
 }
 
 .review-card-item {
@@ -8476,12 +8476,12 @@ body.offers-modal-active {
 
 .review-card-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 10px 28px rgba(4, 173, 254, 0.16);
 }
 
 .review-card-item.is-featured {
-  border: 2px solid #7c3aed;
-  box-shadow: 0 12px 36px rgba(124, 58, 237, 0.18);
+  border: 2px solid #04ADFE;
+  box-shadow: 0 12px 36px rgba(4, 173, 254, 0.22);
   transform: translateY(-4px);
 }
 
@@ -8506,11 +8506,11 @@ body.offers-modal-active {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: #7c3aed;
+  background: #04ADFE;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 2px 8px rgba(4, 173, 254, 0.45);
 }
 
 .review-card-body {
@@ -8543,7 +8543,7 @@ body.offers-modal-active {
   height: 38px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #7c3aed;
+  border: 2px solid #04ADFE;
   flex-shrink: 0;
 }
 
@@ -8585,7 +8585,7 @@ body.offers-modal-active {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #c4b5fd;
+  background: #bae6fd;
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -8593,7 +8593,7 @@ body.offers-modal-active {
 .review-carousel-dots .dot.active {
   width: 22px;
   border-radius: 9999px;
-  background: #4f46e5;
+  background: #04ADFE;
 }
 
 .review-exact-btn-wrap {
@@ -8605,7 +8605,7 @@ body.offers-modal-active {
 }
 
 .btn-review-showcase {
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #2563eb 100%);
+  background: linear-gradient(135deg, #04ADFE 0%, #0294DC 50%, #0284c7 100%);
   color: #ffffff !important;
   font-family: var(--font-heading);
   font-size: 0.88rem;
@@ -8617,13 +8617,13 @@ body.offers-modal-active {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+  box-shadow: 0 8px 24px rgba(4, 173, 254, 0.35);
   transition: all 0.2s ease;
 }
 
 .btn-review-showcase:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.45);
+  box-shadow: 0 12px 28px rgba(4, 173, 254, 0.48);
 }
 
 .btn-play-icon {

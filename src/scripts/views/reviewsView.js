@@ -187,7 +187,7 @@ export function renderReviewsShowcaseSection(options = {}) {
               <div class="review-play-click-target" title="Click to play wholesale unboxing video">
                 <span class="review-play-pulse-wave"></span>
                 <span class="review-play-icon-glow">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#6366f1" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#04ADFE" aria-hidden="true">
                     <polygon points="7 4 19 12 7 20 7 4"></polygon>
                   </svg>
                 </span>
@@ -248,11 +248,11 @@ export function renderReviewsShowcaseSection(options = {}) {
             <span class="review-title-gradient">
               Real Stories.
               <svg class="review-title-swoosh" viewBox="0 0 170 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3 12C38 3 132 2 167 12" stroke="url(#purpleSwooshGrad-${idPrefix})" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M3 12C38 3 132 2 167 12" stroke="url(#blueSwooshGrad-${idPrefix})" stroke-width="4.5" stroke-linecap="round"/>
                 <defs>
-                  <linearGradient id="purpleSwooshGrad-${idPrefix}" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#7c3aed"/>
-                    <stop offset="100%" stop-color="#4f46e5"/>
+                  <linearGradient id="blueSwooshGrad-${idPrefix}" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#04ADFE"/>
+                    <stop offset="100%" stop-color="#0284C7"/>
                   </linearGradient>
                 </defs>
               </svg>
@@ -261,7 +261,7 @@ export function renderReviewsShowcaseSection(options = {}) {
 
           <!-- Subtitle -->
           <p class="review-exact-subtitle">
-            Hear from our happy customers who trust <strong style="color: #7c3aed; font-weight: 800;">ShopNest</strong> for their wholesale needs.
+            Hear from our happy customers who trust <strong style="color: #04ADFE; font-weight: 800;">ShopNest</strong> for their wholesale needs.
           </p>
 
           <!-- 3 Feature Badges -->
@@ -353,10 +353,10 @@ export function renderReviewsShowcaseSection(options = {}) {
         <span class="dot" data-index="2"></span>
       </div>
 
-      <!-- Bottom Action Pill with Side Purple Rays Doodles -->
+      <!-- Bottom Action Pill with Side Blue Rays Doodles -->
       ${showButton ? `
         <div class="review-exact-btn-wrap">
-          <svg class="review-btn-ray-left" width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#6366f1" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <svg class="review-btn-ray-left" width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#04ADFE" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
             <line x1="2" y1="12" x2="16" y2="12"></line>
             <line x1="6" y1="4" x2="18" y2="8"></line>
             <line x1="6" y1="20" x2="18" y2="16"></line>
@@ -375,7 +375,7 @@ export function renderReviewsShowcaseSection(options = {}) {
             </svg>
           </a>
 
-          <svg class="review-btn-ray-right" width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#6366f1" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
+          <svg class="review-btn-ray-right" width="28" height="24" viewBox="0 0 28 24" fill="none" stroke="#04ADFE" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">
             <line x1="26" y1="12" x2="12" y2="12"></line>
             <line x1="22" y1="4" x2="10" y2="8"></line>
             <line x1="22" y1="20" x2="10" y2="16"></line>
@@ -516,7 +516,7 @@ export function renderReviewsView() {
           <nav class="breadcrumbs" aria-label="Breadcrumb" style="margin: 0;">
             <a href="#/" style="color: #64748b; text-decoration: none;">Home</a>
             <span class="separator" style="color: #cbd5e1; margin: 0 6px;">/</span>
-            <span class="current" style="color: #7c3aed; font-weight: 800;">Retailer Reviews</span>
+            <span class="current" style="color: #04ADFE; font-weight: 800;">Retailer Reviews</span>
           </nav>
         </div>
       </div>
