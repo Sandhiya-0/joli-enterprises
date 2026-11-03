@@ -113,7 +113,7 @@ export const featuredReviewCards = [
     id: 3,
     name: "Vikram Patel",
     role: "Distributor, Coimbatore",
-    quote: "Bulk orders are now so easy with Ecommerce Platform. Amazing experience!",
+    quote: "Bulk orders are now so easy with ShopNest. Amazing experience!",
     image: "images/review-photo-3.jpg",
     avatar: "images/review-avatar-3.jpg",
     rating: 5,
@@ -179,7 +179,7 @@ export function renderReviewsShowcaseSection(options = {}) {
             <div class="review-hero-poster-wrap" id="${idPrefix}-poster-wrap" role="button" tabindex="0" aria-label="Play boutique owner unboxing review video">
               <img 
                 src="${baseUrl}images/review-hero-phone.png" 
-                alt="Customer video review - Ecommerce Platform wholesale verified retailer" 
+                alt="Customer video review - ShopNest wholesale verified retailer" 
                 class="review-exact-phone-img" 
                 loading="lazy"
               />
@@ -261,7 +261,7 @@ export function renderReviewsShowcaseSection(options = {}) {
 
           <!-- Subtitle -->
           <p class="review-exact-subtitle">
-            Hear from our happy customers who trust Ecommerce Platform for their wholesale needs.
+            Hear from our happy customers who trust <strong style="color: #7c3aed; font-weight: 800;">ShopNest</strong> Ecommerce Platform for their wholesale needs.
           </p>
 
           <!-- 3 Feature Badges -->
