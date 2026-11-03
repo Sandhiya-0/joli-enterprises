@@ -3913,11 +3913,12 @@ body:not(.is-landing-page) #app-content {
 
 .site-header .brand-name {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: #FFFFFF !important;
   line-height: 1.1;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
